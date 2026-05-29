@@ -139,7 +139,10 @@ class _LastResultBadge extends StatelessWidget {
 
     final name = isDE ? result.nameDe : result.nameEn;
 
-    return GestureDetector(
+    return Semantics(
+      button: true,
+      label: isDE ? 'Letztes Ergebnis: $name. Tippen zum Anzeigen.' : 'Last result: $name. Tap to view.',
+      child: GestureDetector(
       onTap: () => GoRouter.of(context).go('/result/$lastResult'),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -163,6 +166,7 @@ class _LastResultBadge extends StatelessWidget {
             ),
           ],
         ),
+      ),
       ),
     );
   }

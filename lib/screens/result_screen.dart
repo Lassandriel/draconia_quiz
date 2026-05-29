@@ -59,6 +59,7 @@ class _ResultScreenState extends State<ResultScreen>
     final isDE = Localizations.localeOf(context).languageCode == 'de';
     final result = dragonResults[subtype]!;
     final theme = Theme.of(context);
+    final reduceMotion = MediaQuery.of(context).disableAnimations;
 
     final species = isDE ? result.speciesDe : result.speciesEn;
     final name = isDE ? result.nameDe : result.nameEn;
@@ -66,129 +67,149 @@ class _ResultScreenState extends State<ResultScreen>
     final description = isDE ? result.descriptionDe : result.descriptionEn;
     final rarity = isDE ? result.rarityDe : result.rarityEn;
 
-    return Scaffold(
-      body: FadeTransition(
-        opacity: _fadeAnimation,
-        child: CustomScrollView(
-          slivers: [
-            SliverAppBar(
-              expandedHeight: 520,
-              pinned: true,
-              backgroundColor: const Color(0xFF0D0A1A),
-              leading: IconButton(
-                icon: const Icon(Icons.arrow_back, color: Color(0xFFCDA84D)),
-                onPressed: () => context.go('/'),
-              ),
-              actions: [
-                StatefulBuilder(
-                  builder: (_, setIconState) => IconButton(
-                    icon: Icon(
-                      AudioService.instance.muted
-                          ? Icons.volume_off
-                          : Icons.volume_up,
-                      color: const Color(0xFFCDA84D),
-                    ),
-                    onPressed: () async {
-                      await AudioService.instance.toggleMute();
-                      setIconState(() {});
-                    },
-                  ),
+    final scrollView = CustomScrollView(
+      slivers: [
+        SliverAppBar(
+          expandedHeight: 520,
+          pinned: true,
+          backgroundColor: const Color(0xFF0D0A1A),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back, color: Color(0xFFCDA84D)),
+            tooltip: isDE ? 'Zurück' : 'Back',
+            onPressed: () => context.go('/'),
+          ),
+          actions: [
+            StatefulBuilder(
+              builder: (_, setIconState) => IconButton(
+                icon: Icon(
+                  AudioService.instance.muted
+                      ? Icons.volume_off
+                      : Icons.volume_up,
+                  color: const Color(0xFFCDA84D),
                 ),
-                IconButton(
-                  icon: const Icon(Icons.share, color: Color(0xFFCDA84D)),
-                  onPressed: () => _share(name, element, description),
-                ),
-              ],
-              flexibleSpace: FlexibleSpaceBar(
-                background: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    Image.asset(
-                      result.subtype.imagePath,
-                      fit: BoxFit.cover,
-                      alignment: Alignment.topCenter,
-                      errorBuilder: (_, _, _) => Container(
-                        color: const Color(0xFF1A1530),
-                        child: const Icon(
-                          Icons.image_not_supported,
-                          color: Color(0xFF3A2D5A),
-                          size: 80,
-                        ),
-                      ),
-                    ),
-                    const DecoratedBox(
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [Colors.transparent, Color(0xFF0D0A1A)],
-                          stops: [0.5, 1.0],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                tooltip: AudioService.instance.muted
+                    ? (isDE ? 'Ton einschalten' : 'Unmute')
+                    : (isDE ? 'Ton ausschalten' : 'Mute'),
+                onPressed: () async {
+                  await AudioService.instance.toggleMute();
+                  setIconState(() {});
+                },
               ),
             ),
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(24, 8, 24, 40),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      l10n.yourResult,
-                      style: theme.textTheme.bodyMedium?.copyWith(
-                        color: const Color(0xFFCDA84D),
-                        letterSpacing: 2,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(name, style: theme.textTheme.displayLarge),
-                    const SizedBox(height: 20),
-                    _InfoChip(label: l10n.species, value: species),
-                    const SizedBox(height: 12),
-                    Row(
-                      children: [
-                        _InfoChip(label: l10n.element, value: element),
-                        const SizedBox(width: 12),
-                        _InfoChip(label: l10n.rarity, value: rarity),
-                      ],
-                    ),
-                    const SizedBox(height: 28),
-                    _ElementIconRow(subtype: subtype, elementName: element),
-                    const SizedBox(height: 28),
-                    Text(description, style: theme.textTheme.bodyLarge),
-                    const SizedBox(height: 40),
-                    Center(
-                      child: ElevatedButton(
-                        onPressed: () {
-                          AudioService.instance.playSfx(AudioAssets.sfxButton);
-                          context.go('/quiz');
-                        },
-                        child: Text(l10n.restartButton),
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-                    Center(
-                      child: TextButton(
-                        onPressed: () {
-                          AudioService.instance.playSfx(AudioAssets.sfxButton);
-                          context.go('/');
-                        },
-                        child: Text(
-                          l10n.back,
-                          style: const TextStyle(color: Color(0xFFCDA84D)),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+            IconButton(
+              icon: const Icon(Icons.share, color: Color(0xFFCDA84D)),
+              tooltip: isDE ? 'Ergebnis teilen' : 'Share result',
+              onPressed: () => _share(name, element, description),
             ),
           ],
+          flexibleSpace: FlexibleSpaceBar(
+            background: Stack(
+              fit: StackFit.expand,
+              children: [
+                Semantics(
+                  label: isDE
+                      ? '$name – Drachenbild'
+                      : '$name – dragon image',
+                  excludeSemantics: true,
+                  child: Image.asset(
+                    result.subtype.imagePath,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.topCenter,
+                    errorBuilder: (_, _, _) => Container(
+                      color: const Color(0xFF1A1530),
+                      child: const Icon(
+                        Icons.image_not_supported,
+                        color: Color(0xFF3A2D5A),
+                        size: 80,
+                      ),
+                    ),
+                  ),
+                ),
+                const DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [Colors.transparent, Color(0xFF0D0A1A)],
+                      stops: [0.5, 1.0],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
-      ),
+        SliverToBoxAdapter(
+          child: Semantics(
+            label: isDE
+                ? '$name. Spezies: $species. Element: $element. Seltenheit: $rarity. $description'
+                : '$name. Species: $species. Element: $element. Rarity: $rarity. $description',
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(24, 8, 24, 40),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    l10n.yourResult,
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      color: const Color(0xFFCDA84D),
+                      letterSpacing: 2,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(name, style: theme.textTheme.displayLarge),
+                  const SizedBox(height: 20),
+                  _InfoChip(label: l10n.species, value: species),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: [
+                      _InfoChip(label: l10n.element, value: element),
+                      const SizedBox(width: 12),
+                      _InfoChip(label: l10n.rarity, value: rarity),
+                    ],
+                  ),
+                  const SizedBox(height: 28),
+                  _ElementIconRow(
+                    subtype: subtype,
+                    elementName: element,
+                  ),
+                  const SizedBox(height: 28),
+                  Text(description, style: theme.textTheme.bodyLarge),
+                  const SizedBox(height: 40),
+                  Center(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        AudioService.instance.playSfx(AudioAssets.sfxButton);
+                        context.go('/quiz');
+                      },
+                      child: Text(l10n.restartButton),
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  Center(
+                    child: TextButton(
+                      onPressed: () {
+                        AudioService.instance.playSfx(AudioAssets.sfxButton);
+                        context.go('/');
+                      },
+                      child: Text(
+                        l10n.back,
+                        style: const TextStyle(color: Color(0xFFCDA84D)),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+
+    return Scaffold(
+      body: reduceMotion
+          ? scrollView
+          : FadeTransition(opacity: _fadeAnimation, child: scrollView),
     );
   }
 }
@@ -244,23 +265,29 @@ class _ElementIconRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SizedBox(
-          width: 48,
-          height: 48,
-          child: Image.asset(
-            subtype.elementIconPath,
-            fit: BoxFit.contain,
-            errorBuilder: (_, _, _) => const Icon(
-              Icons.auto_awesome,
-              color: Color(0xFFCDA84D),
-              size: 36,
+        Semantics(
+          label: elementName,
+          excludeSemantics: true,
+          child: SizedBox(
+            width: 48,
+            height: 48,
+            child: Image.asset(
+              subtype.elementIconPath,
+              fit: BoxFit.contain,
+              errorBuilder: (_, _, _) => const Icon(
+                Icons.auto_awesome,
+                color: Color(0xFFCDA84D),
+                size: 36,
+              ),
             ),
           ),
         ),
         const SizedBox(width: 12),
-        Text(
-          elementName,
-          style: Theme.of(context).textTheme.headlineMedium,
+        ExcludeSemantics(
+          child: Text(
+            elementName,
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
         ),
       ],
     );

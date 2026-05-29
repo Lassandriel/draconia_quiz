@@ -206,6 +206,7 @@ class _SliderTile extends StatelessWidget {
               min: 0,
               max: 1,
               divisions: 20,
+              semanticFormatterCallback: (v) => '${(v * 100).round()}%',
               onChanged: onChanged,
             ),
           ),
@@ -240,9 +241,13 @@ class _LangChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: AnimatedContainer(
+    return Semantics(
+      button: true,
+      selected: selected,
+      label: label,
+      child: GestureDetector(
+        onTap: onTap,
+        child: AnimatedContainer(
         duration: const Duration(milliseconds: 150),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         decoration: BoxDecoration(
@@ -265,6 +270,7 @@ class _LangChip extends StatelessWidget {
             fontSize: 14,
           ),
         ),
+      ),
       ),
     );
   }
