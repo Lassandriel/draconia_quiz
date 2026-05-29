@@ -235,6 +235,42 @@ abstract class AppLocalizations {
   /// In de, this message translates to:
   /// **'Problem auf GitHub melden'**
   String get reportBugSubtitle;
+
+  /// No description provided for @quitTitle.
+  ///
+  /// In de, this message translates to:
+  /// **'Quiz abbrechen?'**
+  String get quitTitle;
+
+  /// No description provided for @quitMessage.
+  ///
+  /// In de, this message translates to:
+  /// **'Dein Fortschritt geht verloren.'**
+  String get quitMessage;
+
+  /// No description provided for @quitConfirm.
+  ///
+  /// In de, this message translates to:
+  /// **'Abbrechen'**
+  String get quitConfirm;
+
+  /// No description provided for @quitCancel.
+  ///
+  /// In de, this message translates to:
+  /// **'Weiter spielen'**
+  String get quitCancel;
+
+  /// No description provided for @lastResultLabel.
+  ///
+  /// In de, this message translates to:
+  /// **'Zuletzt: {name}'**
+  String lastResultLabel(String name);
+
+  /// No description provided for @lastResultSemantics.
+  ///
+  /// In de, this message translates to:
+  /// **'Letztes Ergebnis: {name}. Tippen zum Anzeigen.'**
+  String lastResultSemantics(String name);
 }
 
 class _AppLocalizationsDelegate

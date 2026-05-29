@@ -129,7 +129,6 @@ class _LastResultBadge extends StatelessWidget {
     final lastResult = SettingsService.instance.lastResult;
     if (lastResult == null) return const SizedBox.shrink();
 
-    final isDE = Localizations.localeOf(context).languageCode == 'de';
     final subtype = DragonSubtype.values.firstWhere(
       (e) => e.name == lastResult,
       orElse: () => DragonSubtype.grossdracheFeuer,
@@ -137,36 +136,38 @@ class _LastResultBadge extends StatelessWidget {
     final result = dragonResults[subtype];
     if (result == null) return const SizedBox.shrink();
 
+    final l10n = AppLocalizations.of(context)!;
+    final isDE = Localizations.localeOf(context).languageCode == 'de';
     final name = isDE ? result.nameDe : result.nameEn;
 
     return Semantics(
       button: true,
-      label: isDE ? 'Letztes Ergebnis: $name. Tippen zum Anzeigen.' : 'Last result: $name. Tap to view.',
+      label: l10n.lastResultSemantics(name),
       child: GestureDetector(
-      onTap: () => GoRouter.of(context).go('/result/$lastResult'),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        decoration: BoxDecoration(
-          color: const Color(0xFF1A1530),
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: const Color(0xFF3A2D5A)),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(Icons.history, color: Color(0xFFCDA84D), size: 14),
-            const SizedBox(width: 6),
-            Text(
-              isDE ? 'Zuletzt: $name' : 'Last: $name',
-              style: const TextStyle(
-                fontFamily: 'Outfit',
-                color: Color(0xFFCDA84D),
-                fontSize: 12,
+        onTap: () => GoRouter.of(context).go('/result/$lastResult'),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          decoration: BoxDecoration(
+            color: const Color(0xFF1A1530),
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(color: const Color(0xFF3A2D5A)),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Icon(Icons.history, color: Color(0xFFCDA84D), size: 14),
+              const SizedBox(width: 6),
+              Text(
+                l10n.lastResultLabel(name),
+                style: const TextStyle(
+                  fontFamily: 'Outfit',
+                  color: Color(0xFFCDA84D),
+                  fontSize: 12,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
       ),
     );
   }

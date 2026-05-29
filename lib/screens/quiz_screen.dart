@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import '../generated/app_localizations.dart';
 
 import '../data/questions.dart' show quizQuestions;
+import '../data/results.dart';
 import '../models/dragon_type.dart';
 import '../models/quiz_question.dart';
 import '../services/audio_service.dart';
@@ -47,6 +48,14 @@ class _QuizScreenState extends State<QuizScreen>
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    for (final result in dragonResults.values) {
+      precacheImage(AssetImage(result.subtype.imagePath), context);
+    }
+  }
+
+  @override
   void dispose() {
     _controller.dispose();
     super.dispose();
@@ -81,7 +90,7 @@ class _QuizScreenState extends State<QuizScreen>
   }
 
   Future<bool> _confirmAbort(BuildContext context) async {
-    final isDE = Localizations.localeOf(context).languageCode == 'de';
+    final l10n = AppLocalizations.of(context)!;
     return await showDialog<bool>(
           context: context,
           builder: (ctx) => AlertDialog(
@@ -91,14 +100,12 @@ class _QuizScreenState extends State<QuizScreen>
               side: const BorderSide(color: Color(0xFF3A2D5A)),
             ),
             title: Text(
-              isDE ? 'Quiz abbrechen?' : 'Quit the quiz?',
+              l10n.quitTitle,
               style: const TextStyle(
                   fontFamily: 'Cinzel', color: Color(0xFFE8DFC0)),
             ),
             content: Text(
-              isDE
-                  ? 'Dein Fortschritt geht verloren.'
-                  : 'Your progress will be lost.',
+              l10n.quitMessage,
               style: const TextStyle(
                   fontFamily: 'CrimsonText',
                   color: Color(0xFF9B8C6E),
@@ -108,14 +115,14 @@ class _QuizScreenState extends State<QuizScreen>
               TextButton(
                 onPressed: () => Navigator.pop(ctx, false),
                 child: Text(
-                  isDE ? 'Weiter spielen' : 'Keep playing',
+                  l10n.quitCancel,
                   style: const TextStyle(color: Color(0xFFCDA84D)),
                 ),
               ),
               TextButton(
                 onPressed: () => Navigator.pop(ctx, true),
                 child: Text(
-                  isDE ? 'Abbrechen' : 'Quit',
+                  l10n.quitConfirm,
                   style: const TextStyle(color: Color(0xFF9B8C6E)),
                 ),
               ),

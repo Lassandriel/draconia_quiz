@@ -28,5 +28,21 @@
   "aboutSection": "About",
   "version": "Version",
   "reportBug": "Report a Bug",
-  "reportBugSubtitle": "Open an issue on GitHub"
+  "reportBugSubtitle": "Open an issue on GitHub",
+  "quitTitle": "Quit the quiz?",
+  "quitMessage": "Your progress will be lost.",
+  "quitConfirm": "Quit",
+  "quitCancel": "Keep playing",
+  "lastResultLabel": "Last: {name}",
+  "@lastResultLabel": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "lastResultSemantics": "Last result: {name}. Tap to view.",
+  "@lastResultSemantics": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  }
 }

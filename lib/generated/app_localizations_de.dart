@@ -79,4 +79,26 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get reportBugSubtitle => 'Problem auf GitHub melden';
+
+  @override
+  String get quitTitle => 'Quiz abbrechen?';
+
+  @override
+  String get quitMessage => 'Dein Fortschritt geht verloren.';
+
+  @override
+  String get quitConfirm => 'Abbrechen';
+
+  @override
+  String get quitCancel => 'Weiter spielen';
+
+  @override
+  String lastResultLabel(String name) {
+    return 'Zuletzt: $name';
+  }
+
+  @override
+  String lastResultSemantics(String name) {
+    return 'Letztes Ergebnis: $name. Tippen zum Anzeigen.';
+  }
 }

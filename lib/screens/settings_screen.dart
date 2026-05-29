@@ -138,6 +138,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             onTap: () async {
               final uri = Uri.parse(_bugReportUrl);
               await launchUrl(uri, mode: LaunchMode.externalApplication);
+              if (!mounted) return;
             },
           ),
         ],

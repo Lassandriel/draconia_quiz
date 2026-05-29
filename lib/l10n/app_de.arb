@@ -28,5 +28,21 @@
   "aboutSection": "Über die App",
   "version": "Version",
   "reportBug": "Bug melden",
-  "reportBugSubtitle": "Problem auf GitHub melden"
+  "reportBugSubtitle": "Problem auf GitHub melden",
+  "quitTitle": "Quiz abbrechen?",
+  "quitMessage": "Dein Fortschritt geht verloren.",
+  "quitConfirm": "Abbrechen",
+  "quitCancel": "Weiter spielen",
+  "lastResultLabel": "Zuletzt: {name}",
+  "@lastResultLabel": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "lastResultSemantics": "Letztes Ergebnis: {name}. Tippen zum Anzeigen.",
+  "@lastResultSemantics": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  }
 }
