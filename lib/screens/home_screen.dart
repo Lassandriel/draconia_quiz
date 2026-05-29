@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Positioned.fill(
             child: Image.asset(
-              'assets/images/app/quiz_background.png',
+              'assets/images/app/quiz_background.webp',
               fit: BoxFit.cover,
               errorBuilder: (_, _, _) => Container(
                 decoration: const BoxDecoration(

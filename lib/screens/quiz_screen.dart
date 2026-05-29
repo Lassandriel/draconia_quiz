@@ -189,7 +189,7 @@ class _QuizScreenState extends State<QuizScreen>
                 label: 'Quiz background',
                 excludeSemantics: true,
                 child: Image.asset(
-                  'assets/images/app/quiz_background.png',
+                  'assets/images/app/quiz_background.webp',
                   fit: BoxFit.cover,
                   errorBuilder: (_, _, _) =>
                       Container(color: const Color(0xFF0D0A1A)),
