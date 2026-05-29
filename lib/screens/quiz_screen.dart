@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import '../generated/app_localizations.dart';
 
 import '../data/questions.dart' show quizQuestions;
-import '../data/results.dart';
 import '../models/dragon_type.dart';
 import '../models/quiz_question.dart';
 import '../services/audio_service.dart';
@@ -48,14 +47,6 @@ class _QuizScreenState extends State<QuizScreen>
   }
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    for (final result in dragonResults.values) {
-      precacheImage(AssetImage(result.subtype.imagePath), context);
-    }
-  }
-
-  @override
   void dispose() {
     _controller.dispose();
     super.dispose();
@@ -70,7 +61,14 @@ class _QuizScreenState extends State<QuizScreen>
       _scores[subtype] = (_scores[subtype] ?? 0) + points;
     });
 
-    if (_currentIndex < _shuffledQuestions.length - 1) {
+    // Ab Frage 12 den aktuellen Spitzenreiter vorladen
+    final total = _shuffledQuestions.length;
+    if (_currentIndex >= total - 6 && _scores.isNotEmpty) {
+      final leader = _scores.entries.reduce((a, b) => a.value >= b.value ? a : b).key;
+      precacheImage(AssetImage(leader.imagePath), context);
+    }
+
+    if (_currentIndex < total - 1) {
       AudioService.instance.playSfx(AudioAssets.sfxTransition);
       _controller.reset();
       setState(() => _currentIndex++);
