@@ -106,7 +106,7 @@ class _ResultScreenState extends State<ResultScreen>
                       result.subtype.imagePath,
                       fit: BoxFit.cover,
                       alignment: Alignment.topCenter,
-                      errorBuilder: (_, __, ___) => Container(
+                      errorBuilder: (_, _, _) => Container(
                         color: const Color(0xFF1A1530),
                         child: const Icon(
                           Icons.image_not_supported,
@@ -247,7 +247,7 @@ class _ElementIconRow extends StatelessWidget {
           child: Image.asset(
             subtype.elementIconPath,
             fit: BoxFit.contain,
-            errorBuilder: (_, __, ___) => const Icon(
+            errorBuilder: (_, _, _) => const Icon(
               Icons.auto_awesome,
               color: Color(0xFFCDA84D),
               size: 36,

@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../generated/app_localizations.dart';
 
-import '../data/questions.dart';
+import '../data/questions.dart' show quizQuestions;
 import '../models/dragon_type.dart';
 import '../models/quiz_question.dart';
 import '../services/audio_service.dart';
+import '../services/settings_service.dart';
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({super.key});
@@ -18,6 +19,7 @@ class _QuizScreenState extends State<QuizScreen>
     with SingleTickerProviderStateMixin {
   int _currentIndex = 0;
   final Map<DragonSubtype, int> _scores = {};
+  late final List<QuizQuestion> _shuffledQuestions;
 
   late final AnimationController _slideController;
   late final Animation<Offset> _slideAnimation;
@@ -27,6 +29,7 @@ class _QuizScreenState extends State<QuizScreen>
   void initState() {
     super.initState();
     AudioService.instance.playMusic(AudioAssets.musicQuiz);
+    _shuffledQuestions = List.of(quizQuestions)..shuffle();
 
     _slideController = AnimationController(
       vsync: this,
@@ -50,12 +53,12 @@ class _QuizScreenState extends State<QuizScreen>
   }
 
   void _onAnswer(QuizAnswer answer) {
-    AudioService.instance.playSfx(AudioAssets.sfxAnswer, volume: 0.35);
+    AudioService.instance.playSfx(AudioAssets.sfxAnswer, volume: SettingsService.instance.sfxVolume * 0.45);
     answer.scores.forEach((subtype, points) {
       _scores[subtype] = (_scores[subtype] ?? 0) + points;
     });
 
-    if (_currentIndex < quizQuestions.length - 1) {
+    if (_currentIndex < _shuffledQuestions.length - 1) {
       AudioService.instance.playSfx(AudioAssets.sfxTransition);
       _slideController.reset();
       setState(() => _currentIndex++);
@@ -68,15 +71,16 @@ class _QuizScreenState extends State<QuizScreen>
   void _finish() {
     if (_scores.isEmpty) return;
     final winner = _scores.entries.reduce((a, b) => a.value >= b.value ? a : b);
+    SettingsService.instance.saveLastResult(winner.key.name);
     context.go('/result/${winner.key.name}');
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final question = quizQuestions[_currentIndex];
+    final question = _shuffledQuestions[_currentIndex];
     final isDE = Localizations.localeOf(context).languageCode == 'de';
-    final total = quizQuestions.length;
+    final total = _shuffledQuestions.length;
     final progress = (_currentIndex + 1) / total;
 
     return Scaffold(
@@ -86,7 +90,7 @@ class _QuizScreenState extends State<QuizScreen>
             child: Image.asset(
               'assets/images/app/quiz_background.png',
               fit: BoxFit.cover,
-              errorBuilder: (_, __, ___) =>
+              errorBuilder: (_, _, _) =>
                   Container(color: const Color(0xFF0D0A1A)),
             ),
           ),
@@ -141,7 +145,7 @@ class _QuizScreenState extends State<QuizScreen>
                       tween: Tween(begin: 0, end: progress),
                       duration: const Duration(milliseconds: 400),
                       curve: Curves.easeOut,
-                      builder: (_, value, __) => LinearProgressIndicator(
+                      builder: (_, value, _) => LinearProgressIndicator(
                         value: value,
                         backgroundColor: const Color(0xFF1A1530),
                         valueColor:
@@ -177,7 +181,7 @@ class _QuizScreenState extends State<QuizScreen>
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 16, vertical: 8),
                               itemCount: question.answers.length,
-                              separatorBuilder: (_, __) =>
+                              separatorBuilder: (_, _) =>
                                   const SizedBox(height: 12),
                               itemBuilder: (_, i) {
                                 final answer = question.answers[i];

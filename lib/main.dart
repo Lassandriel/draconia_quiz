@@ -18,9 +18,9 @@ void main() async {
 
 final _router = GoRouter(
   routes: [
-    GoRoute(path: '/', builder: (_, __) => const HomeScreen()),
-    GoRoute(path: '/quiz', builder: (_, __) => const QuizScreen()),
-    GoRoute(path: '/settings', builder: (_, __) => const SettingsScreen()),
+    GoRoute(path: '/', builder: (_, _) => const HomeScreen()),
+    GoRoute(path: '/quiz', builder: (_, _) => const QuizScreen()),
+    GoRoute(path: '/settings', builder: (_, _) => const SettingsScreen()),
     GoRoute(
       path: '/result/:subtype',
       builder: (_, state) {

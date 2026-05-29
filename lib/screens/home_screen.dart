@@ -3,7 +3,10 @@ import 'package:go_router/go_router.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import '../generated/app_localizations.dart';
 
+import '../data/results.dart';
+import '../models/dragon_type.dart';
 import '../services/audio_service.dart';
+import '../services/settings_service.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -36,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Image.asset(
               'assets/images/app/quiz_background.png',
               fit: BoxFit.cover,
-              errorBuilder: (_, __, ___) => Container(
+              errorBuilder: (_, _, _) => Container(
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
@@ -96,6 +99,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Text(l10n.startButton),
                 ),
                 const Spacer(),
+                // Letztes Ergebnis
+                _LastResultBadge(),
+                const SizedBox(height: 12),
                 // Version
                 Padding(
                   padding: const EdgeInsets.only(bottom: 16),
@@ -112,6 +118,51 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _LastResultBadge extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final lastResult = SettingsService.instance.lastResult;
+    if (lastResult == null) return const SizedBox.shrink();
+
+    final isDE = Localizations.localeOf(context).languageCode == 'de';
+    final subtype = DragonSubtype.values.firstWhere(
+      (e) => e.name == lastResult,
+      orElse: () => DragonSubtype.grossdracheFeuer,
+    );
+    final result = dragonResults[subtype];
+    if (result == null) return const SizedBox.shrink();
+
+    final name = isDE ? result.nameDe : result.nameEn;
+
+    return GestureDetector(
+      onTap: () => GoRouter.of(context).go('/result/$lastResult'),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        decoration: BoxDecoration(
+          color: const Color(0xFF1A1530),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: const Color(0xFF3A2D5A)),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Icon(Icons.history, color: Color(0xFFCDA84D), size: 14),
+            const SizedBox(width: 6),
+            Text(
+              isDE ? 'Zuletzt: $name' : 'Last: $name',
+              style: const TextStyle(
+                fontFamily: 'Outfit',
+                color: Color(0xFFCDA84D),
+                fontSize: 12,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

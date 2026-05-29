@@ -12,10 +12,13 @@ class SettingsService {
   double _sfxVolume = 0.8;
   bool _muted = false;
 
+  String? _lastResult;
+
   Locale get locale => _locale;
   double get musicVolume => _musicVolume;
   double get sfxVolume => _sfxVolume;
   bool get muted => _muted;
+  String? get lastResult => _lastResult;
 
   Future<void> init() async {
     _prefs = await SharedPreferences.getInstance();
@@ -23,6 +26,7 @@ class SettingsService {
     _musicVolume = _prefs.getDouble('music_volume') ?? 0.5;
     _sfxVolume = _prefs.getDouble('sfx_volume') ?? 0.8;
     _muted = _prefs.getBool('muted') ?? false;
+    _lastResult = _prefs.getString('last_result');
 
     final saved = _prefs.getString('language');
     if (saved != null) {
@@ -53,5 +57,10 @@ class SettingsService {
   Future<void> setMuted(bool muted) async {
     _muted = muted;
     await _prefs.setBool('muted', muted);
+  }
+
+  Future<void> saveLastResult(String subtypeName) async {
+    _lastResult = subtypeName;
+    await _prefs.setString('last_result', subtypeName);
   }
 }
