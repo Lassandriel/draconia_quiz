@@ -29,6 +29,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dragonType => 'Dragon Type';
 
   @override
+  String get species => 'Species';
+
+  @override
+  String get subtype => 'Subtype';
+
+  @override
   String get element => 'Element';
 
   @override

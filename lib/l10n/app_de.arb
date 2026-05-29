@@ -12,6 +12,8 @@
   },
   "yourResult": "Dein Ergebnis",
   "dragonType": "Drachenart",
+  "species": "Spezies",
+  "subtype": "Unterart",
   "element": "Element",
   "rarity": "Seltenheit",
   "restartButton": "Nochmal spielen",

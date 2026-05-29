@@ -134,6 +134,18 @@ abstract class AppLocalizations {
   /// **'Drachenart'**
   String get dragonType;
 
+  /// No description provided for @species.
+  ///
+  /// In de, this message translates to:
+  /// **'Spezies'**
+  String get species;
+
+  /// No description provided for @subtype.
+  ///
+  /// In de, this message translates to:
+  /// **'Unterart'**
+  String get subtype;
+
   /// No description provided for @element.
   ///
   /// In de, this message translates to:

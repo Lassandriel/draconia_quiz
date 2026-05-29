@@ -12,6 +12,8 @@
   },
   "yourResult": "Your Result",
   "dragonType": "Dragon Type",
+  "species": "Species",
+  "subtype": "Subtype",
   "element": "Element",
   "rarity": "Rarity",
   "restartButton": "Play Again",

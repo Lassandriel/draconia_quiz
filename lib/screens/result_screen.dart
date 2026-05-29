@@ -60,6 +60,7 @@ class _ResultScreenState extends State<ResultScreen>
     final result = dragonResults[subtype]!;
     final theme = Theme.of(context);
 
+    final species = isDE ? result.speciesDe : result.speciesEn;
     final name = isDE ? result.nameDe : result.nameEn;
     final element = isDE ? result.elementDe : result.elementEn;
     final description = isDE ? result.descriptionDe : result.descriptionEn;
@@ -145,6 +146,8 @@ class _ResultScreenState extends State<ResultScreen>
                     const SizedBox(height: 8),
                     Text(name, style: theme.textTheme.displayLarge),
                     const SizedBox(height: 20),
+                    _InfoChip(label: l10n.species, value: species),
+                    const SizedBox(height: 12),
                     Row(
                       children: [
                         _InfoChip(label: l10n.element, value: element),

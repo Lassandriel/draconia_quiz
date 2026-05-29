@@ -2,6 +2,8 @@ import '../models/dragon_type.dart';
 
 class DragonResult {
   final DragonSubtype subtype;
+  final String speciesDe;
+  final String speciesEn;
   final String nameDe;
   final String nameEn;
   final String elementDe;
@@ -13,6 +15,8 @@ class DragonResult {
 
   const DragonResult({
     required this.subtype,
+    required this.speciesDe,
+    required this.speciesEn,
     required this.nameDe,
     required this.nameEn,
     required this.elementDe,
@@ -27,6 +31,8 @@ class DragonResult {
 const Map<DragonSubtype, DragonResult> dragonResults = {
   DragonSubtype.grossdracheSonne: DragonResult(
     subtype: DragonSubtype.grossdracheSonne,
+    speciesDe: 'Großdrache',
+    speciesEn: 'Great Dragon',
     nameDe: 'Sonnendrache',
     nameEn: 'Sun Dragon',
     elementDe: 'Licht',
@@ -41,6 +47,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.grossdracheErde: DragonResult(
     subtype: DragonSubtype.grossdracheErde,
+    speciesDe: 'Großdrache',
+    speciesEn: 'Great Dragon',
     nameDe: 'Erddrache',
     nameEn: 'Earth Dragon',
     elementDe: 'Erde',
@@ -55,12 +63,14 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.grossdracheGezeitenTraum: DragonResult(
     subtype: DragonSubtype.grossdracheGezeitenTraum,
+    speciesDe: 'Großdrache',
+    speciesEn: 'Great Dragon',
     nameDe: 'Gezeiten- & Traumdrache',
     nameEn: 'Tide & Dream Dragon',
     elementDe: 'Gezeiten & Traum',
     elementEn: 'Tides & Dream',
     descriptionDe:
-        'Deine Schuppen schimmern in Blau und Lila, deine Flügel wirken wie aus Nebel geformt. Du besitzt eine Tiefe, die andere kaum ahnen. Träume und Geheimnisse sind dein Element — du spürst, was andere fühlen, bevor sie es selbst wissen. Weise, ruhig und mit einem Sinn für das Unsichtbare bist du ein Brücke zwischen zwei Welten.',
+        'Deine Schuppen schimmern in Blau und Lila, deine Flügel wirken wie aus Nebel geformt. Du besitzt eine Tiefe, die andere kaum ahnen. Träume und Geheimnisse sind dein Element — du spürst, was andere fühlen, bevor sie es selbst wissen. Weise, ruhig und mit einem Sinn für das Unsichtbare bist du eine Brücke zwischen zwei Welten.',
     descriptionEn:
         'Your scales shimmer in blue and purple, your wings seem formed from mist. You possess a depth others rarely suspect. Dreams and secrets are your element — you sense what others feel before they know it themselves. Wise, calm, and attuned to the invisible, you are a bridge between two worlds.',
     rarityDe: 'Selten',
@@ -69,6 +79,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.grossdracheWind: DragonResult(
     subtype: DragonSubtype.grossdracheWind,
+    speciesDe: 'Großdrache',
+    speciesEn: 'Great Dragon',
     nameDe: 'Wind- & Luftdrache',
     nameEn: 'Wind & Air Dragon',
     elementDe: 'Wind & Luft',
@@ -83,6 +95,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.grossdracheKristall: DragonResult(
     subtype: DragonSubtype.grossdracheKristall,
+    speciesDe: 'Großdrache',
+    speciesEn: 'Great Dragon',
     nameDe: 'Kristalldrache',
     nameEn: 'Crystal Dragon',
     elementDe: 'Kristall',
@@ -97,6 +111,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.grossdracheFeuer: DragonResult(
     subtype: DragonSubtype.grossdracheFeuer,
+    speciesDe: 'Großdrache',
+    speciesEn: 'Great Dragon',
     nameDe: 'Feuerdrache',
     nameEn: 'Fire Dragon',
     elementDe: 'Feuer',
@@ -111,8 +127,10 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.lungFeuer: DragonResult(
     subtype: DragonSubtype.lungFeuer,
-    nameDe: 'Lung-Drache — Feuer',
-    nameEn: 'Lung Dragon — Fire',
+    speciesDe: 'Lung-Drache',
+    speciesEn: 'Lung Dragon',
+    nameDe: 'Feuer-Lung',
+    nameEn: 'Fire Lung',
     elementDe: 'Feuer',
     elementEn: 'Fire',
     descriptionDe:
@@ -125,8 +143,10 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.lungLicht: DragonResult(
     subtype: DragonSubtype.lungLicht,
-    nameDe: 'Lung-Drache — Licht',
-    nameEn: 'Lung Dragon — Light',
+    speciesDe: 'Lung-Drache',
+    speciesEn: 'Lung Dragon',
+    nameDe: 'Licht-Lung',
+    nameEn: 'Light Lung',
     elementDe: 'Licht',
     elementEn: 'Light',
     descriptionDe:
@@ -139,8 +159,10 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.lungFeuerLicht: DragonResult(
     subtype: DragonSubtype.lungFeuerLicht,
-    nameDe: 'Lung-Drache — Feuer & Licht',
-    nameEn: 'Lung Dragon — Fire & Light',
+    speciesDe: 'Lung-Drache',
+    speciesEn: 'Lung Dragon',
+    nameDe: 'Feuer- & Licht-Lung',
+    nameEn: 'Fire & Light Lung',
     elementDe: 'Feuer & Licht',
     elementEn: 'Fire & Light',
     descriptionDe:
@@ -153,6 +175,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.wyvernSturm: DragonResult(
     subtype: DragonSubtype.wyvernSturm,
+    speciesDe: 'Wyvern',
+    speciesEn: 'Wyvern',
     nameDe: 'Sturm-Wyvern',
     nameEn: 'Storm Wyvern',
     elementDe: 'Sturm & Wind',
@@ -167,6 +191,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.wyvernFrost: DragonResult(
     subtype: DragonSubtype.wyvernFrost,
+    speciesDe: 'Wyvern',
+    speciesEn: 'Wyvern',
     nameDe: 'Frost-Wyvern',
     nameEn: 'Frost Wyvern',
     elementDe: 'Frost & Eis',
@@ -181,6 +207,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.lindwurmMagma: DragonResult(
     subtype: DragonSubtype.lindwurmMagma,
+    speciesDe: 'Lindwurm',
+    speciesEn: 'Lindworm',
     nameDe: 'Magma-Lindwurm',
     nameEn: 'Magma Lindworm',
     elementDe: 'Magma & Feuer',
@@ -195,6 +223,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.lindwurmSumpf: DragonResult(
     subtype: DragonSubtype.lindwurmSumpf,
+    speciesDe: 'Lindwurm',
+    speciesEn: 'Lindworm',
     nameDe: 'Sumpf-Lindwurm',
     nameEn: 'Swamp Lindworm',
     elementDe: 'Natur & Erde',
@@ -209,6 +239,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.amphithereTraum: DragonResult(
     subtype: DragonSubtype.amphithereTraum,
+    speciesDe: 'Amphithere',
+    speciesEn: 'Amphithere',
     nameDe: 'Traum-Amphithere',
     nameEn: 'Dream Amphithere',
     elementDe: 'Traum & Nebel',
@@ -223,6 +255,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.amphithereSonne: DragonResult(
     subtype: DragonSubtype.amphithereSonne,
+    speciesDe: 'Amphithere',
+    speciesEn: 'Amphithere',
     nameDe: 'Sonnen-Amphithere',
     nameEn: 'Sun Amphithere',
     elementDe: 'Licht & Feuer',
@@ -237,6 +271,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.leviathanGezeiten: DragonResult(
     subtype: DragonSubtype.leviathanGezeiten,
+    speciesDe: 'Leviathan',
+    speciesEn: 'Leviathan',
     nameDe: 'Gezeiten-Leviathan',
     nameEn: 'Tide Leviathan',
     elementDe: 'Wasser & Gezeiten',
@@ -251,6 +287,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.leviathanMagma: DragonResult(
     subtype: DragonSubtype.leviathanMagma,
+    speciesDe: 'Leviathan',
+    speciesEn: 'Leviathan',
     nameDe: 'Magma-Leviathan',
     nameEn: 'Magma Leviathan',
     elementDe: 'Magma & Feuer',
@@ -265,6 +303,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.seraphGewitter: DragonResult(
     subtype: DragonSubtype.seraphGewitter,
+    speciesDe: 'Seraph-Drache',
+    speciesEn: 'Seraph Dragon',
     nameDe: 'Gewitter-Seraph',
     nameEn: 'Storm Seraph',
     elementDe: 'Blitz & Donner',
@@ -279,6 +319,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.seraphAether: DragonResult(
     subtype: DragonSubtype.seraphAether,
+    speciesDe: 'Seraph-Drache',
+    speciesEn: 'Seraph Dragon',
     nameDe: 'Äther-Seraph',
     nameEn: 'Aether Seraph',
     elementDe: 'Äther & Sternenlicht',
@@ -293,6 +335,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.faeStadt: DragonResult(
     subtype: DragonSubtype.faeStadt,
+    speciesDe: 'Fae-Drache',
+    speciesEn: 'Fae Dragon',
     nameDe: 'Stadt-Fae',
     nameEn: 'City Fae',
     elementDe: 'Natur & Tarnung',
@@ -307,6 +351,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
 
   DragonSubtype.faeWald: DragonResult(
     subtype: DragonSubtype.faeWald,
+    speciesDe: 'Fae-Drache',
+    speciesEn: 'Fae Dragon',
     nameDe: 'Wald-Fae',
     nameEn: 'Forest Fae',
     elementDe: 'Natur & Heilung',

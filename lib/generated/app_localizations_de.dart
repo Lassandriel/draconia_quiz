@@ -30,6 +30,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get dragonType => 'Drachenart';
 
   @override
+  String get species => 'Spezies';
+
+  @override
+  String get subtype => 'Unterart';
+
+  @override
   String get element => 'Element';
 
   @override
