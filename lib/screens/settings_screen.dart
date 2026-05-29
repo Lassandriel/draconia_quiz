@@ -137,7 +137,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 color: Color(0xFF9B8C6E), size: 16),
             onTap: () async {
               final uri = Uri.parse(_bugReportUrl);
-              if (await canLaunchUrl(uri)) launchUrl(uri);
+              await launchUrl(uri, mode: LaunchMode.externalApplication);
             },
           ),
         ],
