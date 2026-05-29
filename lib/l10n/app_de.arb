@@ -1,0 +1,30 @@
+{
+  "@@locale": "de",
+  "appTitle": "Draconia Quiz",
+  "startButton": "Quiz starten",
+  "tagline": "Entdecke, welche Drachenart und welches Element du bist",
+  "questionOf": "Frage {current} von {total}",
+  "@questionOf": {
+    "placeholders": {
+      "current": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "yourResult": "Dein Ergebnis",
+  "dragonType": "Drachenart",
+  "element": "Element",
+  "rarity": "Seltenheit",
+  "restartButton": "Nochmal spielen",
+  "shareButton": "Teilen",
+  "languageLabel": "Sprache",
+  "back": "Zurück",
+  "settings": "Einstellungen",
+  "audioSection": "Audio",
+  "musicVolume": "Musik",
+  "sfxVolume": "Effekte",
+  "languageSection": "Sprache",
+  "aboutSection": "Über die App",
+  "version": "Version",
+  "reportBug": "Bug melden",
+  "reportBugSubtitle": "Problem auf GitHub melden"
+}

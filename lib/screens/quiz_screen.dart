@@ -1,0 +1,249 @@
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import '../generated/app_localizations.dart';
+
+import '../data/questions.dart';
+import '../models/dragon_type.dart';
+import '../models/quiz_question.dart';
+import '../services/audio_service.dart';
+
+class QuizScreen extends StatefulWidget {
+  const QuizScreen({super.key});
+
+  @override
+  State<QuizScreen> createState() => _QuizScreenState();
+}
+
+class _QuizScreenState extends State<QuizScreen>
+    with SingleTickerProviderStateMixin {
+  int _currentIndex = 0;
+  final Map<DragonSubtype, int> _scores = {};
+
+  late final AnimationController _slideController;
+  late final Animation<Offset> _slideAnimation;
+  late final Animation<double> _fadeAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    AudioService.instance.playMusic(AudioAssets.musicQuiz);
+
+    _slideController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 350),
+    );
+    _slideAnimation = Tween<Offset>(
+      begin: const Offset(0.08, 0),
+      end: Offset.zero,
+    ).animate(CurvedAnimation(parent: _slideController, curve: Curves.easeOut));
+    _fadeAnimation = CurvedAnimation(
+      parent: _slideController,
+      curve: Curves.easeIn,
+    );
+    _slideController.forward();
+  }
+
+  @override
+  void dispose() {
+    _slideController.dispose();
+    super.dispose();
+  }
+
+  void _onAnswer(QuizAnswer answer) {
+    AudioService.instance.playSfx(AudioAssets.sfxAnswer, volume: 0.35);
+    answer.scores.forEach((subtype, points) {
+      _scores[subtype] = (_scores[subtype] ?? 0) + points;
+    });
+
+    if (_currentIndex < quizQuestions.length - 1) {
+      AudioService.instance.playSfx(AudioAssets.sfxTransition);
+      _slideController.reset();
+      setState(() => _currentIndex++);
+      _slideController.forward();
+    } else {
+      _finish();
+    }
+  }
+
+  void _finish() {
+    if (_scores.isEmpty) return;
+    final winner = _scores.entries.reduce((a, b) => a.value >= b.value ? a : b);
+    context.go('/result/${winner.key.name}');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final question = quizQuestions[_currentIndex];
+    final isDE = Localizations.localeOf(context).languageCode == 'de';
+    final total = quizQuestions.length;
+    final progress = (_currentIndex + 1) / total;
+
+    return Scaffold(
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/app/quiz_background.png',
+              fit: BoxFit.cover,
+              errorBuilder: (_, __, ___) =>
+                  Container(color: const Color(0xFF0D0A1A)),
+            ),
+          ),
+          Positioned.fill(
+            child: Container(color: Colors.black.withValues(alpha: 0.65)),
+          ),
+          SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                // Header
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        icon: const Icon(Icons.arrow_back,
+                            color: Color(0xFFCDA84D)),
+                        onPressed: () => context.go('/'),
+                      ),
+                      Expanded(
+                        child: Text(
+                          l10n.questionOf(_currentIndex + 1, total),
+                          textAlign: TextAlign.center,
+                          style:
+                              Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                    color: const Color(0xFFCDA84D),
+                                  ),
+                        ),
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          AudioService.instance.muted
+                              ? Icons.volume_off
+                              : Icons.volume_up,
+                          color: const Color(0xFFCDA84D),
+                        ),
+                        onPressed: () async {
+                          await AudioService.instance.toggleMute();
+                          setState(() {});
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+                // Progress bar (animiert)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(4),
+                    child: TweenAnimationBuilder<double>(
+                      tween: Tween(begin: 0, end: progress),
+                      duration: const Duration(milliseconds: 400),
+                      curve: Curves.easeOut,
+                      builder: (_, value, __) => LinearProgressIndicator(
+                        value: value,
+                        backgroundColor: const Color(0xFF1A1530),
+                        valueColor:
+                            const AlwaysStoppedAnimation(Color(0xFFCDA84D)),
+                        minHeight: 6,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 32),
+                // Frage + Antworten (Slide-in Animation)
+                Expanded(
+                  child: FadeTransition(
+                    opacity: _fadeAnimation,
+                    child: SlideTransition(
+                      position: _slideAnimation,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 24),
+                            child: Text(
+                              isDE ? question.textDe : question.textEn,
+                              style:
+                                  Theme.of(context).textTheme.headlineMedium,
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          const SizedBox(height: 32),
+                          Expanded(
+                            child: ListView.separated(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 16, vertical: 8),
+                              itemCount: question.answers.length,
+                              separatorBuilder: (_, __) =>
+                                  const SizedBox(height: 12),
+                              itemBuilder: (_, i) {
+                                final answer = question.answers[i];
+                                return _AnswerCard(
+                                  text: isDE
+                                      ? answer.textDe
+                                      : answer.textEn,
+                                  onTap: () => _onAnswer(answer),
+                                );
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _AnswerCard extends StatefulWidget {
+  final String text;
+  final VoidCallback onTap;
+
+  const _AnswerCard({required this.text, required this.onTap});
+
+  @override
+  State<_AnswerCard> createState() => _AnswerCardState();
+}
+
+class _AnswerCardState extends State<_AnswerCard> {
+  bool _pressed = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTapDown: (_) => setState(() => _pressed = true),
+      onTapUp: (_) {
+        setState(() => _pressed = false);
+        widget.onTap();
+      },
+      onTapCancel: () => setState(() => _pressed = false),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 120),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+        decoration: BoxDecoration(
+          color: _pressed ? const Color(0xFF2A2040) : const Color(0xFF1A1530),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: _pressed
+                ? const Color(0xFFCDA84D)
+                : const Color(0xFF3A2D5A),
+            width: _pressed ? 1.5 : 1,
+          ),
+        ),
+        child: Text(
+          widget.text,
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
+      ),
+    );
+  }
+}

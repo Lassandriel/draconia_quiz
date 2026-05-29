@@ -1,0 +1,30 @@
+{
+  "@@locale": "en",
+  "appTitle": "Draconia Quiz",
+  "startButton": "Start Quiz",
+  "tagline": "Discover which dragon type and element you are",
+  "questionOf": "Question {current} of {total}",
+  "@questionOf": {
+    "placeholders": {
+      "current": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "yourResult": "Your Result",
+  "dragonType": "Dragon Type",
+  "element": "Element",
+  "rarity": "Rarity",
+  "restartButton": "Play Again",
+  "shareButton": "Share",
+  "languageLabel": "Language",
+  "back": "Back",
+  "settings": "Settings",
+  "audioSection": "Audio",
+  "musicVolume": "Music",
+  "sfxVolume": "Effects",
+  "languageSection": "Language",
+  "aboutSection": "About",
+  "version": "Version",
+  "reportBug": "Report a Bug",
+  "reportBugSubtitle": "Open an issue on GitHub"
+}
