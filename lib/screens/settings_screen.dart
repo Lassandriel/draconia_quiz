@@ -137,8 +137,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 color: Color(0xFF9B8C6E), size: 16),
             onTap: () async {
               final uri = Uri.parse(_bugReportUrl);
-              await launchUrl(uri, mode: LaunchMode.externalApplication);
+              final messenger = ScaffoldMessenger.of(context);
+              final errorMsg = AppLocalizations.of(context)!.bugReportError;
+              final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
               if (!mounted) return;
+              if (!ok) {
+                messenger.showSnackBar(SnackBar(content: Text(errorMsg)));
+              }
             },
           ),
         ],

@@ -271,6 +271,18 @@ abstract class AppLocalizations {
   /// In de, this message translates to:
   /// **'Letztes Ergebnis: {name}. Tippen zum Anzeigen.'**
   String lastResultSemantics(String name);
+
+  /// No description provided for @shareText.
+  ///
+  /// In de, this message translates to:
+  /// **'🐉 Ich bin ein {name}!\nElement: {element}\n\n{description}\n\n#DraconiaQuiz'**
+  String shareText(String name, String element, String description);
+
+  /// No description provided for @bugReportError.
+  ///
+  /// In de, this message translates to:
+  /// **'Konnte Browser nicht öffnen.'**
+  String get bugReportError;
 }
 
 class _AppLocalizationsDelegate

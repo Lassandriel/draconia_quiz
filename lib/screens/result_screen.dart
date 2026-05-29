@@ -45,11 +45,8 @@ class _ResultScreenState extends State<ResultScreen>
   }
 
   void _share(String name, String element, String description) {
-    final isDE = Localizations.localeOf(context).languageCode == 'de';
-    final text = isDE
-        ? '🐉 Ich bin ein $name!\nElement: $element\n\n$description\n\n#DraconiaQuiz'
-        : '🐉 I am a $name!\nElement: $element\n\n$description\n\n#DraconiaQuiz';
-    Share.share(text);
+    final l10n = AppLocalizations.of(context)!;
+    Share.share(l10n.shareText(name, element, description));
   }
 
   @override

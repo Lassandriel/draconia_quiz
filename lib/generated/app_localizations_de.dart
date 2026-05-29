@@ -101,4 +101,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String lastResultSemantics(String name) {
     return 'Letztes Ergebnis: $name. Tippen zum Anzeigen.';
   }
+
+  @override
+  String shareText(String name, String element, String description) {
+    return '🐉 Ich bin ein $name!\nElement: $element\n\n$description\n\n#DraconiaQuiz';
+  }
+
+  @override
+  String get bugReportError => 'Konnte Browser nicht öffnen.';
 }

@@ -44,5 +44,14 @@
     "placeholders": {
       "name": { "type": "String" }
     }
-  }
+  },
+  "shareText": "🐉 Ich bin ein {name}!\nElement: {element}\n\n{description}\n\n#DraconiaQuiz",
+  "@shareText": {
+    "placeholders": {
+      "name": { "type": "String" },
+      "element": { "type": "String" },
+      "description": { "type": "String" }
+    }
+  },
+  "bugReportError": "Konnte Browser nicht öffnen."
 }

@@ -221,7 +221,7 @@ class _QuizScreenState extends State<QuizScreen>
                           child: IconButton(
                             icon: const Icon(Icons.arrow_back,
                                 color: Color(0xFFCDA84D)),
-                            tooltip: isDE ? 'Zurück' : 'Back',
+                            tooltip: l10n.back,
                             onPressed: () async {
                               final abort = await _confirmAbort(context);
                               if (abort && context.mounted) context.go('/');
