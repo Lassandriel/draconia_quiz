@@ -22,10 +22,10 @@ Ein Persönlichkeitsquiz für iOS, Android und Web: *Welche Drachenart und welch
 - [x] Wyvern (beide)
 - [x] Lindwurm (beide)
 - [x] Amphithere (beide)
-- [ ] Leviathan — `leviathan_gezeiten.png`, `leviathan_magma.png`
-- [ ] Seraph — `seraph_gewitter.png`, `seraph_aether.png`
-- [ ] Fae-Drache — `fae_stadt.png`, `fae_wald.png`
-- [ ] Element-Icons (alle 11) — `icon_feuer.png` etc. → Ordner `assets/icons/elements/`
+- [x] Leviathan — `leviathan_gezeiten.png`, `leviathan_magma.png`
+- [x] Seraph — `seraph_gewitter.png`, `seraph_aether.png`
+- [x] Fae-Drache — `fae_stadt.png`, `fae_wald.png`
+- [x] Element-Icons (alle 11) ✅ Alle Assets vollständig
 
 → Bilder einfach in die richtigen Unterordner legen, App nutzt sie automatisch.
 → Spezifikationen: siehe [assets/ASSETS_README.md](assets/ASSETS_README.md)
