@@ -25,6 +25,16 @@ class AudioService {
     await _musicPlayer.stop();
   }
 
+  Future<void> pauseMusic() async {
+    await _musicPlayer.pause();
+  }
+
+  Future<void> resumeMusic() async {
+    if (!muted && _currentTrack != null) {
+      await _musicPlayer.resume();
+    }
+  }
+
   Future<void> setMusicVolume(double volume) async {
     await SettingsService.instance.setMusicVolume(volume);
     if (!muted) await _musicPlayer.setVolume(volume);

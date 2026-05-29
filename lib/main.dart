@@ -8,6 +8,7 @@ import 'screens/quiz_screen.dart';
 import 'screens/result_screen.dart';
 import 'screens/settings_screen.dart';
 import 'models/dragon_type.dart';
+import 'services/audio_service.dart';
 import 'services/settings_service.dart';
 
 void main() async {
@@ -47,8 +48,35 @@ class DraconiaApp extends StatefulWidget {
   State<DraconiaApp> createState() => _DraconiaAppState();
 }
 
-class _DraconiaAppState extends State<DraconiaApp> {
+class _DraconiaAppState extends State<DraconiaApp>
+    with WidgetsBindingObserver {
   Locale _locale = SettingsService.instance.locale;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    switch (state) {
+      case AppLifecycleState.paused:
+      case AppLifecycleState.inactive:
+      case AppLifecycleState.hidden:
+        AudioService.instance.pauseMusic();
+      case AppLifecycleState.resumed:
+        AudioService.instance.resumeMusic();
+      default:
+        break;
+    }
+  }
 
   void setLocale(Locale locale) {
     SettingsService.instance.setLocale(locale);
