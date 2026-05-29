@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import '../generated/app_localizations.dart';
 
-import '../main.dart';
 import '../services/audio_service.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -57,35 +56,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 // Top bar
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // Mute
-                      _IconBtn(
-                        icon: AudioService.instance.muted
-                            ? Icons.volume_off
-                            : Icons.volume_up,
-                        onTap: () async {
-                          await AudioService.instance.toggleMute();
-                          setState(() {});
-                        },
-                      ),
-                      // Sprache + Settings
-                      Row(
-                        children: [
-                          _LangButton(
-                              label: 'DE', locale: const Locale('de')),
-                          const SizedBox(width: 8),
-                          _LangButton(
-                              label: 'EN', locale: const Locale('en')),
-                          const SizedBox(width: 8),
-                          _IconBtn(
-                            icon: Icons.settings,
-                            onTap: () => context.go('/settings'),
-                          ),
-                        ],
-                      ),
-                    ],
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: _IconBtn(
+                      icon: Icons.settings,
+                      onTap: () => context.go('/settings'),
+                    ),
                   ),
                 ),
                 const Spacer(),
@@ -163,31 +139,3 @@ class _IconBtn extends StatelessWidget {
   }
 }
 
-class _LangButton extends StatelessWidget {
-  final String label;
-  final Locale locale;
-
-  const _LangButton({required this.label, required this.locale});
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => DraconiaApp.setLocale(context, locale),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-        decoration: BoxDecoration(
-          border: Border.all(color: const Color(0xFFCDA84D)),
-          borderRadius: BorderRadius.circular(6),
-        ),
-        child: Text(
-          label,
-          style: const TextStyle(
-            color: Color(0xFFCDA84D),
-            fontWeight: FontWeight.bold,
-            fontSize: 13,
-          ),
-        ),
-      ),
-    );
-  }
-}
