@@ -53,3 +53,13 @@ app.*.map.json
 # Draconia RP-Dokumente (nur lokal)
 RP_*.md
 "RP_ *.md"
+
+# Release Signing (niemals ins Repo!)
+android/key.properties
+android/*.jks
+android/*.keystore
+
+# Release-Signing (niemals ins Repo!)
+android/key.properties
+android/*.jks
+android/*.keystore
