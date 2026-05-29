@@ -70,9 +70,60 @@ class _QuizScreenState extends State<QuizScreen>
 
   void _finish() {
     if (_scores.isEmpty) return;
-    final winner = _scores.entries.reduce((a, b) => a.value >= b.value ? a : b);
+    final maxScore = _scores.values.reduce((a, b) => a > b ? a : b);
+    final topEntries = _scores.entries.where((e) => e.value == maxScore).toList();
+    topEntries.shuffle();
+    final winner = topEntries.first;
     SettingsService.instance.saveLastResult(winner.key.name);
     context.go('/result/${winner.key.name}');
+  }
+
+  Future<bool> _confirmAbort(BuildContext context) async {
+    final isDE = Localizations.localeOf(context).languageCode == 'de';
+    return await showDialog<bool>(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            backgroundColor: const Color(0xFF1A1530),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+              side: const BorderSide(color: Color(0xFF3A2D5A)),
+            ),
+            title: Text(
+              isDE ? 'Quiz abbrechen?' : 'Quit the quiz?',
+              style: const TextStyle(
+                fontFamily: 'Cinzel',
+                color: Color(0xFFE8DFC0),
+              ),
+            ),
+            content: Text(
+              isDE
+                  ? 'Dein Fortschritt geht verloren.'
+                  : 'Your progress will be lost.',
+              style: const TextStyle(
+                fontFamily: 'CrimsonText',
+                color: Color(0xFF9B8C6E),
+                fontSize: 16,
+              ),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx, false),
+                child: Text(
+                  isDE ? 'Weiter spielen' : 'Keep playing',
+                  style: const TextStyle(color: Color(0xFFCDA84D)),
+                ),
+              ),
+              TextButton(
+                onPressed: () => Navigator.pop(ctx, true),
+                child: Text(
+                  isDE ? 'Abbrechen' : 'Quit',
+                  style: const TextStyle(color: Color(0xFF9B8C6E)),
+                ),
+              ),
+            ],
+          ),
+        ) ??
+        false;
   }
 
   @override
@@ -83,7 +134,14 @@ class _QuizScreenState extends State<QuizScreen>
     final total = _shuffledQuestions.length;
     final progress = (_currentIndex + 1) / total;
 
-    return Scaffold(
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) async {
+        if (didPop) return;
+        final abort = await _confirmAbort(context);
+        if (abort && context.mounted) context.go('/');
+      },
+      child: Scaffold(
       body: Stack(
         children: [
           Positioned.fill(
@@ -109,7 +167,10 @@ class _QuizScreenState extends State<QuizScreen>
                       IconButton(
                         icon: const Icon(Icons.arrow_back,
                             color: Color(0xFFCDA84D)),
-                        onPressed: () => context.go('/'),
+                        onPressed: () async {
+                          final abort = await _confirmAbort(context);
+                          if (abort && context.mounted) context.go('/');
+                        },
                       ),
                       Expanded(
                         child: Text(
@@ -204,6 +265,7 @@ class _QuizScreenState extends State<QuizScreen>
           ),
         ],
       ),
+    ),
     );
   }
 }
