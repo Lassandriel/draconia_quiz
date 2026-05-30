@@ -1,9 +1,10 @@
+import 'dart:math';
+
 import '../models/dragon_type.dart';
 import 'questions.dart';
 
-/// Maximal erreichbarer Score pro Subtyp über alle Fragen:
-/// je Frage die bestmögliche Antwort für diesen Subtyp, aufsummiert.
-/// Einmal lazy berechnet (Daten sind `const`, ändern sich zur Laufzeit nie).
+/// Maximal erreichbarer Score pro Subtyp über alle Fragen (bestmögliche
+/// Antwort je Frage, aufsummiert). Wird als Daten-Sanity-Check genutzt.
 final Map<DragonSubtype, int> maxPossibleScores = _computeMaxPossible();
 
 Map<DragonSubtype, int> _computeMaxPossible() {
@@ -23,39 +24,88 @@ Map<DragonSubtype, int> _computeMaxPossible() {
   return result;
 }
 
-/// Subtypen mit dem höchsten *normalisierten* Score (Anteil am jeweils
-/// maximal erreichbaren Score). Normalisierung sorgt dafür, dass jedes
-/// Ergebnis fair erreichbar ist und nicht „High-Ceiling"-Drachen bevorzugt
-/// werden. Bei Gleichstand enthält die Liste mehrere Einträge.
-List<DragonSubtype> rankedWinners(Map<DragonSubtype, int> scores) {
-  const epsilon = 1e-9;
-  double ratioOf(DragonSubtype s) {
-    final max = maxPossibleScores[s] ?? 0;
-    if (max == 0) return 0;
-    return (scores[s] ?? 0) / max;
+/// Erwartungswert und Standardabweichung des Gesamt-Scores jedes Subtyps
+/// unter gleichverteilten Zufallsantworten — analytisch aus den Fragedaten.
+///
+/// Damit wird das Ergebnis als *z-Score* bestimmt: „Wie viele Standard-
+/// abweichungen über dem Zufalls-Erwartungswert liegt der Score dieses
+/// Drachen?" Das macht alle Drachen vergleichbar, unabhängig davon, wie
+/// hoch ihr theoretisches Maximum ist oder in wie vielen Antworten sie
+/// vorkommen. Ergebnis: jeder Drache ist annähernd gleich wahrscheinlich.
+class _ScoreStats {
+  final Map<DragonSubtype, double> mean;
+  final Map<DragonSubtype, double> std;
+  const _ScoreStats(this.mean, this.std);
+}
+
+final _ScoreStats _stats = _computeStats();
+
+_ScoreStats _computeStats() {
+  final mean = <DragonSubtype, double>{};
+  final variance = <DragonSubtype, double>{};
+
+  final allSubtypes = <DragonSubtype>{};
+  for (final question in quizQuestions) {
+    for (final answer in question.answers) {
+      allSubtypes.addAll(answer.scores.keys);
+    }
   }
 
-  var bestRatio = -1.0;
+  for (final subtype in allSubtypes) {
+    var m = 0.0;
+    var v = 0.0;
+    for (final question in quizQuestions) {
+      final n = question.answers.length;
+      var sum = 0.0;
+      var sumSq = 0.0;
+      for (final answer in question.answers) {
+        final p = (answer.scores[subtype] ?? 0).toDouble();
+        sum += p;
+        sumSq += p * p;
+      }
+      final qMean = sum / n;
+      m += qMean;
+      v += sumSq / n - qMean * qMean; // Varianz dieser Frage (Fragen unabhängig)
+    }
+    mean[subtype] = m;
+    variance[subtype] = v;
+  }
+
+  final std = <DragonSubtype, double>{
+    for (final s in allSubtypes) s: sqrt(variance[s]!),
+  };
+  return _ScoreStats(mean, std);
+}
+
+/// Subtypen mit dem höchsten z-Score. Bei Gleichstand mehrere Einträge.
+List<DragonSubtype> rankedWinners(Map<DragonSubtype, int> scores) {
+  const epsilon = 1e-9;
+  var bestZ = double.negativeInfinity;
   final winners = <DragonSubtype>[];
-  for (final subtype in scores.keys) {
-    final ratio = ratioOf(subtype);
-    if (ratio > bestRatio + epsilon) {
-      bestRatio = ratio;
+
+  _stats.mean.forEach((subtype, mu) {
+    final sigma = _stats.std[subtype]!;
+    if (sigma == 0) return; // konstanter Score → nicht aussagekräftig
+    final z = ((scores[subtype] ?? 0) - mu) / sigma;
+    if (z > bestZ + epsilon) {
+      bestZ = z;
       winners
         ..clear()
         ..add(subtype);
-    } else if ((ratio - bestRatio).abs() <= epsilon) {
+    } else if ((z - bestZ).abs() <= epsilon) {
       winners.add(subtype);
     }
-  }
+  });
+
   return winners;
 }
 
 /// Bestimmt das Endergebnis aus den gesammelten Rohpunkten. Gleichstände
 /// werden zufällig aufgelöst. Fällt auf den Feuer-Großdrachen zurück, falls
-/// (theoretisch) keine Punkte vergeben wurden.
+/// (theoretisch) gar keine Punkte vergeben wurden.
 DragonSubtype computeResult(Map<DragonSubtype, int> scores) {
   if (scores.isEmpty) return DragonSubtype.grossdracheFeuer;
-  final winners = rankedWinners(scores)..shuffle();
-  return winners.first;
+  final winners = rankedWinners(scores);
+  if (winners.isEmpty) return DragonSubtype.grossdracheFeuer;
+  return (winners..shuffle()).first;
 }
