@@ -275,8 +275,13 @@ abstract class AppLocalizations {
   /// No description provided for @shareText.
   ///
   /// In de, this message translates to:
-  /// **'🐉 Ich bin ein {name}!\nElement: {element}\n\n{description}\n\n#DraconiaQuiz'**
-  String shareText(String name, String element, String description);
+  /// **'🐉 Ich bin ein {name}!\nSpezies: {species} | Element: {element}\n\n{description}\n\n#DraconiaQuiz'**
+  String shareText(
+    String name,
+    String species,
+    String element,
+    String description,
+  );
 
   /// No description provided for @bugReportError.
   ///

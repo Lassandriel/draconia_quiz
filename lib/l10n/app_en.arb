@@ -45,10 +45,11 @@
       "name": { "type": "String" }
     }
   },
-  "shareText": "🐉 I am a {name}!\nElement: {element}\n\n{description}\n\n#DraconiaQuiz",
+  "shareText": "🐉 I am a {name}!\nSpecies: {species} | Element: {element}\n\n{description}\n\n#DraconiaQuiz",
   "@shareText": {
     "placeholders": {
       "name": { "type": "String" },
+      "species": { "type": "String" },
       "element": { "type": "String" },
       "description": { "type": "String" }
     }

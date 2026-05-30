@@ -44,9 +44,9 @@ class _ResultScreenState extends State<ResultScreen>
     super.dispose();
   }
 
-  void _share(String name, String element, String description) {
+  void _share(String name, String species, String element, String description) {
     final l10n = AppLocalizations.of(context)!;
-    Share.share(l10n.shareText(name, element, description));
+    Share.share(l10n.shareText(name, species, element, description));
   }
 
   @override
@@ -96,7 +96,7 @@ class _ResultScreenState extends State<ResultScreen>
             IconButton(
               icon: const Icon(Icons.share, color: Color(0xFFCDA84D)),
               tooltip: isDE ? 'Ergebnis teilen' : 'Share result',
-              onPressed: () => _share(name, element, description),
+              onPressed: () => _share(name, species, element, description),
             ),
           ],
           flexibleSpace: FlexibleSpaceBar(

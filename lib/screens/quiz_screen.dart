@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:go_router/go_router.dart';
 import '../generated/app_localizations.dart';
 
@@ -20,6 +21,7 @@ class _QuizScreenState extends State<QuizScreen>
   int _currentIndex = 0;
   final Map<DragonSubtype, int> _scores = {};
   late final List<QuizQuestion> _shuffledQuestions;
+  late final List<List<QuizAnswer>> _shuffledAnswers;
 
   late final AnimationController _controller;
   late final Animation<Offset> _slideAnimation;
@@ -30,6 +32,9 @@ class _QuizScreenState extends State<QuizScreen>
     super.initState();
     AudioService.instance.playMusic(AudioAssets.musicQuiz);
     _shuffledQuestions = List.of(quizQuestions)..shuffle();
+    _shuffledAnswers = _shuffledQuestions
+        .map((q) => List.of(q.answers)..shuffle())
+        .toList();
 
     _controller = AnimationController(
       vsync: this,
@@ -157,7 +162,7 @@ class _QuizScreenState extends State<QuizScreen>
             itemCount: question.answers.length,
             separatorBuilder: (_, _) => const SizedBox(height: 12),
             itemBuilder: (_, i) {
-              final answer = question.answers[i];
+              final answer = _shuffledAnswers[_currentIndex][i];
               return _AnswerCard(
                 text: isDE ? answer.textDe : answer.textEn,
                 onTap: () => _onAnswer(answer),
@@ -334,6 +339,7 @@ class _AnswerCardState extends State<_AnswerCard> {
         onTapDown: (_) => setState(() => _pressed = true),
         onTapUp: (_) {
           setState(() => _pressed = false);
+          HapticFeedback.lightImpact();
           widget.onTap();
         },
         onTapCancel: () => setState(() => _pressed = false),
