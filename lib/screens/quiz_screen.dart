@@ -4,10 +4,12 @@ import 'package:go_router/go_router.dart';
 import '../generated/app_localizations.dart';
 
 import '../data/questions.dart' show quizQuestions;
+import '../data/scoring.dart';
 import '../models/dragon_type.dart';
 import '../models/quiz_question.dart';
 import '../services/audio_service.dart';
 import '../services/settings_service.dart';
+import '../theme/app_colors.dart';
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({super.key});
@@ -19,6 +21,7 @@ class QuizScreen extends StatefulWidget {
 class _QuizScreenState extends State<QuizScreen>
     with SingleTickerProviderStateMixin {
   int _currentIndex = 0;
+  bool _answering = false;
   final Map<DragonSubtype, int> _scores = {};
   late final List<QuizQuestion> _shuffledQuestions;
   late final List<List<QuizAnswer>> _shuffledAnswers;
@@ -58,6 +61,8 @@ class _QuizScreenState extends State<QuizScreen>
   }
 
   void _onAnswer(QuizAnswer answer) {
+    if (_answering) return;
+    _answering = true;
     AudioService.instance.playSfx(
       AudioAssets.sfxAnswer,
       volume: SettingsService.instance.sfxVolume * 0.45,
@@ -76,7 +81,10 @@ class _QuizScreenState extends State<QuizScreen>
     if (_currentIndex < total - 1) {
       AudioService.instance.playSfx(AudioAssets.sfxTransition);
       _controller.reset();
-      setState(() => _currentIndex++);
+      setState(() {
+        _currentIndex++;
+        _answering = false;
+      });
       _controller.forward();
     } else {
       _finish();
@@ -85,11 +93,9 @@ class _QuizScreenState extends State<QuizScreen>
 
   void _finish() {
     if (_scores.isEmpty) return;
-    final maxScore = _scores.values.reduce((a, b) => a > b ? a : b);
-    final top = _scores.entries.where((e) => e.value == maxScore).toList()
-      ..shuffle();
-    SettingsService.instance.saveLastResult(top.first.key.name);
-    context.go('/result/${top.first.key.name}');
+    final result = computeResult(_scores);
+    SettingsService.instance.saveLastResult(result.name);
+    context.go('/result/${result.name}');
   }
 
   Future<bool> _confirmAbort(BuildContext context) async {
@@ -97,21 +103,21 @@ class _QuizScreenState extends State<QuizScreen>
     return await showDialog<bool>(
           context: context,
           builder: (ctx) => AlertDialog(
-            backgroundColor: const Color(0xFF1A1530),
+            backgroundColor: AppColors.surface,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
-              side: const BorderSide(color: Color(0xFF3A2D5A)),
+              side: const BorderSide(color: AppColors.border),
             ),
             title: Text(
               l10n.quitTitle,
               style: const TextStyle(
-                  fontFamily: 'Cinzel', color: Color(0xFFE8DFC0)),
+                  fontFamily: 'Cinzel', color: AppColors.onBackground),
             ),
             content: Text(
               l10n.quitMessage,
               style: const TextStyle(
                   fontFamily: 'CrimsonText',
-                  color: Color(0xFF9B8C6E),
+                  color: AppColors.textMuted,
                   fontSize: 16),
             ),
             actions: [
@@ -119,14 +125,14 @@ class _QuizScreenState extends State<QuizScreen>
                 onPressed: () => Navigator.pop(ctx, false),
                 child: Text(
                   l10n.quitCancel,
-                  style: const TextStyle(color: Color(0xFFCDA84D)),
+                  style: const TextStyle(color: AppColors.primary),
                 ),
               ),
               TextButton(
                 onPressed: () => Navigator.pop(ctx, true),
                 child: Text(
                   l10n.quitConfirm,
-                  style: const TextStyle(color: Color(0xFF9B8C6E)),
+                  style: const TextStyle(color: AppColors.textMuted),
                 ),
               ),
             ],
@@ -196,13 +202,13 @@ class _QuizScreenState extends State<QuizScreen>
           children: [
             Positioned.fill(
               child: Semantics(
-                label: 'Quiz background',
+                label: l10n.quizBackgroundSemantics,
                 excludeSemantics: true,
                 child: Image.asset(
                   'assets/images/app/quiz_background.webp',
                   fit: BoxFit.cover,
                   errorBuilder: (_, _, _) =>
-                      Container(color: const Color(0xFF0D0A1A)),
+                      Container(color: AppColors.background),
                 ),
               ),
             ),
@@ -225,7 +231,7 @@ class _QuizScreenState extends State<QuizScreen>
                           height: 48,
                           child: IconButton(
                             icon: const Icon(Icons.arrow_back,
-                                color: Color(0xFFCDA84D)),
+                                color: AppColors.primary),
                             tooltip: l10n.back,
                             onPressed: () async {
                               final abort = await _confirmAbort(context);
@@ -235,9 +241,7 @@ class _QuizScreenState extends State<QuizScreen>
                         ),
                         Expanded(
                           child: Semantics(
-                            label: isDE
-                                ? 'Frage ${_currentIndex + 1} von $total'
-                                : 'Question ${_currentIndex + 1} of $total',
+                            label: l10n.questionOf(_currentIndex + 1, total),
                             excludeSemantics: true,
                             child: Text(
                               l10n.questionOf(_currentIndex + 1, total),
@@ -245,7 +249,7 @@ class _QuizScreenState extends State<QuizScreen>
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyMedium
-                                  ?.copyWith(color: const Color(0xFFCDA84D)),
+                                  ?.copyWith(color: AppColors.primary),
                             ),
                           ),
                         ),
@@ -257,11 +261,11 @@ class _QuizScreenState extends State<QuizScreen>
                               AudioService.instance.muted
                                   ? Icons.volume_off
                                   : Icons.volume_up,
-                              color: const Color(0xFFCDA84D),
+                              color: AppColors.primary,
                             ),
                             tooltip: AudioService.instance.muted
-                                ? (isDE ? 'Ton einschalten' : 'Unmute')
-                                : (isDE ? 'Ton ausschalten' : 'Mute'),
+                                ? l10n.unmute
+                                : l10n.mute,
                             onPressed: () async {
                               await AudioService.instance.toggleMute();
                               setState(() {});
@@ -273,9 +277,7 @@ class _QuizScreenState extends State<QuizScreen>
                   ),
                   // Fortschrittsbalken
                   Semantics(
-                    label: isDE
-                        ? 'Fortschritt: ${_currentIndex + 1} von $total'
-                        : 'Progress: ${_currentIndex + 1} of $total',
+                    label: l10n.progressSemantics(_currentIndex + 1, total),
                     excludeSemantics: true,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -284,9 +286,9 @@ class _QuizScreenState extends State<QuizScreen>
                         child: reduceMotion
                             ? LinearProgressIndicator(
                                 value: progress,
-                                backgroundColor: const Color(0xFF1A1530),
+                                backgroundColor: AppColors.surface,
                                 valueColor: const AlwaysStoppedAnimation(
-                                    Color(0xFFCDA84D)),
+                                    AppColors.primary),
                                 minHeight: 6,
                               )
                             : TweenAnimationBuilder<double>(
@@ -296,9 +298,9 @@ class _QuizScreenState extends State<QuizScreen>
                                 builder: (_, value, _) =>
                                     LinearProgressIndicator(
                                   value: value,
-                                  backgroundColor: const Color(0xFF1A1530),
+                                  backgroundColor: AppColors.surface,
                                   valueColor: const AlwaysStoppedAnimation(
-                                      Color(0xFFCDA84D)),
+                                      AppColors.primary),
                                   minHeight: 6,
                                 ),
                               ),
@@ -348,12 +350,12 @@ class _AnswerCardState extends State<_AnswerCard> {
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
           decoration: BoxDecoration(
             color:
-                _pressed ? const Color(0xFF2A2040) : const Color(0xFF1A1530),
+                _pressed ? AppColors.surfacePressed : AppColors.surface,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: _pressed
-                  ? const Color(0xFFCDA84D)
-                  : const Color(0xFF3A2D5A),
+                  ? AppColors.primary
+                  : AppColors.border,
               width: _pressed ? 1.5 : 1,
             ),
           ),

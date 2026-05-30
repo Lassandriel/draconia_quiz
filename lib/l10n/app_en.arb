@@ -54,5 +54,33 @@
       "description": { "type": "String" }
     }
   },
-  "bugReportError": "Could not open browser."
+  "bugReportError": "Could not open browser.",
+  "shareError": "Sharing failed.",
+  "mute": "Mute",
+  "unmute": "Unmute",
+  "shareResult": "Share result",
+  "quizBackgroundSemantics": "Quiz background",
+  "dragonImageSemantics": "{name} – dragon image",
+  "@dragonImageSemantics": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "progressSemantics": "Progress: {current} of {total}",
+  "@progressSemantics": {
+    "placeholders": {
+      "current": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "resultSemantics": "{name}. Species: {species}. Element: {element}. Rarity: {rarity}. {description}",
+  "@resultSemantics": {
+    "placeholders": {
+      "name": { "type": "String" },
+      "species": { "type": "String" },
+      "element": { "type": "String" },
+      "rarity": { "type": "String" },
+      "description": { "type": "String" }
+    }
+  }
 }

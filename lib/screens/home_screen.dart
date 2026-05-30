@@ -7,6 +7,7 @@ import '../data/results.dart';
 import '../models/dragon_type.dart';
 import '../services/audio_service.dart';
 import '../services/settings_service.dart';
+import '../theme/app_colors.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     AudioService.instance.playMusic(AudioAssets.musicHome);
     PackageInfo.fromPlatform().then((info) {
+      if (!mounted) return;
       setState(() => _version = info.version);
     });
   }
@@ -44,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [Color(0xFF0D0A1A), Color(0xFF1A0A2E)],
+                    colors: [AppColors.background, AppColors.backgroundGradientEnd],
                   ),
                 ),
               ),
@@ -82,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Text(
                         l10n.tagline,
                         style: theme.textTheme.bodyLarge?.copyWith(
-                          color: const Color(0xFFE8DFC0)
+                          color: AppColors.onBackground
                               .withValues(alpha: 0.8),
                         ),
                         textAlign: TextAlign.center,
@@ -109,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     _version.isEmpty ? '' : 'v$_version',
                     style: const TextStyle(
                       fontFamily: 'Outfit',
-                      color: Color(0x66E8DFC0),
+                      color: AppColors.textFaint,
                       fontSize: 12,
                     ),
                   ),
@@ -148,20 +150,20 @@ class _LastResultBadge extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           decoration: BoxDecoration(
-            color: const Color(0xFF1A1530),
+            color: AppColors.surface,
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: const Color(0xFF3A2D5A)),
+            border: Border.all(color: AppColors.border),
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(Icons.history, color: Color(0xFFCDA84D), size: 14),
+              const Icon(Icons.history, color: AppColors.primary, size: 14),
               const SizedBox(width: 6),
               Text(
                 l10n.lastResultLabel(name),
                 style: const TextStyle(
                   fontFamily: 'Outfit',
-                  color: Color(0xFFCDA84D),
+                  color: AppColors.primary,
                   fontSize: 12,
                 ),
               ),
@@ -186,10 +188,10 @@ class _IconBtn extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          border: Border.all(color: const Color(0xFFCDA84D)),
+          border: Border.all(color: AppColors.primary),
           borderRadius: BorderRadius.circular(6),
         ),
-        child: Icon(icon, color: const Color(0xFFCDA84D), size: 18),
+        child: Icon(icon, color: AppColors.primary, size: 18),
       ),
     );
   }

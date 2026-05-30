@@ -13,11 +13,16 @@ class AudioService {
   Future<void> playMusic(String assetPath) async {
     if (_currentTrack == assetPath) return;
     _currentTrack = assetPath;
-    await _musicPlayer.stop();
-    if (muted) return;
-    await _musicPlayer.setReleaseMode(ReleaseMode.loop);
-    await _musicPlayer.setVolume(SettingsService.instance.musicVolume);
-    await _musicPlayer.play(AssetSource(assetPath));
+    try {
+      await _musicPlayer.stop();
+      if (muted) return;
+      await _musicPlayer.setReleaseMode(ReleaseMode.loop);
+      await _musicPlayer.setVolume(SettingsService.instance.musicVolume);
+      await _musicPlayer.play(AssetSource(assetPath));
+    } catch (_) {
+      // Audio kann fehlschlagen (fehlendes Asset, Web-Autoplay-Sperre,
+      // kein Audio-Output). Stumm ignorieren statt App crashen.
+    }
   }
 
   Future<void> stopMusic() async {
@@ -31,7 +36,11 @@ class AudioService {
 
   Future<void> resumeMusic() async {
     if (!muted && _currentTrack != null) {
-      await _musicPlayer.resume();
+      try {
+        await _musicPlayer.resume();
+      } catch (_) {
+        // Resume kann fehlschlagen (z.B. Web-Autoplay-Sperre).
+      }
     }
   }
 
@@ -47,22 +56,34 @@ class AudioService {
   Future<void> toggleMute() async {
     final newMuted = !muted;
     await SettingsService.instance.setMuted(newMuted);
-    if (newMuted) {
-      await _musicPlayer.setVolume(0);
-    } else {
-      await _musicPlayer.setVolume(SettingsService.instance.musicVolume);
-      if (_currentTrack != null) {
-        await _musicPlayer.play(AssetSource(_currentTrack!));
+    try {
+      if (newMuted) {
+        await _musicPlayer.setVolume(0);
+      } else {
+        final track = _currentTrack;
+        await _musicPlayer.stop();
+        await _musicPlayer.setReleaseMode(ReleaseMode.loop);
+        await _musicPlayer.setVolume(SettingsService.instance.musicVolume);
+        if (track != null && track == _currentTrack) {
+          await _musicPlayer.play(AssetSource(track));
+        }
       }
+    } catch (_) {
+      // Audio-Fehler nicht in die UI durchschlagen lassen.
     }
   }
 
   Future<void> playSfx(String assetPath, {double? volume}) async {
     if (muted) return;
     final sfx = AudioPlayer();
-    await sfx.setVolume(volume ?? SettingsService.instance.sfxVolume);
-    await sfx.play(AssetSource(assetPath));
-    sfx.onPlayerComplete.listen((_) => sfx.dispose());
+    try {
+      await sfx.setVolume(volume ?? SettingsService.instance.sfxVolume);
+      await sfx.play(AssetSource(assetPath));
+      sfx.onPlayerComplete.listen((_) => sfx.dispose());
+    } catch (_) {
+      // Bei Fehler Player sofort freigeben, damit er nicht leakt.
+      await sfx.dispose();
+    }
   }
 
   void dispose() {

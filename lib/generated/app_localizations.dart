@@ -288,6 +288,60 @@ abstract class AppLocalizations {
   /// In de, this message translates to:
   /// **'Konnte Browser nicht öffnen.'**
   String get bugReportError;
+
+  /// No description provided for @shareError.
+  ///
+  /// In de, this message translates to:
+  /// **'Teilen fehlgeschlagen.'**
+  String get shareError;
+
+  /// No description provided for @mute.
+  ///
+  /// In de, this message translates to:
+  /// **'Ton ausschalten'**
+  String get mute;
+
+  /// No description provided for @unmute.
+  ///
+  /// In de, this message translates to:
+  /// **'Ton einschalten'**
+  String get unmute;
+
+  /// No description provided for @shareResult.
+  ///
+  /// In de, this message translates to:
+  /// **'Ergebnis teilen'**
+  String get shareResult;
+
+  /// No description provided for @quizBackgroundSemantics.
+  ///
+  /// In de, this message translates to:
+  /// **'Quiz-Hintergrund'**
+  String get quizBackgroundSemantics;
+
+  /// No description provided for @dragonImageSemantics.
+  ///
+  /// In de, this message translates to:
+  /// **'{name} – Drachenbild'**
+  String dragonImageSemantics(String name);
+
+  /// No description provided for @progressSemantics.
+  ///
+  /// In de, this message translates to:
+  /// **'Fortschritt: {current} von {total}'**
+  String progressSemantics(int current, int total);
+
+  /// No description provided for @resultSemantics.
+  ///
+  /// In de, this message translates to:
+  /// **'{name}. Spezies: {species}. Element: {element}. Seltenheit: {rarity}. {description}'**
+  String resultSemantics(
+    String name,
+    String species,
+    String element,
+    String rarity,
+    String description,
+  );
 }
 
 class _AppLocalizationsDelegate

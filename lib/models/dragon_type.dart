@@ -1,14 +1,3 @@
-enum DragonType {
-  grossdrache,
-  lungDrache,
-  wyvern,
-  lindwurm,
-  amphithere,
-  leviathan,
-  seraph,
-  faeDrache,
-}
-
 enum DragonSubtype {
   // Großdrache
   grossdracheSonne,

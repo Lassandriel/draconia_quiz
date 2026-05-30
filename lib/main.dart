@@ -10,6 +10,7 @@ import 'screens/settings_screen.dart';
 import 'models/dragon_type.dart';
 import 'services/audio_service.dart';
 import 'services/settings_service.dart';
+import 'theme/app_colors.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,6 +29,7 @@ final _router = GoRouter(
         final subtypeName = state.pathParameters['subtype']!;
         final subtype = DragonSubtype.values.firstWhere(
           (e) => e.name == subtypeName,
+          orElse: () => DragonSubtype.grossdracheFeuer,
         );
         return ResultScreen(subtype: subtype);
       },
@@ -103,11 +105,11 @@ class _DraconiaAppState extends State<DraconiaApp>
 }
 
 ThemeData _draconiaTheme() {
-  const background = Color(0xFF0D0A1A);
-  const surface = Color(0xFF1A1530);
-  const primary = Color(0xFFCDA84D);
-  const onPrimary = Color(0xFF0D0A1A);
-  const onBackground = Color(0xFFE8DFC0);
+  const background = AppColors.background;
+  const surface = AppColors.surface;
+  const primary = AppColors.primary;
+  const onPrimary = AppColors.background;
+  const onBackground = AppColors.onBackground;
 
   return ThemeData(
     brightness: Brightness.dark,
@@ -164,7 +166,7 @@ ThemeData _draconiaTheme() {
       color: surface,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
-        side: const BorderSide(color: Color(0xFF3A2D5A), width: 1),
+        side: const BorderSide(color: AppColors.border, width: 1),
       ),
       elevation: 4,
     ),
@@ -172,7 +174,7 @@ ThemeData _draconiaTheme() {
       activeTrackColor: primary,
       thumbColor: primary,
       inactiveTrackColor: surface,
-      overlayColor: Color(0x33CDA84D),
+      overlayColor: AppColors.sliderOverlay,
     ),
   );
 }

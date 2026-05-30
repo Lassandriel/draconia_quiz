@@ -114,4 +114,40 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get bugReportError => 'Konnte Browser nicht öffnen.';
+
+  @override
+  String get shareError => 'Teilen fehlgeschlagen.';
+
+  @override
+  String get mute => 'Ton ausschalten';
+
+  @override
+  String get unmute => 'Ton einschalten';
+
+  @override
+  String get shareResult => 'Ergebnis teilen';
+
+  @override
+  String get quizBackgroundSemantics => 'Quiz-Hintergrund';
+
+  @override
+  String dragonImageSemantics(String name) {
+    return '$name – Drachenbild';
+  }
+
+  @override
+  String progressSemantics(int current, int total) {
+    return 'Fortschritt: $current von $total';
+  }
+
+  @override
+  String resultSemantics(
+    String name,
+    String species,
+    String element,
+    String rarity,
+    String description,
+  ) {
+    return '$name. Spezies: $species. Element: $element. Seltenheit: $rarity. $description';
+  }
 }

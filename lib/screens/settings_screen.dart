@@ -7,6 +7,7 @@ import '../generated/app_localizations.dart';
 import '../main.dart';
 import '../services/audio_service.dart';
 import '../services/settings_service.dart';
+import '../theme/app_colors.dart';
 
 // TODO: Eigene GitHub Issues URL hier eintragen
 const _bugReportUrl = 'https://github.com/Lassandriel/draconia_quiz/issues';
@@ -27,6 +28,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   void initState() {
     super.initState();
     PackageInfo.fromPlatform().then((info) {
+      if (!mounted) return;
       setState(() => _version = info.version);
     });
   }
@@ -38,23 +40,23 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0D0A1A),
+        backgroundColor: AppColors.background,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Color(0xFFCDA84D)),
+          icon: const Icon(Icons.arrow_back, color: AppColors.primary),
           onPressed: () => context.go('/'),
         ),
         title: Text(
           l10n.settings,
           style: const TextStyle(
             fontFamily: 'Cinzel',
-            color: Color(0xFFCDA84D),
+            color: AppColors.primary,
             fontSize: 18,
           ),
         ),
         elevation: 0,
         bottom: const PreferredSize(
           preferredSize: Size.fromHeight(1),
-          child: Divider(color: Color(0xFF3A2D5A), height: 1),
+          child: Divider(color: AppColors.border, height: 1),
         ),
       ),
       body: ListView(
@@ -113,13 +115,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
           // ── Über die App ───────────────────────────
           _SectionHeader(l10n.aboutSection),
           ListTile(
-            leading: const Icon(Icons.info_outline, color: Color(0xFFCDA84D)),
+            leading: const Icon(Icons.info_outline, color: AppColors.primary),
             title: Text(l10n.version,
-                style: const TextStyle(color: Color(0xFFE8DFC0))),
+                style: const TextStyle(color: AppColors.onBackground)),
             trailing: Text(
               _version.isEmpty ? '—' : 'v$_version',
               style: const TextStyle(
-                color: Color(0xFFCDA84D),
+                color: AppColors.primary,
                 fontFamily: 'Outfit',
                 fontSize: 14,
               ),
@@ -127,14 +129,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           ListTile(
             leading: const Icon(Icons.bug_report_outlined,
-                color: Color(0xFFCDA84D)),
+                color: AppColors.primary),
             title: Text(l10n.reportBug,
-                style: const TextStyle(color: Color(0xFFE8DFC0))),
+                style: const TextStyle(color: AppColors.onBackground)),
             subtitle: Text(l10n.reportBugSubtitle,
                 style: const TextStyle(
-                    color: Color(0xFF9B8C6E), fontSize: 12)),
+                    color: AppColors.textMuted, fontSize: 12)),
             trailing: const Icon(Icons.open_in_new,
-                color: Color(0xFF9B8C6E), size: 16),
+                color: AppColors.textMuted, size: 16),
             onTap: () async {
               final uri = Uri.parse(_bugReportUrl);
               final messenger = ScaffoldMessenger.of(context);
@@ -164,7 +166,7 @@ class _SectionHeader extends StatelessWidget {
         title.toUpperCase(),
         style: const TextStyle(
           fontFamily: 'Outfit',
-          color: Color(0xFFCDA84D),
+          color: AppColors.primary,
           fontSize: 11,
           fontWeight: FontWeight.w600,
           letterSpacing: 1.5,
@@ -193,14 +195,14 @@ class _SliderTile extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
       child: Row(
         children: [
-          Icon(icon, color: const Color(0xFFCDA84D), size: 20),
+          Icon(icon, color: AppColors.primary, size: 20),
           const SizedBox(width: 12),
           SizedBox(
             width: 72,
             child: Text(
               label,
               style: const TextStyle(
-                color: Color(0xFFE8DFC0),
+                color: AppColors.onBackground,
                 fontFamily: 'Outfit',
                 fontSize: 14,
               ),
@@ -221,7 +223,7 @@ class _SliderTile extends StatelessWidget {
             child: Text(
               '${(value * 100).round()}',
               style: const TextStyle(
-                color: Color(0xFF9B8C6E),
+                color: AppColors.textMuted,
                 fontFamily: 'Outfit',
                 fontSize: 12,
               ),
@@ -257,12 +259,12 @@ class _LangChip extends StatelessWidget {
         duration: const Duration(milliseconds: 150),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         decoration: BoxDecoration(
-          color: selected ? const Color(0xFFCDA84D) : const Color(0xFF1A1530),
+          color: selected ? AppColors.primary : AppColors.surface,
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
             color: selected
-                ? const Color(0xFFCDA84D)
-                : const Color(0xFF3A2D5A),
+                ? AppColors.primary
+                : AppColors.border,
           ),
         ),
         child: Text(
@@ -270,8 +272,8 @@ class _LangChip extends StatelessWidget {
           style: TextStyle(
             fontFamily: 'Outfit',
             color: selected
-                ? const Color(0xFF0D0A1A)
-                : const Color(0xFFE8DFC0),
+                ? AppColors.background
+                : AppColors.onBackground,
             fontWeight: FontWeight.w600,
             fontSize: 14,
           ),
@@ -288,7 +290,7 @@ class _Divider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Divider(
-      color: Color(0xFF3A2D5A),
+      color: AppColors.border,
       height: 24,
       indent: 20,
       endIndent: 20,

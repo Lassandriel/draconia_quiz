@@ -6,6 +6,7 @@ import '../generated/app_localizations.dart';
 import '../models/dragon_type.dart';
 import '../data/results.dart';
 import '../services/audio_service.dart';
+import '../theme/app_colors.dart';
 
 class ResultScreen extends StatefulWidget {
   final DragonSubtype subtype;
@@ -44,9 +45,21 @@ class _ResultScreenState extends State<ResultScreen>
     super.dispose();
   }
 
-  void _share(String name, String species, String element, String description) {
+  Future<void> _share(
+    String name,
+    String species,
+    String element,
+    String description,
+  ) async {
     final l10n = AppLocalizations.of(context)!;
-    Share.share(l10n.shareText(name, species, element, description));
+    final messenger = ScaffoldMessenger.of(context);
+    final errorText = l10n.shareError;
+    try {
+      await Share.share(l10n.shareText(name, species, element, description));
+    } catch (_) {
+      if (!mounted) return;
+      messenger.showSnackBar(SnackBar(content: Text(errorText)));
+    }
   }
 
   @override
@@ -69,10 +82,10 @@ class _ResultScreenState extends State<ResultScreen>
         SliverAppBar(
           expandedHeight: 520,
           pinned: true,
-          backgroundColor: const Color(0xFF0D0A1A),
+          backgroundColor: AppColors.background,
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back, color: Color(0xFFCDA84D)),
-            tooltip: isDE ? 'Zurück' : 'Back',
+            icon: const Icon(Icons.arrow_back, color: AppColors.primary),
+            tooltip: l10n.back,
             onPressed: () => context.go('/'),
           ),
           actions: [
@@ -82,11 +95,9 @@ class _ResultScreenState extends State<ResultScreen>
                   AudioService.instance.muted
                       ? Icons.volume_off
                       : Icons.volume_up,
-                  color: const Color(0xFFCDA84D),
+                  color: AppColors.primary,
                 ),
-                tooltip: AudioService.instance.muted
-                    ? (isDE ? 'Ton einschalten' : 'Unmute')
-                    : (isDE ? 'Ton ausschalten' : 'Mute'),
+                tooltip: AudioService.instance.muted ? l10n.unmute : l10n.mute,
                 onPressed: () async {
                   await AudioService.instance.toggleMute();
                   setIconState(() {});
@@ -94,8 +105,8 @@ class _ResultScreenState extends State<ResultScreen>
               ),
             ),
             IconButton(
-              icon: const Icon(Icons.share, color: Color(0xFFCDA84D)),
-              tooltip: isDE ? 'Ergebnis teilen' : 'Share result',
+              icon: const Icon(Icons.share, color: AppColors.primary),
+              tooltip: l10n.shareResult,
               onPressed: () => _share(name, species, element, description),
             ),
           ],
@@ -104,19 +115,17 @@ class _ResultScreenState extends State<ResultScreen>
               fit: StackFit.expand,
               children: [
                 Semantics(
-                  label: isDE
-                      ? '$name – Drachenbild'
-                      : '$name – dragon image',
+                  label: l10n.dragonImageSemantics(name),
                   excludeSemantics: true,
                   child: Image.asset(
                     result.subtype.imagePath,
                     fit: BoxFit.cover,
                     alignment: Alignment.topCenter,
                     errorBuilder: (_, _, _) => Container(
-                      color: const Color(0xFF1A1530),
+                      color: AppColors.surface,
                       child: const Icon(
                         Icons.image_not_supported,
-                        color: Color(0xFF3A2D5A),
+                        color: AppColors.border,
                         size: 80,
                       ),
                     ),
@@ -127,7 +136,7 @@ class _ResultScreenState extends State<ResultScreen>
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
-                      colors: [Colors.transparent, Color(0xFF0D0A1A)],
+                      colors: [Colors.transparent, AppColors.background],
                       stops: [0.5, 1.0],
                     ),
                   ),
@@ -138,9 +147,8 @@ class _ResultScreenState extends State<ResultScreen>
         ),
         SliverToBoxAdapter(
           child: Semantics(
-            label: isDE
-                ? '$name. Spezies: $species. Element: $element. Seltenheit: $rarity. $description'
-                : '$name. Species: $species. Element: $element. Rarity: $rarity. $description',
+            label: l10n.resultSemantics(
+                name, species, element, rarity, description),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(24, 8, 24, 40),
               child: Column(
@@ -149,7 +157,7 @@ class _ResultScreenState extends State<ResultScreen>
                   Text(
                     l10n.yourResult,
                     style: theme.textTheme.bodyMedium?.copyWith(
-                      color: const Color(0xFFCDA84D),
+                      color: AppColors.primary,
                       letterSpacing: 2,
                     ),
                   ),
@@ -191,7 +199,7 @@ class _ResultScreenState extends State<ResultScreen>
                       },
                       child: Text(
                         l10n.back,
-                        style: const TextStyle(color: Color(0xFFCDA84D)),
+                        style: const TextStyle(color: AppColors.primary),
                       ),
                     ),
                   ),
@@ -222,9 +230,9 @@ class _InfoChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
       decoration: BoxDecoration(
-        color: const Color(0xFF1A1530),
+        color: AppColors.surface,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: const Color(0xFF3A2D5A)),
+        border: Border.all(color: AppColors.border),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -232,7 +240,7 @@ class _InfoChip extends StatelessWidget {
           Text(
             label,
             style: const TextStyle(
-              color: Color(0xFFCDA84D),
+              color: AppColors.primary,
               fontSize: 11,
               letterSpacing: 1,
             ),
@@ -241,7 +249,7 @@ class _InfoChip extends StatelessWidget {
           Text(
             value,
             style: const TextStyle(
-              color: Color(0xFFE8DFC0),
+              color: AppColors.onBackground,
               fontSize: 15,
               fontWeight: FontWeight.w600,
             ),
@@ -273,7 +281,7 @@ class _ElementIconRow extends StatelessWidget {
               fit: BoxFit.contain,
               errorBuilder: (_, _, _) => const Icon(
                 Icons.auto_awesome,
-                color: Color(0xFFCDA84D),
+                color: AppColors.primary,
                 size: 36,
               ),
             ),
