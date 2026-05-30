@@ -1,11 +1,11 @@
 {
-    "name": "draconia_quiz",
-    "short_name": "draconia_quiz",
+    "name": "Draconia Quiz",
+    "short_name": "Draconia",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#0D0A1A",
+    "theme_color": "#CDA84D",
+    "description": "Discover which dragon type and element you are.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
