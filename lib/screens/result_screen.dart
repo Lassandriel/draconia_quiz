@@ -6,6 +6,7 @@ import '../generated/app_localizations.dart';
 import '../models/dragon_type.dart';
 import '../data/results.dart';
 import '../services/audio_service.dart';
+import '../services/share_card.dart';
 import '../theme/app_colors.dart';
 
 class ResultScreen extends StatefulWidget {
@@ -54,11 +55,27 @@ class _ResultScreenState extends State<ResultScreen>
     final l10n = AppLocalizations.of(context)!;
     final messenger = ScaffoldMessenger.of(context);
     final errorText = l10n.shareError;
+    final text = l10n.shareText(name, species, element, description);
+    final card = ShareCardData(
+      imageAsset: widget.subtype.imagePath,
+      elementIconAsset: widget.subtype.elementIconPath,
+      label: l10n.yourResult,
+      name: name,
+      subtitle: '$species · $element',
+      brand: 'Draconia Quiz',
+    );
     try {
-      await Share.share(l10n.shareText(name, species, element, description));
+      // Bevorzugt: gestaltete Karte (Bild + Text)
+      await shareResultCard(card: card, text: text);
     } catch (_) {
-      if (!mounted) return;
-      messenger.showSnackBar(SnackBar(content: Text(errorText)));
+      // Fallback 1: nur Text teilen
+      try {
+        await Share.share(text);
+      } catch (_) {
+        // Fallback 2: dem Nutzer Bescheid geben
+        if (!mounted) return;
+        messenger.showSnackBar(SnackBar(content: Text(errorText)));
+      }
     }
   }
 
