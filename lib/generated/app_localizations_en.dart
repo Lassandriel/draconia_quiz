@@ -104,11 +104,10 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String shareText(
     String name,
-    String species,
     String element,
-    String description,
+    String url,
   ) {
-    return '🐉 I am a $name!\nSpecies: $species | Element: $element\n\n$description\n\n#DraconiaQuiz';
+    return '🐉 I\'m a $name – $element element.\n\nWant to find out what you are?\nGet the app here: $url\n\n#DraconiaQuiz';
   }
 
   @override

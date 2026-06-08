@@ -45,13 +45,12 @@
       "name": { "type": "String" }
     }
   },
-  "shareText": "🐉 Ich bin ein {name}!\nSpezies: {species} | Element: {element}\n\n{description}\n\n#DraconiaQuiz",
+  "shareText": "🐉 Ich bin ein {name} – Element {element}.\n\nWillst du rausfinden, was du bist?\nHol dir die App hier: {url}\n\n#DraconiaQuiz",
   "@shareText": {
     "placeholders": {
       "name": { "type": "String" },
-      "species": { "type": "String" },
       "element": { "type": "String" },
-      "description": { "type": "String" }
+      "url": { "type": "String" }
     }
   },
   "bugReportError": "Konnte Browser nicht öffnen.",

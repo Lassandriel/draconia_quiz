@@ -9,6 +9,10 @@ import '../services/audio_service.dart';
 import '../services/share_card.dart';
 import '../theme/app_colors.dart';
 
+// Platzhalter, bis die App im Play Store öffentlich ist. Dann hier den
+// Play-Store-Link eintragen (einzige Stelle, die geändert werden muss).
+const _shareUrl = '[Link]';
+
 class ResultScreen extends StatefulWidget {
   final DragonSubtype subtype;
 
@@ -50,12 +54,11 @@ class _ResultScreenState extends State<ResultScreen>
     String name,
     String species,
     String element,
-    String description,
   ) async {
     final l10n = AppLocalizations.of(context)!;
     final messenger = ScaffoldMessenger.of(context);
     final errorText = l10n.shareError;
-    final text = l10n.shareText(name, species, element, description);
+    final text = l10n.shareText(name, element, _shareUrl);
     final card = ShareCardData(
       imageAsset: widget.subtype.imagePath,
       elementIconAsset: widget.subtype.elementIconPath,
@@ -124,7 +127,7 @@ class _ResultScreenState extends State<ResultScreen>
             IconButton(
               icon: const Icon(Icons.share, color: AppColors.primary),
               tooltip: l10n.shareResult,
-              onPressed: () => _share(name, species, element, description),
+              onPressed: () => _share(name, species, element),
             ),
           ],
           flexibleSpace: FlexibleSpaceBar(
