@@ -9,9 +9,11 @@ import '../services/audio_service.dart';
 import '../services/share_card.dart';
 import '../theme/app_colors.dart';
 
-// Platzhalter, bis die App im Play Store öffentlich ist. Dann hier den
-// Play-Store-Link eintragen (einzige Stelle, die geändert werden muss).
-const _shareUrl = '[Link]';
+// Permanenter Play-Store-Link (basiert auf dem unveränderlichen Package-
+// Namen). Funktioniert ab Veröffentlichung automatisch öffentlich — muss
+// nicht mehr geändert werden.
+const _shareUrl =
+    'https://play.google.com/store/apps/details?id=com.draconia.draconia_quiz';
 
 class ResultScreen extends StatefulWidget {
   final DragonSubtype subtype;
