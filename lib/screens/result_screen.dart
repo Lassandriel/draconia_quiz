@@ -185,11 +185,9 @@ class _ResultScreenState extends State<ResultScreen>
                   const SizedBox(height: 8),
                   Text(name, style: theme.textTheme.displayLarge),
                   const SizedBox(height: 20),
-                  _InfoChip(label: l10n.species, value: species),
-                  const SizedBox(height: 12),
                   Row(
                     children: [
-                      _InfoChip(label: l10n.element, value: element),
+                      _InfoChip(label: l10n.species, value: species),
                       const SizedBox(width: 12),
                       _InfoChip(label: l10n.rarity, value: rarity),
                     ],
@@ -309,13 +307,48 @@ class _ElementIconRow extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 12),
-        ExcludeSemantics(
-          child: Text(
-            elementName,
-            style: Theme.of(context).textTheme.headlineMedium,
+        // Doppel-Elemente (z. B. „Natur & Tarnung") als zwei getrennte
+        // Badges nebeneinander; einfache Elemente als ein Badge.
+        Expanded(
+          child: ExcludeSemantics(
+            child: Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                for (final part in elementName.split(' & '))
+                  _ElementBadge(part),
+              ],
+            ),
           ),
         ),
       ],
+    );
+  }
+}
+
+class _ElementBadge extends StatelessWidget {
+  final String text;
+
+  const _ElementBadge(this.text);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      decoration: BoxDecoration(
+        color: AppColors.surface,
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: AppColors.primary),
+      ),
+      child: Text(
+        text,
+        style: const TextStyle(
+          fontFamily: 'Cinzel',
+          color: AppColors.onBackground,
+          fontSize: 18,
+          fontWeight: FontWeight.w700,
+        ),
+      ),
     );
   }
 }
