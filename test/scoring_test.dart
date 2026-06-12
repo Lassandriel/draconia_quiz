@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:draconia_quiz/data/questions.dart';
+import 'package:draconia_quiz/data/results.dart';
 import 'package:draconia_quiz/data/scoring.dart';
 import 'package:draconia_quiz/models/dragon_type.dart';
 
@@ -44,24 +45,57 @@ void main() {
     );
   });
 
-  test('Verteilung ist annähernd fair (kein Drache dominiert)', () {
+  test('seltene Drachen kommen seltener vor (Rarity-Ordering)', () {
     final rng = Random(42);
     final counts = <DragonSubtype, int>{};
-    const runs = 40000;
+    const runs = 60000;
     for (var i = 0; i < runs; i++) {
       final winners = rankedWinners(_randomRun(rng));
       // deterministische Gleichstand-Auflösung für stabile Zählung
       final w = winners.reduce((a, b) => a.index <= b.index ? a : b);
       counts[w] = (counts[w] ?? 0) + 1;
     }
-    final ideal = runs / DragonSubtype.values.length;
-    counts.forEach((subtype, c) {
-      // großzügige Grenze: kein Drache über 3x oder unter 1/3 des Ideals
-      expect(c, lessThan(ideal * 3),
-          reason: '$subtype kommt zu häufig vor (${c / runs * 100}%)');
-      expect(c, greaterThan(ideal / 3),
-          reason: '$subtype kommt zu selten vor (${c / runs * 100}%)');
-    });
+
+    double avgOf(DragonRarity tier) {
+      final list = [
+        for (final s in DragonSubtype.values)
+          if (dragonRarity[s] == tier) (counts[s] ?? 0) / runs
+      ];
+      return list.reduce((a, b) => a + b) / list.length;
+    }
+
+    final common = avgOf(DragonRarity.common);
+    final rare = avgOf(DragonRarity.rare);
+    final veryRare = avgOf(DragonRarity.veryRare);
+    final legendary = avgOf(DragonRarity.legendary);
+
+    // Monotone Stufung: häufig > selten > sehr selten > legendär
+    expect(common, greaterThan(rare), reason: 'häufig $common vs selten $rare');
+    expect(rare, greaterThan(veryRare),
+        reason: 'selten $rare vs sehr selten $veryRare');
+    expect(veryRare, greaterThan(legendary),
+        reason: 'sehr selten $veryRare vs legendär $legendary');
+    // Trotzdem bleibt selbst der Legendäre erreichbar (nicht ~0).
+    expect(legendary, greaterThan(0.005),
+        reason: 'legendär zu selten: $legendary');
+  });
+
+  test('dragonRarity stimmt mit den rarityDe-Texten in results.dart überein', () {
+    const fromText = {
+      'Häufig': DragonRarity.common,
+      'Selten': DragonRarity.rare,
+      'Sehr selten': DragonRarity.veryRare,
+      'Legendär': DragonRarity.legendary,
+    };
+    for (final subtype in DragonSubtype.values) {
+      final expected = fromText[dragonResults[subtype]!.rarityDe];
+      expect(
+        dragonRarity[subtype],
+        expected,
+        reason: '$subtype: Tier weicht von rarityDe '
+            '"${dragonResults[subtype]!.rarityDe}" ab',
+      );
+    }
   });
 
   test('computeResult liefert immer ein gültiges Ergebnis', () {
