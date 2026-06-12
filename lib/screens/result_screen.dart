@@ -120,6 +120,7 @@ class _ResultScreenState extends State<ResultScreen>
                 tooltip: AudioService.instance.muted ? l10n.unmute : l10n.mute,
                 onPressed: () async {
                   await AudioService.instance.toggleMute();
+                  if (!mounted) return;
                   setIconState(() {});
                 },
               ),

@@ -268,6 +268,7 @@ class _QuizScreenState extends State<QuizScreen>
                                 : l10n.mute,
                             onPressed: () async {
                               await AudioService.instance.toggleMute();
+                              if (!mounted) return;
                               setState(() {});
                             },
                           ),
