@@ -9,8 +9,9 @@ import '../services/audio_service.dart';
 import '../services/settings_service.dart';
 import '../theme/app_colors.dart';
 
-// TODO: Eigene GitHub Issues URL hier eintragen
-const _bugReportUrl = 'https://github.com/Lassandriel/draconia_quiz/issues';
+// Ziel des „Bug melden"-Buttons: direkt das Formular für ein neues Issue.
+const _bugReportUrl =
+    'https://github.com/Lassandriel/draconia_quiz/issues/new';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
