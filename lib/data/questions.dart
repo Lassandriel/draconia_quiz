@@ -3,46 +3,72 @@ import '../models/quiz_question.dart';
 
 const List<QuizQuestion> quizQuestions = [
   QuizQuestion(
-    textDe: 'Wo fühlst du dich am wohlsten?',
-    textEn: 'Where do you feel most at home?',
+    textDe: 'Wo fühlst du dich am lebendigsten?',
+    textEn: 'Where do you feel most alive?',
     answers: [
       QuizAnswer(
-        textDe: 'Hoch in den Lüften, über den Wolken',
-        textEn: 'High in the sky, above the clouds',
+        textDe: 'Hoch über den Wolken, im Licht der Sonne',
+        textEn: 'High above the clouds, in the light of the sun',
+        scores: {
+          DragonSubtype.seraphAether: 3,
+          DragonSubtype.grossdracheSonne: 3,
+          DragonSubtype.lungLicht: 3,
+          DragonSubtype.amphithereSonne: 2,
+          DragonSubtype.lungFeuerLicht: 1,
+        },
+      ),
+      QuizAnswer(
+        textDe: 'Tief im Wald, zwischen Moos und alten Bäumen',
+        textEn: 'Deep in the forest, among moss and ancient trees',
+        scores: {
+          DragonSubtype.faeWald: 3,
+          DragonSubtype.lindwurmSumpf: 2,
+          DragonSubtype.amphithereTraum: 2,
+          DragonSubtype.faeStadt: 1,
+        },
+      ),
+      QuizAnswer(
+        textDe: 'An einem Vulkan, umgeben von Feuer und Lava',
+        textEn: 'At a volcano, surrounded by fire and lava',
+        scores: {
+          DragonSubtype.grossdracheFeuer: 3,
+          DragonSubtype.lindwurmMagma: 3,
+          DragonSubtype.leviathanMagma: 3,
+          DragonSubtype.lungFeuer: 2,
+          DragonSubtype.lungFeuerLicht: 2,
+        },
+      ),
+      QuizAnswer(
+        textDe: 'In den Tiefen des Ozeans',
+        textEn: 'In the depths of the ocean',
+        scores: {
+          DragonSubtype.leviathanGezeiten: 3,
+          DragonSubtype.grossdracheGezeitenTraum: 2,
+        },
+      ),
+      QuizAnswer(
+        textDe: 'In Höhlen tief im Stein',
+        textEn: 'In caves deep within the stone',
+        scores: {
+          DragonSubtype.grossdracheErde: 3,
+          DragonSubtype.grossdracheKristall: 3,
+          DragonSubtype.lindwurmMagma: 1,
+        },
+      ),
+      QuizAnswer(
+        textDe: 'In eisiger Kälte, im ewigen Eis',
+        textEn: 'In icy cold, amid eternal ice',
+        scores: {
+          DragonSubtype.wyvernFrost: 3,
+        },
+      ),
+      QuizAnswer(
+        textDe: 'An steilen Klippen und in weiter Steppe',
+        textEn: 'On steep cliffs and across open steppe',
         scores: {
           DragonSubtype.grossdracheWind: 3,
           DragonSubtype.wyvernSturm: 3,
           DragonSubtype.seraphGewitter: 2,
-          DragonSubtype.seraphAether: 3,
-          DragonSubtype.lungLicht: 1,
-        },
-      ),
-      QuizAnswer(
-        textDe: 'Tief im Wald, umgeben von Natur',
-        textEn: 'Deep in the forest, surrounded by nature',
-        scores: {
-          DragonSubtype.faeWald: 3,
-          DragonSubtype.lindwurmSumpf: 2,
-          DragonSubtype.amphithereTraum: 1,
-        },
-      ),
-      QuizAnswer(
-        textDe: 'In einer pulsierenden Stadt voller Leben',
-        textEn: 'In a lively city full of energy',
-        scores: {
-          DragonSubtype.faeStadt: 3,
-          DragonSubtype.grossdracheKristall: 1,
-          DragonSubtype.lungFeuer: 1,
-        },
-      ),
-      QuizAnswer(
-        textDe: 'In der Tiefe — Lava, Wasser oder Erde',
-        textEn: 'In the depths — lava, water, or earth',
-        scores: {
-          DragonSubtype.leviathanGezeiten: 3,
-          DragonSubtype.leviathanMagma: 3,
-          DragonSubtype.lindwurmMagma: 2,
-          DragonSubtype.grossdracheErde: 2,
         },
       ),
     ],
