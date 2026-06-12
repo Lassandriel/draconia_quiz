@@ -73,7 +73,7 @@ extension DragonSubtypeImage on DragonSubtype {
       case DragonSubtype.grossdracheFeuer:
       case DragonSubtype.lungFeuer:               return '$base/icon_feuer.webp';
       case DragonSubtype.lungFeuerLicht:          return '$base/icon_feuer.webp';
-      case DragonSubtype.wyvernFrost:             return '$base/icon_kristall.webp';
+      case DragonSubtype.wyvernFrost:             return '$base/icon_eis.webp';
       case DragonSubtype.lindwurmMagma:
       case DragonSubtype.leviathanMagma:          return '$base/icon_magma.webp';
       case DragonSubtype.lindwurmSumpf:
