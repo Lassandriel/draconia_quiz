@@ -447,8 +447,8 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'Dein größter innerer Widerspruch ist...',
-    textEn: 'Your greatest inner contradiction is...',
+    textDe: 'Was trifft am ehesten auf dich zu?',
+    textEn: 'Which of these fits you best?',
     answers: [
       QuizAnswer(
         textDe: 'Ich bin mächtig, aber sehne mich nach Ruhe',
@@ -588,12 +588,12 @@ const List<QuizQuestion> quizQuestions = [
   // ── Lore-basierte Fragen ──────────────────────────────
 
   QuizQuestion(
-    textDe: 'Welche Umgebung wäre dein idealer Lebensraum in einer Fantasywelt?',
-    textEn: 'What environment would be your ideal habitat in a fantasy world?',
+    textDe: 'Wo würdest du am liebsten leben?',
+    textEn: 'Where would you most like to live?',
     answers: [
       QuizAnswer(
-        textDe: 'Eine prächtige Hauptstadt — Macht, Glanz und das Herz der Zivilisation',
-        textEn: 'A magnificent capital — power, splendor and the heart of civilization',
+        textDe: 'In einer prächtigen Hauptstadt voller Macht und Glanz',
+        textEn: 'In a grand capital full of power and splendor',
         scores: {
           DragonSubtype.grossdracheSonne: 3,
           DragonSubtype.lungLicht: 2,
@@ -602,8 +602,8 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Eine Universitätsstadt — Forschung, Erfindungen und Wissensdurst',
-        textEn: 'A university city — research, inventions and thirst for knowledge',
+        textDe: 'In einer Stadt voller Forschung und Wissen',
+        textEn: 'In a city full of research and knowledge',
         scores: {
           DragonSubtype.seraphAether: 3,
           DragonSubtype.grossdracheKristall: 2,
@@ -612,8 +612,8 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Kein fester Ort — ich wandere und entdecke neue Regionen',
-        textEn: 'No fixed place — I wander and discover new regions',
+        textDe: 'Nirgends fest — immer unterwegs zu neuen Orten',
+        textEn: 'Nowhere fixed — always travelling to new places',
         scores: {
           DragonSubtype.grossdracheWind: 3,
           DragonSubtype.lungFeuerLicht: 2,
@@ -622,8 +622,8 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Die unwirtlichsten Extremregionen — Vulkane, Sturmzonen oder Tiefsee',
-        textEn: 'The most inhospitable extreme regions — volcanoes, storm zones or the deep',
+        textDe: 'In den wildesten Regionen: Vulkane, Stürme, Tiefsee',
+        textEn: 'In the wildest regions: volcanoes, storms, deep sea',
         scores: {
           DragonSubtype.seraphGewitter: 3,
           DragonSubtype.leviathanMagma: 3,
@@ -635,12 +635,12 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'Welcher Beruf würde dich in einer Welt aus Magie und Drachen am meisten erfüllen?',
-    textEn: 'Which profession would fulfil you most in a world of magic and dragons?',
+    textDe: 'Welche Aufgabe würde dich erfüllen?',
+    textEn: 'What kind of work would fulfil you?',
     answers: [
       QuizAnswer(
-        textDe: 'Sturmreiter oder Kurierläufer — immer mitten im wildesten Geschehen',
-        textEn: 'Storm Rider or Express Courier — always in the middle of the wildest action',
+        textDe: 'Sturmreiter — mitten im wildesten Geschehen',
+        textEn: 'Storm Rider — right in the thick of the action',
         scores: {
           DragonSubtype.seraphGewitter: 3,
           DragonSubtype.wyvernSturm: 3,
@@ -648,8 +648,8 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Architekt oder Navigator — ich plane und forme, wie die Welt funktioniert',
-        textEn: 'Architect or Navigator — I plan and shape how the world works',
+        textDe: 'Baumeister — ich plane und forme die Welt',
+        textEn: 'Builder — I plan and shape the world',
         scores: {
           DragonSubtype.leviathanGezeiten: 3,
           DragonSubtype.grossdracheGezeitenTraum: 2,
@@ -657,8 +657,8 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Meisterschmied — ich erschaffe Dinge aus dem Feuer, die Generationen überdauern',
-        textEn: 'Master Smith — I forge things from fire that outlast generations',
+        textDe: 'Meisterschmied — ich erschaffe Dinge, die ewig halten',
+        textEn: 'Master Smith — I forge things that last forever',
         scores: {
           DragonSubtype.leviathanMagma: 3,
           DragonSubtype.lindwurmMagma: 3,
@@ -666,8 +666,8 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Heiler oder Kräuterkundiger — ich helfe still und werde oft übersehen',
-        textEn: 'Healer or Herbalist — I help quietly and am often overlooked',
+        textDe: 'Heiler — ich helfe still im Hintergrund',
+        textEn: 'Healer — I help quietly in the background',
         scores: {
           DragonSubtype.faeWald: 3,
           DragonSubtype.lindwurmSumpf: 2,
@@ -683,8 +683,8 @@ const List<QuizQuestion> quizQuestions = [
     textEn: 'You have a secret hobby — which one?',
     answers: [
       QuizAnswer(
-        textDe: 'Ich schreibe Geschichten, in denen ich ein völlig normales Leben führe',
-        textEn: 'I write stories where I live a completely normal life',
+        textDe: 'Ich schreibe Geschichten über ein ganz normales Leben',
+        textEn: 'I write stories about a totally normal life',
         scores: {
           DragonSubtype.grossdracheGezeitenTraum: 3,
           DragonSubtype.amphithereTraum: 3,
@@ -692,8 +692,8 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich baue detaillierte Miniaturwelten — mit den Händen, ganz ohne Hilfsmittel',
-        textEn: 'I build detailed miniature worlds — by hand, without any tools',
+        textDe: 'Ich baue winzige Miniaturwelten von Hand',
+        textEn: 'I build tiny miniature worlds by hand',
         scores: {
           DragonSubtype.grossdracheErde: 3,
           DragonSubtype.grossdracheKristall: 2,
@@ -701,8 +701,8 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich beschäftige mich heimlich mit Pflanzen und finde es eigentlich uncool',
-        textEn: 'I secretly tend to plants and honestly find it kind of uncool',
+        textDe: 'Ich päppele heimlich Pflanzen auf',
+        textEn: 'I secretly tend to my plants',
         scores: {
           DragonSubtype.grossdracheWind: 2,
           DragonSubtype.faeWald: 3,
@@ -711,8 +711,8 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich verschlinge kitschige Liebesromane und will, dass das niemand weiß',
-        textEn: 'I devour cheesy romance novels and want nobody to know',
+        textDe: 'Ich verschlinge heimlich kitschige Liebesromane',
+        textEn: 'I secretly devour cheesy romance novels',
         scores: {
           DragonSubtype.grossdracheSonne: 3,
           DragonSubtype.lungLicht: 2,
@@ -748,8 +748,8 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich rette Wissen, Brut und Zukunft — notfalls durch Rückzug, um neu aufzubauen',
-        textEn: 'I save our knowledge, our young and our future — retreating if need be, to rebuild',
+        textDe: 'Ich rette Wissen und Brut — und baue notfalls neu auf',
+        textEn: 'I save our knowledge and our young — and rebuild if I must',
         scores: {
           DragonSubtype.seraphAether: 3,
           DragonSubtype.grossdracheKristall: 2,
@@ -787,8 +787,8 @@ const List<QuizQuestion> quizQuestions = [
     textEn: 'Which kind of festival would excite you the most?',
     answers: [
       QuizAnswer(
-        textDe: 'Ein Gemeinschaftsfest — alle fliegen zusammen und geben der Welt Energie zurück',
-        textEn: 'A community festival — everyone flies together and gives energy back to the world',
+        textDe: 'Ein Gemeinschaftsfest, bei dem alle zusammenkommen',
+        textEn: 'A community festival where everyone comes together',
         scores: {
           DragonSubtype.grossdracheSonne: 3,
           DragonSubtype.lungLicht: 2,
@@ -797,8 +797,8 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ein Handelsfest — zwei völlig verschiedene Kulturen treffen sich zum Tausch',
-        textEn: 'A trade festival — two completely different cultures meet to exchange',
+        textDe: 'Ein Handelsfest, wo fremde Kulturen aufeinandertreffen',
+        textEn: 'A trade festival where foreign cultures meet',
         scores: {
           DragonSubtype.leviathanGezeiten: 3,
           DragonSubtype.leviathanMagma: 3,
@@ -806,8 +806,8 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ein Kräftemessen — Wettkämpfe, Machtdemonstrationen, Spektakel',
-        textEn: 'A tournament — contests, displays of power, spectacle',
+        textDe: 'Ein Kräftemessen voller Wettkämpfe und Spektakel',
+        textEn: 'A tournament full of contests and spectacle',
         scores: {
           DragonSubtype.grossdracheFeuer: 3,
           DragonSubtype.wyvernSturm: 3,
@@ -816,8 +816,8 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Eine feierliche Zeremonie — ruhig, bedeutungsvoll, mit uralter Magie',
-        textEn: 'A solemn ceremony — quiet, meaningful, with ancient magic',
+        textDe: 'Eine feierliche Zeremonie voller uralter Magie',
+        textEn: 'A solemn ceremony full of ancient magic',
         scores: {
           DragonSubtype.seraphAether: 3,
           DragonSubtype.grossdracheSonne: 2,
@@ -829,12 +829,12 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'Wie siehst du das Verhältnis zwischen deiner inneren Natur und der Gesellschaft?',
-    textEn: 'How do you see the relationship between your inner nature and society?',
+    textDe: 'Wie stehst du zu Regeln und Gemeinschaft?',
+    textEn: 'How do you feel about rules and community?',
     answers: [
       QuizAnswer(
-        textDe: 'Meine wahre, rohe Natur ist alles — Regeln und Konventionen bremsen mich',
-        textEn: 'My true, raw nature is everything — rules and conventions hold me back',
+        textDe: 'Regeln bremsen mich — ich folge meiner Natur',
+        textEn: 'Rules hold me back — I follow my own nature',
         scores: {
           DragonSubtype.leviathanMagma: 3,
           DragonSubtype.grossdracheFeuer: 2,
@@ -843,8 +843,8 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Kultur und Zivilisation erheben uns — ich lebe gerne nach gemeinsamen Werten',
-        textEn: 'Culture and civilization elevate us — I enjoy living by shared values',
+        textDe: 'Ich lebe gern nach gemeinsamen Werten',
+        textEn: 'I am happy living by shared values',
         scores: {
           DragonSubtype.grossdracheKristall: 3,
           DragonSubtype.faeStadt: 3,
@@ -852,8 +852,8 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Beides hat seinen Platz — ich wechsle je nach Situation',
-        textEn: 'Both have their place — I switch depending on the situation',
+        textDe: 'Beides hat seinen Platz — ich passe mich an',
+        textEn: 'Both have their place — I adapt',
         scores: {
           DragonSubtype.grossdracheSonne: 2,
           DragonSubtype.grossdracheErde: 2,
@@ -862,8 +862,8 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich folge keiner Seite — meine eigenen Regeln gelten, abseits aller Gruppen',
-        textEn: 'I follow neither side — my own rules apply, away from all groups',
+        textDe: 'Ich folge keiner Seite — nur meinen eigenen Regeln',
+        textEn: 'I follow neither side — only my own rules',
         scores: {
           DragonSubtype.faeWald: 3,
           DragonSubtype.amphithereTraum: 2,
