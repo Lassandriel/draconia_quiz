@@ -103,11 +103,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String shareText(
-    String name,
-    String element,
-    String url,
-  ) {
+  String shareText(String name, String element, String url) {
     return '🐉 Ich bin ein $name – Element $element.\n\nWillst du rausfinden, was du bist?\nHol dir die App hier: $url\n\n#DraconiaQuiz';
   }
 

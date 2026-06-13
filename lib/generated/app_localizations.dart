@@ -276,11 +276,7 @@ abstract class AppLocalizations {
   ///
   /// In de, this message translates to:
   /// **'🐉 Ich bin ein {name} – Element {element}.\n\nWillst du rausfinden, was du bist?\nHol dir die App hier: {url}\n\n#DraconiaQuiz'**
-  String shareText(
-    String name,
-    String element,
-    String url,
-  );
+  String shareText(String name, String element, String url);
 
   /// No description provided for @bugReportError.
   ///
