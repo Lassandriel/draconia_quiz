@@ -20,4 +20,19 @@ void main() {
     final startButton = find.byType(ElevatedButton);
     expect(startButton, findsOneWidget);
   });
+
+  testWidgets('gespeicherte Sprache rendert die passende UI (es)', (
+    tester,
+  ) async {
+    // Prüft die gesamte Kette: gespeicherte Sprache -> SettingsService ->
+    // MaterialApp.locale -> AppLocalizations -> sichtbarer Text.
+    SharedPreferences.setMockInitialValues({'language': 'es'});
+    await SettingsService.instance.init();
+
+    await tester.pumpWidget(const DraconiaApp());
+    await tester.pumpAndSettle();
+
+    // Spanischer Start-Button-Text aus app_es.arb.
+    expect(find.text('Empezar el test'), findsOneWidget);
+  });
 }
