@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:share_plus/share_plus.dart';
 import '../generated/app_localizations.dart';
 
+import '../data/localized_text.dart';
 import '../models/dragon_type.dart';
 import '../data/results.dart';
 import '../services/audio_service.dart';
@@ -52,11 +53,7 @@ class _ResultScreenState extends State<ResultScreen>
     super.dispose();
   }
 
-  Future<void> _share(
-    String name,
-    String species,
-    String element,
-  ) async {
+  Future<void> _share(String name, String species, String element) async {
     final l10n = AppLocalizations.of(context)!;
     final messenger = ScaffoldMessenger.of(context);
     final errorText = l10n.shareError;
@@ -88,16 +85,16 @@ class _ResultScreenState extends State<ResultScreen>
   Widget build(BuildContext context) {
     final subtype = widget.subtype;
     final l10n = AppLocalizations.of(context)!;
-    final isDE = Localizations.localeOf(context).languageCode == 'de';
+    final locale = Localizations.localeOf(context);
     final result = dragonResults[subtype]!;
     final theme = Theme.of(context);
     final reduceMotion = MediaQuery.of(context).disableAnimations;
 
-    final species = isDE ? result.speciesDe : result.speciesEn;
-    final name = isDE ? result.nameDe : result.nameEn;
-    final element = isDE ? result.elementDe : result.elementEn;
-    final description = isDE ? result.descriptionDe : result.descriptionEn;
-    final rarity = isDE ? result.rarityDe : result.rarityEn;
+    final species = result.species.resolve(locale);
+    final name = result.name.resolve(locale);
+    final element = result.element.resolve(locale);
+    final description = result.description.resolve(locale);
+    final rarity = result.rarity.resolve(locale);
 
     final scrollView = CustomScrollView(
       slivers: [
@@ -171,7 +168,12 @@ class _ResultScreenState extends State<ResultScreen>
         SliverToBoxAdapter(
           child: Semantics(
             label: l10n.resultSemantics(
-                name, species, element, rarity, description),
+              name,
+              species,
+              element,
+              rarity,
+              description,
+            ),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(24, 8, 24, 40),
               child: Column(
@@ -195,10 +197,7 @@ class _ResultScreenState extends State<ResultScreen>
                     ],
                   ),
                   const SizedBox(height: 28),
-                  _ElementIconRow(
-                    subtype: subtype,
-                    elementName: element,
-                  ),
+                  _ElementIconRow(subtype: subtype, elementName: element),
                   const SizedBox(height: 28),
                   Text(description, style: theme.textTheme.bodyLarge),
                   const SizedBox(height: 40),

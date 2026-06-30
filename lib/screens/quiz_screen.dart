@@ -3,6 +3,7 @@ import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:go_router/go_router.dart';
 import '../generated/app_localizations.dart';
 
+import '../data/localized_text.dart';
 import '../data/questions.dart' show quizQuestions;
 import '../data/scoring.dart';
 import '../models/dragon_type.dart';
@@ -47,10 +48,7 @@ class _QuizScreenState extends State<QuizScreen>
       begin: const Offset(0.08, 0),
       end: Offset.zero,
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
-    _fadeAnimation = CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeIn,
-    );
+    _fadeAnimation = CurvedAnimation(parent: _controller, curve: Curves.easeIn);
     _controller.forward();
   }
 
@@ -74,7 +72,9 @@ class _QuizScreenState extends State<QuizScreen>
     // Ab Frage 12 den aktuellen Spitzenreiter vorladen
     final total = _shuffledQuestions.length;
     if (_currentIndex >= total - 6 && _scores.isNotEmpty) {
-      final leader = _scores.entries.reduce((a, b) => a.value >= b.value ? a : b).key;
+      final leader = _scores.entries
+          .reduce((a, b) => a.value >= b.value ? a : b)
+          .key;
       precacheImage(AssetImage(leader.imagePath), context);
     }
 
@@ -111,14 +111,17 @@ class _QuizScreenState extends State<QuizScreen>
             title: Text(
               l10n.quitTitle,
               style: const TextStyle(
-                  fontFamily: 'Cinzel', color: AppColors.onBackground),
+                fontFamily: 'Cinzel',
+                color: AppColors.onBackground,
+              ),
             ),
             content: Text(
               l10n.quitMessage,
               style: const TextStyle(
-                  fontFamily: 'CrimsonText',
-                  color: AppColors.textMuted,
-                  fontSize: 16),
+                fontFamily: 'CrimsonText',
+                color: AppColors.textMuted,
+                fontSize: 16,
+              ),
             ),
             actions: [
               TextButton(
@@ -145,7 +148,7 @@ class _QuizScreenState extends State<QuizScreen>
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final question = _shuffledQuestions[_currentIndex];
-    final isDE = Localizations.localeOf(context).languageCode == 'de';
+    final locale = Localizations.localeOf(context);
     final total = _shuffledQuestions.length;
     final progress = (_currentIndex + 1) / total;
     final reduceMotion = MediaQuery.of(context).disableAnimations;
@@ -156,7 +159,7 @@ class _QuizScreenState extends State<QuizScreen>
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Text(
-            isDE ? question.textDe : question.textEn,
+            question.text.resolve(locale),
             style: Theme.of(context).textTheme.headlineMedium,
             textAlign: TextAlign.center,
           ),
@@ -170,7 +173,7 @@ class _QuizScreenState extends State<QuizScreen>
             itemBuilder: (_, i) {
               final answer = _shuffledAnswers[_currentIndex][i];
               return _AnswerCard(
-                text: isDE ? answer.textDe : answer.textEn,
+                text: answer.text.resolve(locale),
                 onTap: () => _onAnswer(answer),
               );
             },
@@ -183,10 +186,7 @@ class _QuizScreenState extends State<QuizScreen>
     if (!reduceMotion) {
       questionArea = FadeTransition(
         opacity: _fadeAnimation,
-        child: SlideTransition(
-          position: _slideAnimation,
-          child: questionArea,
-        ),
+        child: SlideTransition(position: _slideAnimation, child: questionArea),
       );
     }
 
@@ -213,8 +213,7 @@ class _QuizScreenState extends State<QuizScreen>
               ),
             ),
             Positioned.fill(
-              child:
-                  Container(color: Colors.black.withValues(alpha: 0.65)),
+              child: Container(color: Colors.black.withValues(alpha: 0.65)),
             ),
             SafeArea(
               child: Column(
@@ -230,8 +229,10 @@ class _QuizScreenState extends State<QuizScreen>
                           width: 48,
                           height: 48,
                           child: IconButton(
-                            icon: const Icon(Icons.arrow_back,
-                                color: AppColors.primary),
+                            icon: const Icon(
+                              Icons.arrow_back,
+                              color: AppColors.primary,
+                            ),
                             tooltip: l10n.back,
                             onPressed: () async {
                               final abort = await _confirmAbort(context);
@@ -246,9 +247,7 @@ class _QuizScreenState extends State<QuizScreen>
                             child: Text(
                               l10n.questionOf(_currentIndex + 1, total),
                               textAlign: TextAlign.center,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium
+                              style: Theme.of(context).textTheme.bodyMedium
                                   ?.copyWith(color: AppColors.primary),
                             ),
                           ),
@@ -289,7 +288,8 @@ class _QuizScreenState extends State<QuizScreen>
                                 value: progress,
                                 backgroundColor: AppColors.surface,
                                 valueColor: const AlwaysStoppedAnimation(
-                                    AppColors.primary),
+                                  AppColors.primary,
+                                ),
                                 minHeight: 6,
                               )
                             : TweenAnimationBuilder<double>(
@@ -298,12 +298,13 @@ class _QuizScreenState extends State<QuizScreen>
                                 curve: Curves.easeOut,
                                 builder: (_, value, _) =>
                                     LinearProgressIndicator(
-                                  value: value,
-                                  backgroundColor: AppColors.surface,
-                                  valueColor: const AlwaysStoppedAnimation(
-                                      AppColors.primary),
-                                  minHeight: 6,
-                                ),
+                                      value: value,
+                                      backgroundColor: AppColors.surface,
+                                      valueColor: const AlwaysStoppedAnimation(
+                                        AppColors.primary,
+                                      ),
+                                      minHeight: 6,
+                                    ),
                               ),
                       ),
                     ),
@@ -350,13 +351,10 @@ class _AnswerCardState extends State<_AnswerCard> {
           duration: const Duration(milliseconds: 120),
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
           decoration: BoxDecoration(
-            color:
-                _pressed ? AppColors.surfacePressed : AppColors.surface,
+            color: _pressed ? AppColors.surfacePressed : AppColors.surface,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color: _pressed
-                  ? AppColors.primary
-                  : AppColors.border,
+              color: _pressed ? AppColors.primary : AppColors.border,
               width: _pressed ? 1.5 : 1,
             ),
           ),

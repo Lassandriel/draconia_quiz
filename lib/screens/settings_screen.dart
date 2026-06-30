@@ -10,8 +10,7 @@ import '../services/settings_service.dart';
 import '../theme/app_colors.dart';
 
 // Ziel des „Bug melden"-Buttons: direkt das Formular für ein neues Issue.
-const _bugReportUrl =
-    'https://github.com/Lassandriel/draconia_quiz/issues/new';
+const _bugReportUrl = 'https://github.com/Lassandriel/draconia_quiz/issues/new';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -117,8 +116,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
           _SectionHeader(l10n.aboutSection),
           ListTile(
             leading: const Icon(Icons.info_outline, color: AppColors.primary),
-            title: Text(l10n.version,
-                style: const TextStyle(color: AppColors.onBackground)),
+            title: Text(
+              l10n.version,
+              style: const TextStyle(color: AppColors.onBackground),
+            ),
             trailing: Text(
               _version.isEmpty ? '—' : 'v$_version',
               style: const TextStyle(
@@ -129,20 +130,31 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.bug_report_outlined,
-                color: AppColors.primary),
-            title: Text(l10n.reportBug,
-                style: const TextStyle(color: AppColors.onBackground)),
-            subtitle: Text(l10n.reportBugSubtitle,
-                style: const TextStyle(
-                    color: AppColors.textMuted, fontSize: 12)),
-            trailing: const Icon(Icons.open_in_new,
-                color: AppColors.textMuted, size: 16),
+            leading: const Icon(
+              Icons.bug_report_outlined,
+              color: AppColors.primary,
+            ),
+            title: Text(
+              l10n.reportBug,
+              style: const TextStyle(color: AppColors.onBackground),
+            ),
+            subtitle: Text(
+              l10n.reportBugSubtitle,
+              style: const TextStyle(color: AppColors.textMuted, fontSize: 12),
+            ),
+            trailing: const Icon(
+              Icons.open_in_new,
+              color: AppColors.textMuted,
+              size: 16,
+            ),
             onTap: () async {
               final uri = Uri.parse(_bugReportUrl);
               final messenger = ScaffoldMessenger.of(context);
               final errorMsg = AppLocalizations.of(context)!.bugReportError;
-              final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
+              final ok = await launchUrl(
+                uri,
+                mode: LaunchMode.externalApplication,
+              );
               if (!mounted) return;
               if (!ok) {
                 messenger.showSnackBar(SnackBar(content: Text(errorMsg)));
@@ -257,29 +269,25 @@ class _LangChip extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: AnimatedContainer(
-        duration: const Duration(milliseconds: 150),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        decoration: BoxDecoration(
-          color: selected ? AppColors.primary : AppColors.surface,
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(
-            color: selected
-                ? AppColors.primary
-                : AppColors.border,
+          duration: const Duration(milliseconds: 150),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          decoration: BoxDecoration(
+            color: selected ? AppColors.primary : AppColors.surface,
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(
+              color: selected ? AppColors.primary : AppColors.border,
+            ),
+          ),
+          child: Text(
+            label,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              color: selected ? AppColors.background : AppColors.onBackground,
+              fontWeight: FontWeight.w600,
+              fontSize: 14,
+            ),
           ),
         ),
-        child: Text(
-          label,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            color: selected
-                ? AppColors.background
-                : AppColors.onBackground,
-            fontWeight: FontWeight.w600,
-            fontSize: 14,
-          ),
-        ),
-      ),
       ),
     );
   }

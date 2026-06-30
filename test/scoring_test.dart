@@ -80,7 +80,7 @@ void main() {
         reason: 'legendär zu selten: $legendary');
   });
 
-  test('dragonRarity stimmt mit den rarityDe-Texten in results.dart überein', () {
+  test('dragonRarity stimmt mit den deutschen rarity-Texten in results.dart überein', () {
     const fromText = {
       'Häufig': DragonRarity.common,
       'Selten': DragonRarity.rare,
@@ -88,12 +88,12 @@ void main() {
       'Legendär': DragonRarity.legendary,
     };
     for (final subtype in DragonSubtype.values) {
-      final expected = fromText[dragonResults[subtype]!.rarityDe];
+      final rarityDe = dragonResults[subtype]!.rarity['de'];
+      final expected = fromText[rarityDe];
       expect(
         dragonRarity[subtype],
         expected,
-        reason: '$subtype: Tier weicht von rarityDe '
-            '"${dragonResults[subtype]!.rarityDe}" ab',
+        reason: '$subtype: Tier weicht von rarity[de] "$rarityDe" ab',
       );
     }
   });

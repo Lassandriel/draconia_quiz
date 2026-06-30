@@ -3,12 +3,16 @@ import '../models/quiz_question.dart';
 
 const List<QuizQuestion> quizQuestions = [
   QuizQuestion(
-    textDe: 'Wo fühlst du dich am lebendigsten?',
-    textEn: 'Where do you feel most alive?',
+    text: {
+      'de': 'Wo fühlst du dich am lebendigsten?',
+      'en': 'Where do you feel most alive?',
+    },
     answers: [
       QuizAnswer(
-        textDe: 'Hoch über den Wolken, im Licht der Sonne',
-        textEn: 'High above the clouds, in the light of the sun',
+        text: {
+          'de': 'Hoch über den Wolken, im Licht der Sonne',
+          'en': 'High above the clouds, in the light of the sun',
+        },
         scores: {
           DragonSubtype.seraphAether: 3,
           DragonSubtype.grossdracheSonne: 3,
@@ -18,8 +22,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Tief im Wald, zwischen Moos und alten Bäumen',
-        textEn: 'Deep in the forest, among moss and ancient trees',
+        text: {
+          'de': 'Tief im Wald, zwischen Moos und alten Bäumen',
+          'en': 'Deep in the forest, among moss and ancient trees',
+        },
         scores: {
           DragonSubtype.faeWald: 3,
           DragonSubtype.lindwurmSumpf: 2,
@@ -28,8 +34,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'An einem Vulkan, umgeben von Feuer und Lava',
-        textEn: 'At a volcano, surrounded by fire and lava',
+        text: {
+          'de': 'An einem Vulkan, umgeben von Feuer und Lava',
+          'en': 'At a volcano, surrounded by fire and lava',
+        },
         scores: {
           DragonSubtype.grossdracheFeuer: 3,
           DragonSubtype.lindwurmMagma: 3,
@@ -39,16 +47,20 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'In den Tiefen des Ozeans',
-        textEn: 'In the depths of the ocean',
+        text: {
+          'de': 'In den Tiefen des Ozeans',
+          'en': 'In the depths of the ocean',
+        },
         scores: {
           DragonSubtype.leviathanGezeiten: 3,
           DragonSubtype.grossdracheGezeitenTraum: 2,
         },
       ),
       QuizAnswer(
-        textDe: 'In Höhlen tief im Stein',
-        textEn: 'In caves deep within the stone',
+        text: {
+          'de': 'In Höhlen tief im Stein',
+          'en': 'In caves deep within the stone',
+        },
         scores: {
           DragonSubtype.grossdracheErde: 3,
           DragonSubtype.grossdracheKristall: 3,
@@ -56,15 +68,17 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'In eisiger Kälte, im ewigen Eis',
-        textEn: 'In icy cold, amid eternal ice',
-        scores: {
-          DragonSubtype.wyvernFrost: 3,
+        text: {
+          'de': 'In eisiger Kälte, im ewigen Eis',
+          'en': 'In icy cold, amid eternal ice',
         },
+        scores: {DragonSubtype.wyvernFrost: 3},
       ),
       QuizAnswer(
-        textDe: 'An steilen Klippen und in weiter Steppe',
-        textEn: 'On steep cliffs and across open steppe',
+        text: {
+          'de': 'An steilen Klippen und in weiter Steppe',
+          'en': 'On steep cliffs and across open steppe',
+        },
         scores: {
           DragonSubtype.grossdracheWind: 3,
           DragonSubtype.wyvernSturm: 3,
@@ -75,12 +89,16 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'Wie gehst du mit Konflikten um?',
-    textEn: 'How do you handle conflict?',
+    text: {
+      'de': 'Wie gehst du mit Konflikten um?',
+      'en': 'How do you handle conflict?',
+    },
     answers: [
       QuizAnswer(
-        textDe: 'Ich handle direkt und mit Stärke',
-        textEn: 'I act directly and with strength',
+        text: {
+          'de': 'Ich handle direkt und mit Stärke',
+          'en': 'I act directly and with strength',
+        },
         scores: {
           DragonSubtype.grossdracheFeuer: 3,
           DragonSubtype.lungFeuer: 2,
@@ -90,8 +108,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich beobachte zuerst und plane taktisch',
-        textEn: 'I observe first and plan tactically',
+        text: {
+          'de': 'Ich beobachte zuerst und plane taktisch',
+          'en': 'I observe first and plan tactically',
+        },
         scores: {
           DragonSubtype.grossdracheErde: 3,
           DragonSubtype.leviathanMagma: 2,
@@ -100,8 +120,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich versuche Verständnis und Diplomatie',
-        textEn: 'I seek understanding and diplomacy',
+        text: {
+          'de': 'Ich versuche Verständnis und Diplomatie',
+          'en': 'I seek understanding and diplomacy',
+        },
         scores: {
           DragonSubtype.grossdracheSonne: 3,
           DragonSubtype.lungLicht: 3,
@@ -110,8 +132,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich weiche aus und löse es auf meine eigene Art',
-        textEn: 'I evade and solve it in my own way',
+        text: {
+          'de': 'Ich weiche aus und löse es auf meine eigene Art',
+          'en': 'I evade and solve it in my own way',
+        },
         scores: {
           DragonSubtype.faeStadt: 2,
           DragonSubtype.faeWald: 2,
@@ -123,12 +147,13 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'Was treibt dich am stärksten an?',
-    textEn: 'What motivates you the most?',
+    text: {
+      'de': 'Was treibt dich am stärksten an?',
+      'en': 'What motivates you the most?',
+    },
     answers: [
       QuizAnswer(
-        textDe: 'Freiheit und Abenteuer',
-        textEn: 'Freedom and adventure',
+        text: {'de': 'Freiheit und Abenteuer', 'en': 'Freedom and adventure'},
         scores: {
           DragonSubtype.grossdracheWind: 3,
           DragonSubtype.lungFeuerLicht: 2,
@@ -137,8 +162,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Wissen und Geheimnisse lüften',
-        textEn: 'Knowledge and uncovering secrets',
+        text: {
+          'de': 'Wissen und Geheimnisse lüften',
+          'en': 'Knowledge and uncovering secrets',
+        },
         scores: {
           DragonSubtype.seraphAether: 3,
           DragonSubtype.grossdracheGezeitenTraum: 3,
@@ -147,8 +174,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Meine Familie und Gemeinschaft schützen',
-        textEn: 'Protecting my family and community',
+        text: {
+          'de': 'Meine Familie und Gemeinschaft schützen',
+          'en': 'Protecting my family and community',
+        },
         scores: {
           DragonSubtype.grossdracheErde: 3,
           DragonSubtype.leviathanGezeiten: 2,
@@ -157,8 +186,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Erschaffen, handwerken, bauen',
-        textEn: 'Creating, crafting, building',
+        text: {
+          'de': 'Erschaffen, handwerken, bauen',
+          'en': 'Creating, crafting, building',
+        },
         scores: {
           DragonSubtype.leviathanMagma: 3,
           DragonSubtype.grossdracheKristall: 2,
@@ -170,12 +201,16 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'Welches Wetter passt am besten zu dir?',
-    textEn: 'Which weather suits you best?',
+    text: {
+      'de': 'Welches Wetter passt am besten zu dir?',
+      'en': 'Which weather suits you best?',
+    },
     answers: [
       QuizAnswer(
-        textDe: 'Gewitter — elektrisch und wild',
-        textEn: 'Thunderstorm — electric and wild',
+        text: {
+          'de': 'Gewitter — elektrisch und wild',
+          'en': 'Thunderstorm — electric and wild',
+        },
         scores: {
           DragonSubtype.seraphGewitter: 3,
           DragonSubtype.wyvernSturm: 3,
@@ -183,8 +218,7 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Strahlender Sonnenschein',
-        textEn: 'Bright sunshine',
+        text: {'de': 'Strahlender Sonnenschein', 'en': 'Bright sunshine'},
         scores: {
           DragonSubtype.grossdracheSonne: 3,
           DragonSubtype.amphithereSonne: 3,
@@ -193,8 +227,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Tiefer Nebel und Mondschein',
-        textEn: 'Deep fog and moonlight',
+        text: {
+          'de': 'Tiefer Nebel und Mondschein',
+          'en': 'Deep fog and moonlight',
+        },
         scores: {
           DragonSubtype.grossdracheGezeitenTraum: 3,
           DragonSubtype.amphithereTraum: 3,
@@ -202,8 +238,7 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Eisige Kälte und Stille',
-        textEn: 'Icy cold and silence',
+        text: {'de': 'Eisige Kälte und Stille', 'en': 'Icy cold and silence'},
         scores: {
           DragonSubtype.wyvernFrost: 3,
           DragonSubtype.seraphAether: 2,
@@ -214,12 +249,16 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'Wie bewegst du dich am liebsten fort?',
-    textEn: 'How do you prefer to move?',
+    text: {
+      'de': 'Wie bewegst du dich am liebsten fort?',
+      'en': 'How do you prefer to move?',
+    },
     answers: [
       QuizAnswer(
-        textDe: 'Rasend schnell — nichts kann mich aufhalten',
-        textEn: 'Blazing fast — nothing can stop me',
+        text: {
+          'de': 'Rasend schnell — nichts kann mich aufhalten',
+          'en': 'Blazing fast — nothing can stop me',
+        },
         scores: {
           DragonSubtype.wyvernSturm: 3,
           DragonSubtype.seraphGewitter: 2,
@@ -228,8 +267,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Schwebend und anmutig, fast lautlos',
-        textEn: 'Floating gracefully, almost silent',
+        text: {
+          'de': 'Schwebend und anmutig, fast lautlos',
+          'en': 'Floating gracefully, almost silent',
+        },
         scores: {
           DragonSubtype.lungLicht: 3,
           DragonSubtype.lungFeuer: 2,
@@ -239,8 +280,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Durch das Wasser oder unterirdisch',
-        textEn: 'Through water or underground',
+        text: {
+          'de': 'Durch das Wasser oder unterirdisch',
+          'en': 'Through water or underground',
+        },
         scores: {
           DragonSubtype.leviathanGezeiten: 3,
           DragonSubtype.leviathanMagma: 3,
@@ -249,8 +292,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Mit mächtigen Flügelschlägen, imposant',
-        textEn: 'With powerful wingbeats, imposing',
+        text: {
+          'de': 'Mit mächtigen Flügelschlägen, imposant',
+          'en': 'With powerful wingbeats, imposing',
+        },
         scores: {
           DragonSubtype.grossdracheErde: 2,
           DragonSubtype.grossdracheFeuer: 2,
@@ -262,12 +307,16 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'Was ist deine größte Stärke?',
-    textEn: 'What is your greatest strength?',
+    text: {
+      'de': 'Was ist deine größte Stärke?',
+      'en': 'What is your greatest strength?',
+    },
     answers: [
       QuizAnswer(
-        textDe: 'Physische Kraft und Unverwundbarkeit',
-        textEn: 'Physical power and invulnerability',
+        text: {
+          'de': 'Physische Kraft und Unverwundbarkeit',
+          'en': 'Physical power and invulnerability',
+        },
         scores: {
           DragonSubtype.grossdracheErde: 3,
           DragonSubtype.leviathanMagma: 3,
@@ -276,8 +325,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Intuition und emotionale Tiefe',
-        textEn: 'Intuition and emotional depth',
+        text: {
+          'de': 'Intuition und emotionale Tiefe',
+          'en': 'Intuition and emotional depth',
+        },
         scores: {
           DragonSubtype.grossdracheGezeitenTraum: 3,
           DragonSubtype.amphithereTraum: 3,
@@ -286,8 +337,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Anpassungsfähigkeit und Cleverness',
-        textEn: 'Adaptability and cleverness',
+        text: {
+          'de': 'Anpassungsfähigkeit und Cleverness',
+          'en': 'Adaptability and cleverness',
+        },
         scores: {
           DragonSubtype.faeStadt: 3,
           DragonSubtype.lindwurmSumpf: 2,
@@ -296,8 +349,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Strahlendes Charisma und Führungsstärke',
-        textEn: 'Radiant charisma and leadership',
+        text: {
+          'de': 'Strahlendes Charisma und Führungsstärke',
+          'en': 'Radiant charisma and leadership',
+        },
         scores: {
           DragonSubtype.grossdracheSonne: 3,
           DragonSubtype.lungFeuerLicht: 3,
@@ -309,12 +364,16 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'Was wäre dein Zuhause?',
-    textEn: 'What would your home be like?',
+    text: {
+      'de': 'Was wäre dein Zuhause?',
+      'en': 'What would your home be like?',
+    },
     answers: [
       QuizAnswer(
-        textDe: 'Eine Festung aus Stein, tief in der Erde',
-        textEn: 'A fortress of stone, deep in the earth',
+        text: {
+          'de': 'Eine Festung aus Stein, tief in der Erde',
+          'en': 'A fortress of stone, deep in the earth',
+        },
         scores: {
           DragonSubtype.grossdracheErde: 3,
           DragonSubtype.leviathanMagma: 2,
@@ -322,8 +381,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ein Nest ganz oben, wo kein anderer hinkommt',
-        textEn: 'A nest at the very top, where no one else can reach',
+        text: {
+          'de': 'Ein Nest ganz oben, wo kein anderer hinkommt',
+          'en': 'A nest at the very top, where no one else can reach',
+        },
         scores: {
           DragonSubtype.seraphAether: 3,
           DragonSubtype.seraphGewitter: 2,
@@ -332,8 +393,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ein prächtiger Palast, elegant und leuchtend',
-        textEn: 'A magnificent palace, elegant and radiant',
+        text: {
+          'de': 'Ein prächtiger Palast, elegant und leuchtend',
+          'en': 'A magnificent palace, elegant and radiant',
+        },
         scores: {
           DragonSubtype.grossdracheSonne: 2,
           DragonSubtype.grossdracheKristall: 3,
@@ -342,8 +405,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Kein festes Zuhause — ich bin ständig unterwegs',
-        textEn: 'No fixed home — I\'m always on the move',
+        text: {
+          'de': 'Kein festes Zuhause — ich bin ständig unterwegs',
+          'en': 'No fixed home — I\'m always on the move',
+        },
         scores: {
           DragonSubtype.grossdracheWind: 3,
           DragonSubtype.lungFeuerLicht: 2,
@@ -355,12 +420,16 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'Welche Farbe zieht dich am meisten an?',
-    textEn: 'Which color draws you in the most?',
+    text: {
+      'de': 'Welche Farbe zieht dich am meisten an?',
+      'en': 'Which color draws you in the most?',
+    },
     answers: [
       QuizAnswer(
-        textDe: 'Gold und Weiß — leuchtend und warm',
-        textEn: 'Gold and white — radiant and warm',
+        text: {
+          'de': 'Gold und Weiß — leuchtend und warm',
+          'en': 'Gold and white — radiant and warm',
+        },
         scores: {
           DragonSubtype.grossdracheSonne: 3,
           DragonSubtype.lungLicht: 3,
@@ -369,8 +438,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Dunkelblau und Lila — geheimnisvoll und tief',
-        textEn: 'Dark blue and purple — mysterious and deep',
+        text: {
+          'de': 'Dunkelblau und Lila — geheimnisvoll und tief',
+          'en': 'Dark blue and purple — mysterious and deep',
+        },
         scores: {
           DragonSubtype.grossdracheGezeitenTraum: 3,
           DragonSubtype.amphithereTraum: 3,
@@ -378,8 +449,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Schwarz und Orange — kraftvoll und gefährlich',
-        textEn: 'Black and orange — powerful and dangerous',
+        text: {
+          'de': 'Schwarz und Orange — kraftvoll und gefährlich',
+          'en': 'Black and orange — powerful and dangerous',
+        },
         scores: {
           DragonSubtype.lindwurmMagma: 3,
           DragonSubtype.leviathanMagma: 3,
@@ -388,8 +461,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Grün und Braun — verwurzelt und lebendig',
-        textEn: 'Green and brown — rooted and alive',
+        text: {
+          'de': 'Grün und Braun — verwurzelt und lebendig',
+          'en': 'Green and brown — rooted and alive',
+        },
         scores: {
           DragonSubtype.faeWald: 3,
           DragonSubtype.lindwurmSumpf: 3,
@@ -400,12 +475,16 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'In einer Gruppe übernimmst du die Rolle...',
-    textEn: 'In a group, you tend to be the one who...',
+    text: {
+      'de': 'In einer Gruppe übernimmst du die Rolle...',
+      'en': 'In a group, you tend to be the one who...',
+    },
     answers: [
       QuizAnswer(
-        textDe: '...die Richtung vorgibt und anführt',
-        textEn: '...sets the direction and leads',
+        text: {
+          'de': '...die Richtung vorgibt und anführt',
+          'en': '...sets the direction and leads',
+        },
         scores: {
           DragonSubtype.grossdracheSonne: 3,
           DragonSubtype.lungFeuerLicht: 2,
@@ -414,8 +493,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: '...alle zusammenhält und für Harmonie sorgt',
-        textEn: '...holds everyone together and ensures harmony',
+        text: {
+          'de': '...alle zusammenhält und für Harmonie sorgt',
+          'en': '...holds everyone together and ensures harmony',
+        },
         scores: {
           DragonSubtype.leviathanGezeiten: 3,
           DragonSubtype.grossdracheGezeitenTraum: 2,
@@ -424,8 +505,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: '...alleine im Hintergrund die wichtige Arbeit macht',
-        textEn: '...works alone in the background doing the important work',
+        text: {
+          'de': '...alleine im Hintergrund die wichtige Arbeit macht',
+          'en': '...works alone in the background doing the important work',
+        },
         scores: {
           DragonSubtype.seraphAether: 3,
           DragonSubtype.faeWald: 3,
@@ -434,8 +517,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: '...mit einem Streich die Stimmung auflockert',
-        textEn: '...lightens the mood with a clever trick',
+        text: {
+          'de': '...mit einem Streich die Stimmung auflockert',
+          'en': '...lightens the mood with a clever trick',
+        },
         scores: {
           DragonSubtype.grossdracheWind: 2,
           DragonSubtype.wyvernSturm: 2,
@@ -447,12 +532,16 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'Was trifft am ehesten auf dich zu?',
-    textEn: 'Which of these fits you best?',
+    text: {
+      'de': 'Was trifft am ehesten auf dich zu?',
+      'en': 'Which of these fits you best?',
+    },
     answers: [
       QuizAnswer(
-        textDe: 'Ich bin mächtig, aber sehne mich nach Ruhe',
-        textEn: 'I am powerful, but long for peace',
+        text: {
+          'de': 'Ich bin mächtig, aber sehne mich nach Ruhe',
+          'en': 'I am powerful, but long for peace',
+        },
         scores: {
           DragonSubtype.grossdracheFeuer: 2,
           DragonSubtype.lungFeuer: 3,
@@ -461,8 +550,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich bin frei, aber fühle mich manchmal einsam',
-        textEn: 'I am free, but sometimes feel lonely',
+        text: {
+          'de': 'Ich bin frei, aber fühle mich manchmal einsam',
+          'en': 'I am free, but sometimes feel lonely',
+        },
         scores: {
           DragonSubtype.grossdracheWind: 3,
           DragonSubtype.amphithereTraum: 2,
@@ -471,8 +562,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich gehöre zur Welt, aber fühle mich fremd darin',
-        textEn: 'I belong to the world, but feel like a stranger in it',
+        text: {
+          'de': 'Ich gehöre zur Welt, aber fühle mich fremd darin',
+          'en': 'I belong to the world, but feel like a stranger in it',
+        },
         scores: {
           DragonSubtype.grossdracheGezeitenTraum: 3,
           DragonSubtype.seraphAether: 2,
@@ -481,8 +574,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich passe mich an, aber weiß nie ganz, wer ich bin',
-        textEn: 'I adapt, but never quite know who I am',
+        text: {
+          'de': 'Ich passe mich an, aber weiß nie ganz, wer ich bin',
+          'en': 'I adapt, but never quite know who I am',
+        },
         scores: {
           DragonSubtype.faeStadt: 3,
           DragonSubtype.lindwurmSumpf: 2,
@@ -494,12 +589,16 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'Welche Fähigkeit wünschst du dir am meisten?',
-    textEn: 'Which ability do you wish for the most?',
+    text: {
+      'de': 'Welche Fähigkeit wünschst du dir am meisten?',
+      'en': 'Which ability do you wish for the most?',
+    },
     answers: [
       QuizAnswer(
-        textDe: 'Dinge aus dem Nichts erschaffen',
-        textEn: 'Create things from nothing',
+        text: {
+          'de': 'Dinge aus dem Nichts erschaffen',
+          'en': 'Create things from nothing',
+        },
         scores: {
           DragonSubtype.grossdracheKristall: 3,
           DragonSubtype.leviathanMagma: 2,
@@ -508,8 +607,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Illusionen weben und Träume beeinflussen',
-        textEn: 'Weave illusions and influence dreams',
+        text: {
+          'de': 'Illusionen weben und Träume beeinflussen',
+          'en': 'Weave illusions and influence dreams',
+        },
         scores: {
           DragonSubtype.grossdracheGezeitenTraum: 3,
           DragonSubtype.amphithereTraum: 3,
@@ -517,8 +618,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Blitze und Stürme kontrollieren',
-        textEn: 'Control lightning and storms',
+        text: {
+          'de': 'Blitze und Stürme kontrollieren',
+          'en': 'Control lightning and storms',
+        },
         scores: {
           DragonSubtype.seraphGewitter: 3,
           DragonSubtype.wyvernSturm: 3,
@@ -526,8 +629,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Reines Licht ausstrahlen, das Dunkelheit vertreibt',
-        textEn: 'Radiate pure light that drives away darkness',
+        text: {
+          'de': 'Reines Licht ausstrahlen, das Dunkelheit vertreibt',
+          'en': 'Radiate pure light that drives away darkness',
+        },
         scores: {
           DragonSubtype.lungLicht: 3,
           DragonSubtype.lungFeuerLicht: 3,
@@ -539,12 +644,16 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'Wie triffst du wichtige Entscheidungen?',
-    textEn: 'How do you make important decisions?',
+    text: {
+      'de': 'Wie triffst du wichtige Entscheidungen?',
+      'en': 'How do you make important decisions?',
+    },
     answers: [
       QuizAnswer(
-        textDe: 'Aus dem Bauch heraus — sofort',
-        textEn: 'From my gut — immediately',
+        text: {
+          'de': 'Aus dem Bauch heraus — sofort',
+          'en': 'From my gut — immediately',
+        },
         scores: {
           DragonSubtype.grossdracheFeuer: 3,
           DragonSubtype.wyvernSturm: 2,
@@ -553,8 +662,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Nach langer Beobachtung und Analyse',
-        textEn: 'After long observation and analysis',
+        text: {
+          'de': 'Nach langer Beobachtung und Analyse',
+          'en': 'After long observation and analysis',
+        },
         scores: {
           DragonSubtype.seraphAether: 3,
           DragonSubtype.grossdracheErde: 2,
@@ -563,8 +674,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich höre auf mein Herz und meine Gefühle',
-        textEn: 'I listen to my heart and feelings',
+        text: {
+          'de': 'Ich höre auf mein Herz und meine Gefühle',
+          'en': 'I listen to my heart and feelings',
+        },
         scores: {
           DragonSubtype.grossdracheGezeitenTraum: 3,
           DragonSubtype.leviathanGezeiten: 2,
@@ -573,8 +686,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich schaue, was am besten für alle ist',
-        textEn: 'I look at what\'s best for everyone',
+        text: {
+          'de': 'Ich schaue, was am besten für alle ist',
+          'en': 'I look at what\'s best for everyone',
+        },
         scores: {
           DragonSubtype.grossdracheSonne: 3,
           DragonSubtype.lungLicht: 2,
@@ -586,14 +701,17 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   // ── Lore-basierte Fragen ──────────────────────────────
-
   QuizQuestion(
-    textDe: 'Wo würdest du am liebsten leben?',
-    textEn: 'Where would you most like to live?',
+    text: {
+      'de': 'Wo würdest du am liebsten leben?',
+      'en': 'Where would you most like to live?',
+    },
     answers: [
       QuizAnswer(
-        textDe: 'In einer prächtigen Hauptstadt voller Macht und Glanz',
-        textEn: 'In a grand capital full of power and splendor',
+        text: {
+          'de': 'In einer prächtigen Hauptstadt voller Macht und Glanz',
+          'en': 'In a grand capital full of power and splendor',
+        },
         scores: {
           DragonSubtype.grossdracheSonne: 3,
           DragonSubtype.lungLicht: 2,
@@ -602,8 +720,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'In einer Stadt voller Forschung und Wissen',
-        textEn: 'In a city full of research and knowledge',
+        text: {
+          'de': 'In einer Stadt voller Forschung und Wissen',
+          'en': 'In a city full of research and knowledge',
+        },
         scores: {
           DragonSubtype.seraphAether: 3,
           DragonSubtype.grossdracheKristall: 2,
@@ -612,8 +732,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Nirgends fest — immer unterwegs zu neuen Orten',
-        textEn: 'Nowhere fixed — always travelling to new places',
+        text: {
+          'de': 'Nirgends fest — immer unterwegs zu neuen Orten',
+          'en': 'Nowhere fixed — always travelling to new places',
+        },
         scores: {
           DragonSubtype.grossdracheWind: 3,
           DragonSubtype.lungFeuerLicht: 2,
@@ -622,8 +744,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'In den wildesten Regionen: Vulkane, Stürme, Tiefsee',
-        textEn: 'In the wildest regions: volcanoes, storms, deep sea',
+        text: {
+          'de': 'In den wildesten Regionen: Vulkane, Stürme, Tiefsee',
+          'en': 'In the wildest regions: volcanoes, storms, deep sea',
+        },
         scores: {
           DragonSubtype.seraphGewitter: 3,
           DragonSubtype.leviathanMagma: 3,
@@ -635,12 +759,16 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'Welche Aufgabe würde dich erfüllen?',
-    textEn: 'What kind of work would fulfil you?',
+    text: {
+      'de': 'Welche Aufgabe würde dich erfüllen?',
+      'en': 'What kind of work would fulfil you?',
+    },
     answers: [
       QuizAnswer(
-        textDe: 'Sturmreiter — mitten im wildesten Geschehen',
-        textEn: 'Storm Rider — right in the thick of the action',
+        text: {
+          'de': 'Sturmreiter — mitten im wildesten Geschehen',
+          'en': 'Storm Rider — right in the thick of the action',
+        },
         scores: {
           DragonSubtype.seraphGewitter: 3,
           DragonSubtype.wyvernSturm: 3,
@@ -648,8 +776,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Baumeister — ich plane und forme die Welt',
-        textEn: 'Builder — I plan and shape the world',
+        text: {
+          'de': 'Baumeister — ich plane und forme die Welt',
+          'en': 'Builder — I plan and shape the world',
+        },
         scores: {
           DragonSubtype.leviathanGezeiten: 3,
           DragonSubtype.grossdracheGezeitenTraum: 2,
@@ -657,8 +787,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Meisterschmied — ich erschaffe Dinge, die ewig halten',
-        textEn: 'Master Smith — I forge things that last forever',
+        text: {
+          'de': 'Meisterschmied — ich erschaffe Dinge, die ewig halten',
+          'en': 'Master Smith — I forge things that last forever',
+        },
         scores: {
           DragonSubtype.leviathanMagma: 3,
           DragonSubtype.lindwurmMagma: 3,
@@ -666,8 +798,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Heiler — ich helfe still im Hintergrund',
-        textEn: 'Healer — I help quietly in the background',
+        text: {
+          'de': 'Heiler — ich helfe still im Hintergrund',
+          'en': 'Healer — I help quietly in the background',
+        },
         scores: {
           DragonSubtype.faeWald: 3,
           DragonSubtype.lindwurmSumpf: 2,
@@ -679,12 +813,16 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'Du hast ein geheimes Hobby — welches?',
-    textEn: 'You have a secret hobby — which one?',
+    text: {
+      'de': 'Du hast ein geheimes Hobby — welches?',
+      'en': 'You have a secret hobby — which one?',
+    },
     answers: [
       QuizAnswer(
-        textDe: 'Ich schreibe Geschichten über ein ganz normales Leben',
-        textEn: 'I write stories about a totally normal life',
+        text: {
+          'de': 'Ich schreibe Geschichten über ein ganz normales Leben',
+          'en': 'I write stories about a totally normal life',
+        },
         scores: {
           DragonSubtype.grossdracheGezeitenTraum: 3,
           DragonSubtype.amphithereTraum: 3,
@@ -692,8 +830,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich baue winzige Miniaturwelten von Hand',
-        textEn: 'I build tiny miniature worlds by hand',
+        text: {
+          'de': 'Ich baue winzige Miniaturwelten von Hand',
+          'en': 'I build tiny miniature worlds by hand',
+        },
         scores: {
           DragonSubtype.grossdracheErde: 3,
           DragonSubtype.grossdracheKristall: 2,
@@ -701,8 +841,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich päppele heimlich Pflanzen auf',
-        textEn: 'I secretly tend to my plants',
+        text: {
+          'de': 'Ich päppele heimlich Pflanzen auf',
+          'en': 'I secretly tend to my plants',
+        },
         scores: {
           DragonSubtype.grossdracheWind: 2,
           DragonSubtype.faeWald: 3,
@@ -711,8 +853,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich verschlinge heimlich kitschige Liebesromane',
-        textEn: 'I secretly devour cheesy romance novels',
+        text: {
+          'de': 'Ich verschlinge heimlich kitschige Liebesromane',
+          'en': 'I secretly devour cheesy romance novels',
+        },
         scores: {
           DragonSubtype.grossdracheSonne: 3,
           DragonSubtype.lungLicht: 2,
@@ -723,12 +867,19 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'Eine dunkle Macht bedroht die Existenz aller Drachen. Was tust du?',
-    textEn: 'A dark power threatens the existence of all dragonkind. What do you do?',
+    text: {
+      'de':
+          'Eine dunkle Macht bedroht die Existenz aller Drachen. Was tust du?',
+      'en':
+          'A dark power threatens the existence of all dragonkind. What do you do?',
+    },
     answers: [
       QuizAnswer(
-        textDe: 'Ich stelle mich allein dazwischen — und gebe notfalls mein Leben',
-        textEn: 'I stand in its path alone — and give my life if I must',
+        text: {
+          'de':
+              'Ich stelle mich allein dazwischen — und gebe notfalls mein Leben',
+          'en': 'I stand in its path alone — and give my life if I must',
+        },
         scores: {
           DragonSubtype.grossdracheErde: 3,
           DragonSubtype.grossdracheSonne: 2,
@@ -737,8 +888,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich eine alle Drachen unter mir und führe sie in den Kampf',
-        textEn: 'I unite all dragons under me and lead them into battle',
+        text: {
+          'de': 'Ich eine alle Drachen unter mir und führe sie in den Kampf',
+          'en': 'I unite all dragons under me and lead them into battle',
+        },
         scores: {
           DragonSubtype.grossdracheSonne: 3,
           DragonSubtype.lungFeuerLicht: 3,
@@ -748,8 +901,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich rette Wissen und Brut — und baue notfalls neu auf',
-        textEn: 'I save our knowledge and our young — and rebuild if I must',
+        text: {
+          'de': 'Ich rette Wissen und Brut — und baue notfalls neu auf',
+          'en': 'I save our knowledge and our young — and rebuild if I must',
+        },
         scores: {
           DragonSubtype.seraphAether: 3,
           DragonSubtype.grossdracheKristall: 2,
@@ -759,8 +914,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich treffe die kalte Wahl: wenige opfern, um viele zu retten',
-        textEn: 'I make the cold choice: sacrifice the few to save the many',
+        text: {
+          'de': 'Ich treffe die kalte Wahl: wenige opfern, um viele zu retten',
+          'en': 'I make the cold choice: sacrifice the few to save the many',
+        },
         scores: {
           DragonSubtype.wyvernFrost: 3,
           DragonSubtype.leviathanMagma: 2,
@@ -769,8 +926,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich greife zu Mitteln, die kein anderer wagt — um jeden Preis',
-        textEn: 'I turn to means no other dares — whatever the cost',
+        text: {
+          'de': 'Ich greife zu Mitteln, die kein anderer wagt — um jeden Preis',
+          'en': 'I turn to means no other dares — whatever the cost',
+        },
         scores: {
           DragonSubtype.lindwurmSumpf: 3,
           DragonSubtype.faeStadt: 2,
@@ -783,12 +942,16 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'Welches Fest würde dich am meisten begeistern?',
-    textEn: 'Which kind of festival would excite you the most?',
+    text: {
+      'de': 'Welches Fest würde dich am meisten begeistern?',
+      'en': 'Which kind of festival would excite you the most?',
+    },
     answers: [
       QuizAnswer(
-        textDe: 'Ein Gemeinschaftsfest, bei dem alle zusammenkommen',
-        textEn: 'A community festival where everyone comes together',
+        text: {
+          'de': 'Ein Gemeinschaftsfest, bei dem alle zusammenkommen',
+          'en': 'A community festival where everyone comes together',
+        },
         scores: {
           DragonSubtype.grossdracheSonne: 3,
           DragonSubtype.lungLicht: 2,
@@ -797,8 +960,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ein Handelsfest, wo fremde Kulturen aufeinandertreffen',
-        textEn: 'A trade festival where foreign cultures meet',
+        text: {
+          'de': 'Ein Handelsfest, wo fremde Kulturen aufeinandertreffen',
+          'en': 'A trade festival where foreign cultures meet',
+        },
         scores: {
           DragonSubtype.leviathanGezeiten: 3,
           DragonSubtype.leviathanMagma: 3,
@@ -806,8 +971,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ein Kräftemessen voller Wettkämpfe und Spektakel',
-        textEn: 'A tournament full of contests and spectacle',
+        text: {
+          'de': 'Ein Kräftemessen voller Wettkämpfe und Spektakel',
+          'en': 'A tournament full of contests and spectacle',
+        },
         scores: {
           DragonSubtype.grossdracheFeuer: 3,
           DragonSubtype.wyvernSturm: 3,
@@ -816,8 +983,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Eine feierliche Zeremonie voller uralter Magie',
-        textEn: 'A solemn ceremony full of ancient magic',
+        text: {
+          'de': 'Eine feierliche Zeremonie voller uralter Magie',
+          'en': 'A solemn ceremony full of ancient magic',
+        },
         scores: {
           DragonSubtype.seraphAether: 3,
           DragonSubtype.grossdracheSonne: 2,
@@ -829,12 +998,16 @@ const List<QuizQuestion> quizQuestions = [
   ),
 
   QuizQuestion(
-    textDe: 'Wie stehst du zu Regeln und Gemeinschaft?',
-    textEn: 'How do you feel about rules and community?',
+    text: {
+      'de': 'Wie stehst du zu Regeln und Gemeinschaft?',
+      'en': 'How do you feel about rules and community?',
+    },
     answers: [
       QuizAnswer(
-        textDe: 'Regeln bremsen mich — ich folge meiner Natur',
-        textEn: 'Rules hold me back — I follow my own nature',
+        text: {
+          'de': 'Regeln bremsen mich — ich folge meiner Natur',
+          'en': 'Rules hold me back — I follow my own nature',
+        },
         scores: {
           DragonSubtype.leviathanMagma: 3,
           DragonSubtype.grossdracheFeuer: 2,
@@ -843,8 +1016,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich lebe gern nach gemeinsamen Werten',
-        textEn: 'I am happy living by shared values',
+        text: {
+          'de': 'Ich lebe gern nach gemeinsamen Werten',
+          'en': 'I am happy living by shared values',
+        },
         scores: {
           DragonSubtype.grossdracheKristall: 3,
           DragonSubtype.faeStadt: 3,
@@ -852,8 +1027,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Beides hat seinen Platz — ich passe mich an',
-        textEn: 'Both have their place — I adapt',
+        text: {
+          'de': 'Beides hat seinen Platz — ich passe mich an',
+          'en': 'Both have their place — I adapt',
+        },
         scores: {
           DragonSubtype.grossdracheSonne: 2,
           DragonSubtype.grossdracheErde: 2,
@@ -862,8 +1039,10 @@ const List<QuizQuestion> quizQuestions = [
         },
       ),
       QuizAnswer(
-        textDe: 'Ich folge keiner Seite — nur meinen eigenen Regeln',
-        textEn: 'I follow neither side — only my own rules',
+        text: {
+          'de': 'Ich folge keiner Seite — nur meinen eigenen Regeln',
+          'en': 'I follow neither side — only my own rules',
+        },
         scores: {
           DragonSubtype.faeWald: 3,
           DragonSubtype.amphithereTraum: 2,

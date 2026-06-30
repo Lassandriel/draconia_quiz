@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import '../generated/app_localizations.dart';
 
+import '../data/localized_text.dart';
 import '../data/results.dart';
 import '../models/dragon_type.dart';
 import '../services/audio_service.dart';
@@ -46,7 +47,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [AppColors.background, AppColors.backgroundGradientEnd],
+                    colors: [
+                      AppColors.background,
+                      AppColors.backgroundGradientEnd,
+                    ],
                   ),
                 ),
               ),
@@ -84,8 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Text(
                         l10n.tagline,
                         style: theme.textTheme.bodyLarge?.copyWith(
-                          color: AppColors.onBackground
-                              .withValues(alpha: 0.8),
+                          color: AppColors.onBackground.withValues(alpha: 0.8),
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -139,8 +142,8 @@ class _LastResultBadge extends StatelessWidget {
     if (result == null) return const SizedBox.shrink();
 
     final l10n = AppLocalizations.of(context)!;
-    final isDE = Localizations.localeOf(context).languageCode == 'de';
-    final name = isDE ? result.nameDe : result.nameEn;
+    final locale = Localizations.localeOf(context);
+    final name = result.name.resolve(locale);
 
     return Semantics(
       button: true,
@@ -196,4 +199,3 @@ class _IconBtn extends StatelessWidget {
     );
   }
 }
-
