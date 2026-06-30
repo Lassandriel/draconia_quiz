@@ -1,6 +1,16 @@
 import 'package:flutter/widgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+/// Alle von der App unterstützten Sprachen, in Anzeige-Reihenfolge.
+/// Einzige Quelle der Wahrheit – `main.dart` (supportedLocales) und der
+/// Einstellungs-Screen leiten sich hieraus ab. Neue Sprache = hier eintragen,
+/// passende `app_<code>.arb` anlegen und die Inhalts-Maps füllen.
+const List<Locale> kSupportedLocales = [
+  Locale('de'),
+  Locale('en'),
+  Locale('es'),
+];
+
 class SettingsService {
   SettingsService._();
   static final SettingsService instance = SettingsService._();
@@ -29,12 +39,18 @@ class SettingsService {
     _lastResult = _prefs.getString('last_result');
 
     final saved = _prefs.getString('language');
-    if (saved != null) {
+    final supported =
+        saved != null && kSupportedLocales.any((l) => l.languageCode == saved);
+    if (supported) {
       _locale = Locale(saved);
     } else {
+      // Systemsprache übernehmen, falls unterstützt – sonst Englisch.
       final systemLang =
           WidgetsBinding.instance.platformDispatcher.locale.languageCode;
-      _locale = systemLang == 'de' ? const Locale('de') : const Locale('en');
+      final matched = kSupportedLocales.any(
+        (l) => l.languageCode == systemLang,
+      );
+      _locale = matched ? Locale(systemLang) : const Locale('en');
       await _prefs.setString('language', _locale.languageCode);
     }
   }

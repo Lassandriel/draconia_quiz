@@ -12,6 +12,14 @@ import '../theme/app_colors.dart';
 // Ziel des „Bug melden"-Buttons: direkt das Formular für ein neues Issue.
 const _bugReportUrl = 'https://github.com/Lassandriel/draconia_quiz/issues/new';
 
+// Sprachen in der Auswahl, jeweils im Eigennamen. Reihenfolge wie
+// kSupportedLocales. Neue Sprache hier mit ihrem Eigennamen ergänzen.
+const _languageOptions = <({String code, String label})>[
+  (code: 'de', label: 'Deutsch'),
+  (code: 'en', label: 'English'),
+  (code: 'es', label: 'Español'),
+];
+
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
 
@@ -88,25 +96,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
           _SectionHeader(l10n.languageSection),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-            child: Row(
+            child: Wrap(
+              spacing: 12,
+              runSpacing: 12,
               children: [
-                _LangChip(
-                  label: 'Deutsch',
-                  selected: locale.languageCode == 'de',
-                  onTap: () {
-                    DraconiaApp.setLocale(context, const Locale('de'));
-                    setState(() {});
-                  },
-                ),
-                const SizedBox(width: 12),
-                _LangChip(
-                  label: 'English',
-                  selected: locale.languageCode == 'en',
-                  onTap: () {
-                    DraconiaApp.setLocale(context, const Locale('en'));
-                    setState(() {});
-                  },
-                ),
+                for (final lang in _languageOptions)
+                  _LangChip(
+                    label: lang.label,
+                    selected: locale.languageCode == lang.code,
+                    onTap: () {
+                      DraconiaApp.setLocale(context, Locale(lang.code));
+                      setState(() {});
+                    },
+                  ),
               ],
             ),
           ),

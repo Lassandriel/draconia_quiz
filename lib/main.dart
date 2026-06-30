@@ -41,8 +41,8 @@ class DraconiaApp extends StatefulWidget {
   const DraconiaApp({super.key});
 
   static void setLocale(BuildContext context, Locale locale) {
-    _DraconiaAppState? state =
-        context.findAncestorStateOfType<_DraconiaAppState>();
+    _DraconiaAppState? state = context
+        .findAncestorStateOfType<_DraconiaAppState>();
     state?.setLocale(locale);
   }
 
@@ -50,8 +50,7 @@ class DraconiaApp extends StatefulWidget {
   State<DraconiaApp> createState() => _DraconiaAppState();
 }
 
-class _DraconiaAppState extends State<DraconiaApp>
-    with WidgetsBindingObserver {
+class _DraconiaAppState extends State<DraconiaApp> with WidgetsBindingObserver {
   Locale _locale = SettingsService.instance.locale;
 
   @override
@@ -90,7 +89,7 @@ class _DraconiaAppState extends State<DraconiaApp>
     return MaterialApp.router(
       title: 'Draconia Quiz',
       locale: _locale,
-      supportedLocales: const [Locale('de'), Locale('en')],
+      supportedLocales: kSupportedLocales,
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
