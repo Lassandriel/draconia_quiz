@@ -19,6 +19,7 @@ const _languageOptions = <({String code, String label})>[
   (code: 'en', label: 'English'),
   (code: 'es', label: 'Español'),
   (code: 'fr', label: 'Français'),
+  (code: 'ja', label: '日本語'),
   (code: 'pt', label: 'Português'),
   (code: 'ru', label: 'Русский'),
 ];

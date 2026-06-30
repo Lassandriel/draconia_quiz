@@ -25,6 +25,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Großdrache',
       'en': 'Great Dragon',
+      'ja': 'グレートドラゴン',
       'ru': 'Великий дракон',
       'pt': 'Grande Dragão',
       'fr': 'Grand Dragon',
@@ -33,6 +34,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Sonnendrache',
       'en': 'Sun Dragon',
+      'ja': '太陽の竜',
       'ru': 'Солнечный дракон',
       'pt': 'Dragão do Sol',
       'fr': 'Dragon du Soleil',
@@ -41,6 +43,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Licht',
       'en': 'Light',
+      'ja': '光',
       'ru': 'Свет',
       'pt': 'Luz',
       'fr': 'Lumière',
@@ -51,6 +54,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Du bist einer der seltensten Großdrachen überhaupt — ein Sonnendrache. Deine goldenen und roten Schuppen brechen das Licht wie ein Prisma. Du bist gütig, charismatisch und strahlst eine Wärme aus, die andere anzieht. Konflikte löst du mit Diplomatie, nicht mit Gewalt. Deine Größte Stärke: Du bringst Licht auch in die dunkelsten Momente.',
       'en':
           'You are one of the rarest Great Dragons — a Sun Dragon. Your golden and red scales break light like a prism. You are kind, charismatic, and radiate a warmth that draws others to you. You resolve conflicts with diplomacy, not force. Your greatest strength: you bring light even into the darkest moments.',
+      'ja':
+          'あなたは存在するなかでも特に稀少なグレートドラゴンのひとつ — 太陽の竜だ。金と赤の鱗はプリズムのように光を分かつ。優しく、カリスマにあふれ、人を惹きつける温かさを放っている。争いは力ではなく対話で解決する。あなたの最大の強み — 最も暗い瞬間にさえ光をもたらすこと。',
       'ru':
           'Ты — один из редчайших Великих драконов: Солнечный дракон. Твоя золотая и красная чешуя преломляет свет, словно призма. Ты добр, харизматичен и излучаешь тепло, что притягивает других. Конфликты ты решаешь дипломатией, а не силой. Твоя величайшая сила: ты несёшь свет даже в самые тёмные мгновения.',
       'pt':
@@ -63,6 +68,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Sehr selten',
       'en': 'Very rare',
+      'ja': '非常に稀少',
       'ru': 'Очень редкий',
       'pt': 'Muito raro',
       'fr': 'Très rare',
@@ -75,6 +81,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Großdrache',
       'en': 'Great Dragon',
+      'ja': 'グレートドラゴン',
       'ru': 'Великий дракон',
       'pt': 'Grande Dragão',
       'fr': 'Grand Dragon',
@@ -83,6 +90,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Erddrache',
       'en': 'Earth Dragon',
+      'ja': '大地の竜',
       'ru': 'Земляной дракон',
       'pt': 'Dragão da Terra',
       'fr': 'Dragon de la Terre',
@@ -91,6 +99,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Erde',
       'en': 'Earth',
+      'ja': '地',
       'ru': 'Земля',
       'pt': 'Terra',
       'fr': 'Terre',
@@ -101,6 +110,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Deine panzerartigen Schuppen in tiefen Braun- und Grautönen wirken wie lebendiger Stein. Du bist der Fels in der Brandung — diszipliniert, taktisch und unerschütterlich. Deine Familie und deine Gemeinschaft sind dir heilig. Du planst vor dem Handeln und deine Entschlossenheit macht dich zu einem natürlichen Beschützer.',
       'en':
           'Your armor-like scales in deep brown and gray tones look like living stone. You are the rock in the storm — disciplined, tactical, and unshakeable. Your family and community are sacred to you. You plan before acting, and your resolve makes you a natural protector.',
+      'ja':
+          '深い茶と灰の色合いの、鎧のような鱗は、まるで生きた岩のよう。あなたは嵐の中の岩 — 規律正しく、戦略的で、揺るがない。家族と仲間はあなたにとって神聖なもの。動く前に計画を練り、その決意があなたを生まれながらの守護者にしている。',
       'ru':
           'Твоя похожая на броню чешуя в глубоких коричневых и серых тонах выглядит как живой камень. Ты — скала среди бури: дисциплинированный, тактичный и непоколебимый. Твоя семья и сообщество для тебя священны. Ты обдумываешь, прежде чем действовать, и твоя решимость делает тебя прирождённым защитником.',
       'pt':
@@ -113,6 +124,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Häufig',
       'en': 'Common',
+      'ja': '一般的',
       'ru': 'Обычный',
       'pt': 'Comum',
       'fr': 'Commun',
@@ -125,6 +137,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Großdrache',
       'en': 'Great Dragon',
+      'ja': 'グレートドラゴン',
       'ru': 'Великий дракон',
       'pt': 'Grande Dragão',
       'fr': 'Grand Dragon',
@@ -133,6 +146,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Gezeiten- & Traumdrache',
       'en': 'Tide & Dream Dragon',
+      'ja': '潮と夢の竜',
       'ru': 'Дракон приливов и снов',
       'pt': 'Dragão das Marés e dos Sonhos',
       'fr': 'Dragon des Marées et des Rêves',
@@ -141,6 +155,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Gezeiten & Traum',
       'en': 'Tides & Dream',
+      'ja': '潮と夢',
       'ru': 'Приливы и Сон',
       'pt': 'Marés e Sonho',
       'fr': 'Marées et Rêve',
@@ -151,6 +166,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Deine Schuppen schimmern in Blau und Lila, deine Flügel wirken wie aus Nebel geformt. Du besitzt eine Tiefe, die andere kaum ahnen. Träume und Geheimnisse sind dein Element — du spürst, was andere fühlen, bevor sie es selbst wissen. Weise, ruhig und mit einem Sinn für das Unsichtbare bist du eine Brücke zwischen zwei Welten.',
       'en':
           'Your scales shimmer in blue and purple, your wings seem formed from mist. You possess a depth others rarely suspect. Dreams and secrets are your element — you sense what others feel before they know it themselves. Wise, calm, and attuned to the invisible, you are a bridge between two worlds.',
+      'ja':
+          '鱗は青と紫にきらめき、翼は霧から形づくられたかのよう。あなたには、他の者がほとんど気づかない深さがある。夢と秘密はあなたの領分 — 他者が自覚するより先に、その気持ちを感じ取る。賢く、穏やかで、目に見えぬものと調和したあなたは、二つの世界を結ぶ架け橋だ。',
       'ru':
           'Твоя чешуя мерцает синим и фиолетовым, а крылья будто сотканы из тумана. В тебе есть глубина, о которой мало кто догадывается. Сны и тайны — твоя стихия: ты чувствуешь то, что ощущают другие, прежде чем они сами это осознают. Мудрый, спокойный и созвучный незримому, ты — мост между двумя мирами.',
       'pt':
@@ -163,6 +180,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Selten',
       'en': 'Rare',
+      'ja': '稀少',
       'ru': 'Редкий',
       'pt': 'Raro',
       'fr': 'Rare',
@@ -175,6 +193,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Großdrache',
       'en': 'Great Dragon',
+      'ja': 'グレートドラゴン',
       'ru': 'Великий дракон',
       'pt': 'Grande Dragão',
       'fr': 'Grand Dragon',
@@ -183,6 +202,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Wind- & Luftdrache',
       'en': 'Wind & Air Dragon',
+      'ja': '風と大気の竜',
       'ru': 'Дракон ветра и воздуха',
       'pt': 'Dragão do Vento e do Ar',
       'fr': 'Dragon du Vent et de l\'Air',
@@ -191,6 +211,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Wind & Luft',
       'en': 'Wind & Air',
+      'ja': '風と大気',
       'ru': 'Ветер и Воздух',
       'pt': 'Vento e Ar',
       'fr': 'Vent et Air',
@@ -201,6 +222,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Deine leichte Knochenstruktur und aerodynamisch geformten Hörner sind für Geschwindigkeit gemacht. Du bist frei, impulsiv und liebst es, die Grenzen auszuloten. Kein Ort hält dich lange — du bist immer auf der Suche nach dem nächsten Horizont. Dein Lachen ist ansteckend und deine Energie grenzenlos.',
       'en':
           'Your light bone structure and aerodynamically shaped horns are made for speed. You are free, impulsive, and love pushing limits. No place holds you for long — you are always searching for the next horizon. Your laughter is contagious and your energy boundless.',
+      'ja':
+          '軽い骨格と、空力を意識した形の角は、速さのために生まれた。自由で衝動的、限界を試すのが大好きだ。どんな場所もあなたを長くは留めない — いつも次の地平を探している。あなたの笑いは伝染し、エネルギーは尽きることがない。',
       'ru':
           'Твоя лёгкая костная структура и аэродинамичные рога созданы для скорости. Ты свободен, импульсивен и любишь испытывать пределы. Ни одно место не удерживает тебя надолго — ты всегда в поисках нового горизонта. Твой смех заразителен, а энергия безгранична.',
       'pt':
@@ -213,6 +236,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Häufig',
       'en': 'Common',
+      'ja': '一般的',
       'ru': 'Обычный',
       'pt': 'Comum',
       'fr': 'Commun',
@@ -225,6 +249,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Großdrache',
       'en': 'Great Dragon',
+      'ja': 'グレートドラゴン',
       'ru': 'Великий дракон',
       'pt': 'Grande Dragão',
       'fr': 'Grand Dragon',
@@ -233,6 +258,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Kristalldrache',
       'en': 'Crystal Dragon',
+      'ja': '結晶の竜',
       'ru': 'Кристальный дракон',
       'pt': 'Dragão de Cristal',
       'fr': 'Dragon de Cristal',
@@ -241,6 +267,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Kristall',
       'en': 'Crystal',
+      'ja': '結晶',
       'ru': 'Кристалл',
       'pt': 'Cristal',
       'fr': 'Cristal',
@@ -251,6 +278,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Deine Schuppen bestehen aus organischen Edelsteinen — sie brechen das Licht und sind extrem hart. Du bist großzügig, weise und besitzt einen Sinn für Schönheit und Ordnung. Die Dinge, die du erschaffst, halten Generationen. Dein Zuhause ist prächtig, dein Geist klar wie ein geschliffener Diamant.',
       'en':
           'Your scales are made of organic gemstones — they refract light and are extremely hard. You are generous, wise, and have a sense of beauty and order. The things you create last for generations. Your home is magnificent, your mind clear as a cut diamond.',
+      'ja':
+          '鱗は生きた宝石でできていて — 光を屈折させ、極めて硬い。寛大で賢く、美と秩序の感覚を備えている。あなたが創るものは何世代も残る。住まいは壮麗で、心は磨かれたダイヤモンドのように澄んでいる。',
       'ru':
           'Твоя чешуя состоит из живых самоцветов — она преломляет свет и невероятно прочна. Ты щедр, мудр и обладаешь чувством красоты и порядка. То, что ты создаёшь, живёт поколениями. Твой дом великолепен, а разум ясен, как огранённый алмаз.',
       'pt':
@@ -263,6 +292,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Selten',
       'en': 'Rare',
+      'ja': '稀少',
       'ru': 'Редкий',
       'pt': 'Raro',
       'fr': 'Rare',
@@ -275,6 +305,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Großdrache',
       'en': 'Great Dragon',
+      'ja': 'グレートドラゴン',
       'ru': 'Великий дракон',
       'pt': 'Grande Dragão',
       'fr': 'Grand Dragon',
@@ -283,6 +314,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Feuerdrache',
       'en': 'Fire Dragon',
+      'ja': '炎の竜',
       'ru': 'Огненный дракон',
       'pt': 'Dragão de Fogo',
       'fr': 'Dragon de Feu',
@@ -291,6 +323,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Feuer',
       'en': 'Fire',
+      'ja': '炎',
       'ru': 'Огонь',
       'pt': 'Fogo',
       'fr': 'Feu',
@@ -301,6 +334,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Deine roten Schuppen glühen wie Kohlen. Du bist leidenschaftlich, direkt und brennst für das, woran du glaubst. Manchmal zu impulsiv, immer authentisch — du versteckst dich nie hinter Masken. Dein Feuer wärmt die, die dir nahestehen, und schützt sie vor allem, was ihnen schadet.',
       'en':
           'Your red scales glow like embers. You are passionate, direct, and burn for what you believe in. Sometimes too impulsive, always authentic — you never hide behind masks. Your fire warms those close to you and protects them from everything that might harm them.',
+      'ja':
+          '赤い鱗は熾火のように輝く。情熱的でまっすぐ、信じるもののために燃える。時に衝動的すぎるが、いつも本物 — 仮面の陰に隠れることはない。あなたの炎は近しい者を温め、害を及ぼすものから守る。',
       'ru':
           'Твоя красная чешуя пылает, как угли. Ты страстен, прям и горишь за то, во что веришь. Порой слишком импульсивный, всегда искренний — ты никогда не прячешься за масками. Твой огонь согревает близких и защищает их от всего, что может навредить.',
       'pt':
@@ -313,6 +348,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Häufig',
       'en': 'Common',
+      'ja': '一般的',
       'ru': 'Обычный',
       'pt': 'Comum',
       'fr': 'Commun',
@@ -325,6 +361,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Lung-Drache',
       'en': 'Lung Dragon',
+      'ja': 'ルンドラゴン',
       'ru': 'Дракон Лун',
       'pt': 'Dragão Lung',
       'fr': 'Dragon Lung',
@@ -333,6 +370,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Feuer-Lung',
       'en': 'Fire Lung',
+      'ja': '炎のルン',
       'ru': 'Огненный Лун',
       'pt': 'Lung de Fogo',
       'fr': 'Lung de Feu',
@@ -341,6 +379,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Feuer',
       'en': 'Fire',
+      'ja': '炎',
       'ru': 'Огонь',
       'pt': 'Fogo',
       'fr': 'Feu',
@@ -351,6 +390,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Flügellos, schlangenartig, schwebend durch reine Magie — du bist ein Lung-Drache. Deine langen Bartfäden und deine Mähne entlang der Wirbelsäule machen dich unverwechselbar. Als Feuer-Lung bist du streng und mächtig, aber tief im Inneren liegt eine Wärme, die du nur deinen Liebsten zeigst. Lung-Drachen sind extrem selten.',
       'en':
           'Wingless, serpentine, hovering through pure magic — you are a Lung Dragon. Your long whiskers and mane along your spine make you unmistakable. As a Fire Lung, you are stern and powerful, but deep inside lies a warmth you only show to your closest. Lung Dragons are extremely rare.',
+      'ja':
+          '翼を持たず、蛇のようにしなやかで、純粋な魔力で宙を漂う — あなたはルンドラゴンだ。長いひげと背筋に沿ったたてがみが、あなたを他の誰とも見分けがつかなくしている。炎のルンとして厳しく力強いが、奥底には、最も近しい者にしか見せない温かさが宿っている。ルンドラゴンは極めて稀少だ。',
       'ru':
           'Бескрылый, змееподобный, парящий благодаря чистой магии — ты Дракон Лун. Твои длинные усы и грива вдоль хребта делают тебя ни с кем не спутать. Как Огненный Лун, ты суров и могуществен, но в глубине таится тепло, которое ты показываешь лишь самым близким. Драконы Лун чрезвычайно редки.',
       'pt':
@@ -363,6 +404,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Sehr selten',
       'en': 'Very rare',
+      'ja': '非常に稀少',
       'ru': 'Очень редкий',
       'pt': 'Muito raro',
       'fr': 'Très rare',
@@ -375,6 +417,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Lung-Drache',
       'en': 'Lung Dragon',
+      'ja': 'ルンドラゴン',
       'ru': 'Дракон Лун',
       'pt': 'Dragão Lung',
       'fr': 'Dragon Lung',
@@ -383,6 +426,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Licht-Lung',
       'en': 'Light Lung',
+      'ja': '光のルン',
       'ru': 'Световой Лун',
       'pt': 'Lung de Luz',
       'fr': 'Lung de Lumière',
@@ -391,6 +435,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Licht',
       'en': 'Light',
+      'ja': '光',
       'ru': 'Свет',
       'pt': 'Luz',
       'fr': 'Lumière',
@@ -401,6 +446,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Ein goldener, flügelloser Drache, der durch die Luft schwebt wie durch Wasser. Dein Licht ist nicht aggressiv — es ist rein, heilend, hoffnungsvoll. Du hast eine natürliche Verbindung zu anderen Lebewesen und deine Präsenz allein kann eine verdunkelte Stimmung erhellen. Du bist selten — und kostbar.',
       'en':
           'A golden, wingless dragon that glides through the air like water. Your light is not aggressive — it is pure, healing, hopeful. You have a natural connection to other living beings, and your presence alone can brighten a darkened mood. You are rare — and precious.',
+      'ja':
+          '水の中を進むように空を滑る、金色の翼なき竜。あなたの光は攻撃的ではなく — 純粋で、癒しに満ち、希望に満ちている。他の生き物との自然なつながりを持ち、ただそこにいるだけで、沈んだ気分を明るく照らせる。あなたは稀少で — そして貴い。',
       'ru':
           'Золотой бескрылый дракон, скользящий по воздуху, как по воде. Твой свет не агрессивен — он чист, целителен, полон надежды. У тебя природная связь с другими живыми существами, и одно твоё присутствие способно озарить помрачневшее настроение. Ты редок — и драгоценен.',
       'pt':
@@ -413,6 +460,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Sehr selten',
       'en': 'Very rare',
+      'ja': '非常に稀少',
       'ru': 'Очень редкий',
       'pt': 'Muito raro',
       'fr': 'Très rare',
@@ -425,6 +473,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Lung-Drache',
       'en': 'Lung Dragon',
+      'ja': 'ルンドラゴン',
       'ru': 'Дракон Лун',
       'pt': 'Dragão Lung',
       'fr': 'Dragon Lung',
@@ -433,6 +482,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Feuer- & Licht-Lung',
       'en': 'Fire & Light Lung',
+      'ja': '炎と光のルン',
       'ru': 'Лун огня и света',
       'pt': 'Lung de Fogo e Luz',
       'fr': 'Lung de Feu et de Lumière',
@@ -441,6 +491,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Feuer & Licht',
       'en': 'Fire & Light',
+      'ja': '炎と光',
       'ru': 'Огонь и Свет',
       'pt': 'Fogo e Luz',
       'fr': 'Feu et Lumière',
@@ -451,6 +502,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Du trägst zwei Elemente in dir — Feuer und Licht. Das macht dich zu einem der mächtigsten und seltensten Wesen Draconias. Du bist mutig bis zur Eigensinnigkeit, neugierig ohne Grenzen, und wenn du handelst, verändert sich die Welt um dich herum. Dein Funke ist ansteckend.',
       'en':
           'You carry two elements within you — fire and light. This makes you one of the most powerful and rarest beings in Draconia. You are brave to the point of stubbornness, endlessly curious, and when you act, the world around you changes. Your spark is contagious.',
+      'ja':
+          'あなたは二つの属性を内に宿している — 炎と光だ。それがあなたをドラコニアでも有数の、最も力強く稀少な存在にしている。頑固なまでに勇敢で、限りなく好奇心旺盛。あなたが動けば、周りの世界が変わる。あなたの火花は伝染する。',
       'ru':
           'Ты несёшь в себе две стихии — огонь и свет. Это делает тебя одним из самых могущественных и редких существ Драконии. Ты храбр до упрямства, бесконечно любопытен, и когда ты действуешь, мир вокруг меняется. Твоя искра заразительна.',
       'pt':
@@ -463,6 +516,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Legendär',
       'en': 'Legendary',
+      'ja': '伝説級',
       'ru': 'Легендарный',
       'pt': 'Lendário',
       'fr': 'Légendaire',
@@ -475,6 +529,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Wyvern',
       'en': 'Wyvern',
+      'ja': 'ワイバーン',
       'ru': 'Виверна',
       'pt': 'Wyvern',
       'fr': 'Wyverne',
@@ -483,6 +538,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Sturm-Wyvern',
       'en': 'Storm Wyvern',
+      'ja': '嵐のワイバーン',
       'ru': 'Грозовая виверна',
       'pt': 'Wyvern da Tempestade',
       'fr': 'Wyverne des Tempêtes',
@@ -491,6 +547,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Sturm & Wind',
       'en': 'Storm & Wind',
+      'ja': '嵐と風',
       'ru': 'Буря и Ветер',
       'pt': 'Tempestade e Vento',
       'fr': 'Tempête et Vent',
@@ -501,6 +558,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Deine sichelförmigen Flügel schneiden durch die Luft wie Klingen. Kein anderes Lebewesen ist in der Luft schneller als du. Du lebst für den Moment, für den Nervenkitzel, für die Wildheit des Sturms. Wyvern haben keine Vorderbeine — ihre Flügel sind ihre Arme, und du weißt genau, wie du sie einsetzt.',
       'en':
           'Your sickle-shaped wings cut through the air like blades. No other creature is faster in the sky than you. You live for the moment, for the thrill, for the wildness of the storm. Wyverns have no forelegs — their wings are their arms, and you know exactly how to use them.',
+      'ja':
+          '鎌のような翼が、刃のごとく空を切り裂く。空ではあなたより速い生き物はいない。瞬間のため、スリルのため、嵐の荒々しさのために生きる。ワイバーンに前脚はない — 翼こそがその腕であり、あなたはその使い方を熟知している。',
       'ru':
           'Твои серповидные крылья рассекают воздух, словно клинки. Ни одно существо не быстрее тебя в небе. Ты живёшь ради мгновения, ради азарта, ради ярости бури. У виверн нет передних лап — их крылья и есть их руки, и ты точно знаешь, как ими пользоваться.',
       'pt':
@@ -513,6 +572,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Selten',
       'en': 'Rare',
+      'ja': '稀少',
       'ru': 'Редкий',
       'pt': 'Raro',
       'fr': 'Rare',
@@ -525,6 +585,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Wyvern',
       'en': 'Wyvern',
+      'ja': 'ワイバーン',
       'ru': 'Виверна',
       'pt': 'Wyvern',
       'fr': 'Wyverne',
@@ -533,6 +594,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Frost-Wyvern',
       'en': 'Frost Wyvern',
+      'ja': '霜のワイバーン',
       'ru': 'Морозная виверна',
       'pt': 'Wyvern da Geada',
       'fr': 'Wyverne du Givre',
@@ -541,6 +603,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Frost & Eis',
       'en': 'Frost & Ice',
+      'ja': '霜と氷',
       'ru': 'Мороз и Лёд',
       'pt': 'Geada e Gelo',
       'fr': 'Givre et Glace',
@@ -551,6 +614,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Deine Flügelmembran ist dick und kältebeständig, an den Gelenken hängen Eiszapfen. Du bist kalt nach außen, aber nicht nach innen — du testest jeden, der dir nahe kommen will. Wer dein Vertrauen gewinnt, hat einen unerschütterlichen Verbündeten. Du handelst überlegt, präzise, unerbittlich.',
       'en':
           'Your wing membrane is thick and cold-resistant, with icicles at the joints. You are cold on the outside, but not on the inside — you test everyone who wants to get close. Whoever earns your trust has an unshakeable ally. You act deliberately, precisely, relentlessly.',
+      'ja':
+          '翼の膜は厚く寒さに強く、関節にはつららが垂れている。外は冷たくとも、内は違う — 近づこうとする者を必ず試す。あなたの信頼を勝ち得た者は、揺るがぬ味方を得る。あなたは慎重に、的確に、容赦なく動く。',
       'ru':
           'Перепонка твоих крыльев толстая и устойчивая к холоду, на суставах висят сосульки. Снаружи ты холоден, но не внутри — ты испытываешь каждого, кто хочет сблизиться. Тот, кто заслужит твоё доверие, обретёт непоколебимого союзника. Ты действуешь обдуманно, точно, неумолимо.',
       'pt':
@@ -563,6 +628,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Selten',
       'en': 'Rare',
+      'ja': '稀少',
       'ru': 'Редкий',
       'pt': 'Raro',
       'fr': 'Rare',
@@ -575,6 +641,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Lindwurm',
       'en': 'Lindworm',
+      'ja': 'リンドヴルム',
       'ru': 'Линдворм',
       'pt': 'Lindworm',
       'fr': 'Lindworm',
@@ -583,6 +650,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Magma-Lindwurm',
       'en': 'Magma Lindworm',
+      'ja': 'マグマのリンドヴルム',
       'ru': 'Магмовый линдворм',
       'pt': 'Lindworm de Magma',
       'fr': 'Lindworm de Magma',
@@ -591,6 +659,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Magma & Feuer',
       'en': 'Magma & Fire',
+      'ja': 'マグマと炎',
       'ru': 'Магма и Огонь',
       'pt': 'Magma e Fogo',
       'fr': 'Magma et Feu',
@@ -601,6 +670,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Deine Haut ähnelt glühender Lava und du lebst dort, wo anderen der Boden unter den Füßen zu heiß wird. Lindwürmer haben nur zwei Vorderbeine und einen langen, schlangenartigen Körper. Du bist ein Meisterhandwerker — kein anderer taucht tiefer in das Magmameer als du, und kein anderer schmiedet stärkere Waffen.',
       'en':
           'Your skin resembles glowing lava, and you live where the ground gets too hot for others. Lindworms have only two forelegs and a long, serpentine body. You are a master craftsman — no one dives deeper into the magma sea than you, and no one forges stronger weapons.',
+      'ja':
+          '肌は灼熱の溶岩のようで、他の者には熱すぎる場所に住んでいる。リンドヴルムには前脚が二本だけ、そして長い蛇のような体がある。あなたは熟練の職人 — マグマの海にあなたより深く潜る者はなく、これより強い武器を鍛える者もいない。',
       'ru':
           'Твоя кожа похожа на раскалённую лаву, и ты живёшь там, где земля становится слишком горячей для других. У линдвормов лишь две передние лапы и длинное змееподобное тело. Ты мастер своего дела — никто не ныряет глубже в море магмы, чем ты, и никто не куёт оружие крепче.',
       'pt':
@@ -613,6 +684,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Selten',
       'en': 'Rare',
+      'ja': '稀少',
       'ru': 'Редкий',
       'pt': 'Raro',
       'fr': 'Rare',
@@ -625,6 +697,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Lindwurm',
       'en': 'Lindworm',
+      'ja': 'リンドヴルム',
       'ru': 'Линдворм',
       'pt': 'Lindworm',
       'fr': 'Lindworm',
@@ -633,6 +706,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Sumpf-Lindwurm',
       'en': 'Swamp Lindworm',
+      'ja': '沼のリンドヴルム',
       'ru': 'Болотный линдворм',
       'pt': 'Lindworm do Pântano',
       'fr': 'Lindworm des Marais',
@@ -641,6 +715,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Natur & Erde',
       'en': 'Nature & Earth',
+      'ja': '自然と地',
       'ru': 'Природа и Земля',
       'pt': 'Natureza e Terra',
       'fr': 'Nature et Terre',
@@ -651,6 +726,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Deine Schuppen tarnen dich perfekt in jedem Wald, jedem Sumpf, jedem Dickicht. Du wirst unterschätzt — und das ist deine größte Waffe. Anpassungsfähig, geduldig und mit einem tiefen Gespür für das Lebendige bist du dort am stärksten, wo andere nicht hinschauen.',
       'en':
           'Your scales perfectly camouflage you in any forest, swamp, or thicket. You are underestimated — and that is your greatest weapon. Adaptable, patient, and with a deep sense for the living world, you are strongest where others are not looking.',
+      'ja':
+          '鱗はどんな森でも、沼でも、茂みでも、あなたを完璧に隠す。あなたは過小評価される — そしてそれこそが最大の武器だ。柔軟で忍耐強く、生命への深い感覚を持つあなたは、誰も見ていない場所で最も強い。',
       'ru':
           'Твоя чешуя идеально маскирует тебя в любом лесу, болоте или чаще. Тебя недооценивают — и это твоё самое сильное оружие. Гибкий, терпеливый и с глубоким чутьём ко всему живому, ты сильнее всего там, где никто не смотрит.',
       'pt':
@@ -663,6 +740,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Selten',
       'en': 'Rare',
+      'ja': '稀少',
       'ru': 'Редкий',
       'pt': 'Raro',
       'fr': 'Rare',
@@ -675,6 +753,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Amphithere',
       'en': 'Amphithere',
+      'ja': 'アンフィプテレ',
       'ru': 'Амфиптер',
       'pt': 'Anfítero',
       'fr': 'Amphiptère',
@@ -683,6 +762,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Traum-Amphithere',
       'en': 'Dream Amphithere',
+      'ja': '夢のアンフィプテレ',
       'ru': 'Амфиптер снов',
       'pt': 'Anfítero dos Sonhos',
       'fr': 'Amphiptère des Rêves',
@@ -691,6 +771,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Traum & Nebel',
       'en': 'Dream & Mist',
+      'ja': '夢と霧',
       'ru': 'Сон и Туман',
       'pt': 'Sonho e Névoa',
       'fr': 'Rêve et Brume',
@@ -701,6 +782,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Keine Beine — nur ein schlangenartiger Körper und mächtige Federschwingen. Dein Flügelschlag erzeugt Nebel, der Illusionen und Träume hervorruft. Du bist ein Wandler zwischen den Welten — real und unwirklich zugleich. Andere wissen nie ganz, was sie von dir zu erwarten haben, und genau das macht dich faszinierend.',
       'en':
           'No legs — just a serpentine body and magnificent feathered wings. Your wingbeat creates mist that conjures illusions and dreams. You are a walker between worlds — real and unreal at once. Others never quite know what to expect from you, and that is exactly what makes you fascinating.',
+      'ja':
+          '脚はなく — 蛇のような体と、見事な羽根の翼だけ。あなたの羽ばたきは、幻と夢を呼び起こす霧を生み出す。あなたは世界のあわいを歩む者 — 現実でありながら非現実でもある。他の者はあなたから何が来るのか決して読みきれず、それこそがあなたを魅力的にしている。',
       'ru':
           'Без лап — лишь змееподобное тело и великолепные оперённые крылья. Взмах твоих крыльев создаёт туман, что рождает иллюзии и сны. Ты странник меж мирами — реальный и нереальный одновременно. Другие никогда не знают, чего от тебя ждать, и именно это делает тебя завораживающим.',
       'pt':
@@ -713,6 +796,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Sehr selten',
       'en': 'Very rare',
+      'ja': '非常に稀少',
       'ru': 'Очень редкий',
       'pt': 'Muito raro',
       'fr': 'Très rare',
@@ -725,6 +809,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Amphithere',
       'en': 'Amphithere',
+      'ja': 'アンフィプテレ',
       'ru': 'Амфиптер',
       'pt': 'Anfítero',
       'fr': 'Amphiptère',
@@ -733,6 +818,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Sonnen-Amphithere',
       'en': 'Sun Amphithere',
+      'ja': '太陽のアンフィプテレ',
       'ru': 'Солнечный амфиптер',
       'pt': 'Anfítero do Sol',
       'fr': 'Amphiptère du Soleil',
@@ -741,6 +827,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Licht & Feuer',
       'en': 'Light & Fire',
+      'ja': '光と炎',
       'ru': 'Свет и Огонь',
       'pt': 'Luz e Fogo',
       'fr': 'Lumière et Feu',
@@ -751,6 +838,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Deine Federn glühen in goldenem Licht. Bei Gefahr kannst du eine blendende Lichtexplosion auslösen. Du bist warm, charismatisch und strahlend — aber unterschätze deine Stärke nicht. Hinter der Eleganz steckt eine Kraft, die selbst ausgewachsene Großdrachen zur Vorsicht mahnt.',
       'en':
           'Your feathers glow in golden light. In danger, you can unleash a blinding light explosion. You are warm, charismatic, and radiant — but do not underestimate your strength. Behind the elegance is a power that even grown Great Dragons treat with caution.',
+      'ja':
+          '羽根は黄金の光を放つ。危機に際しては、目もくらむ光の爆発を放てる。温かく、カリスマにあふれ、輝いている — だがその力を侮ってはいけない。優雅さの奥には、成熟したグレートドラゴンさえ慎重にさせる力が潜んでいる。',
       'ru':
           'Твои перья сияют золотым светом. В опасности ты можешь обрушить ослепительную вспышку света. Ты тёплый, харизматичный и сияющий — но не недооценивай свою силу. За изяществом скрывается мощь, с которой считаются даже взрослые Великие драконы.',
       'pt':
@@ -763,6 +852,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Sehr selten',
       'en': 'Very rare',
+      'ja': '非常に稀少',
       'ru': 'Очень редкий',
       'pt': 'Muito raro',
       'fr': 'Très rare',
@@ -775,6 +865,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Leviathan',
       'en': 'Leviathan',
+      'ja': 'リヴァイアサン',
       'ru': 'Левиафан',
       'pt': 'Leviatã',
       'fr': 'Léviathan',
@@ -783,6 +874,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Gezeiten-Leviathan',
       'en': 'Tide Leviathan',
+      'ja': '潮のリヴァイアサン',
       'ru': 'Левиафан приливов',
       'pt': 'Leviatã das Marés',
       'fr': 'Léviathan des Marées',
@@ -791,6 +883,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Wasser & Gezeiten',
       'en': 'Water & Tides',
+      'ja': '水と潮',
       'ru': 'Вода и Приливы',
       'pt': 'Água e Marés',
       'fr': 'Eau et Marées',
@@ -801,6 +894,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Du beherrschst die Wasserinseln und Wasserwege Draconias. Deine gewaltigen Schwingen funktionieren unter Wasser wie die Flossen eines Mantarochens, und du besitzt feine Kiemenschlitze. Du bist ein Architekt und Navigator — du formst die Welt um dich herum, während andere einfach durch sie hindurchschwimmen.',
       'en':
           'You rule the water islands and waterways of Draconia. Your enormous wings function underwater like manta ray fins, and you possess fine gill slits. You are an architect and navigator — you shape the world around you while others simply swim through it.',
+      'ja':
+          'あなたはドラコニアの水の島々と水路を治めている。巨大な翼は水中でマンタの鰭のように働き、繊細なえらの裂け目も備えている。あなたは建築家であり航海者 — 他の者がただ泳ぎ抜けるだけの世界を、あなたは形づくっていく。',
       'ru':
           'Ты властвуешь над водными островами и водными путями Драконии. Твои огромные крылья работают под водой, как плавники манты, а ещё у тебя есть тонкие жаберные щели. Ты зодчий и навигатор — ты формируешь мир вокруг себя, пока другие просто плывут сквозь него.',
       'pt':
@@ -813,6 +908,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Selten',
       'en': 'Rare',
+      'ja': '稀少',
       'ru': 'Редкий',
       'pt': 'Raro',
       'fr': 'Rare',
@@ -825,6 +921,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Leviathan',
       'en': 'Leviathan',
+      'ja': 'リヴァイアサン',
       'ru': 'Левиафан',
       'pt': 'Leviatã',
       'fr': 'Léviathan',
@@ -833,6 +930,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Magma-Leviathan',
       'en': 'Magma Leviathan',
+      'ja': 'マグマのリヴァイアサン',
       'ru': 'Магмовый левиафан',
       'pt': 'Leviatã de Magma',
       'fr': 'Léviathan de Magma',
@@ -841,6 +939,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Magma & Feuer',
       'en': 'Magma & Fire',
+      'ja': 'マグマと炎',
       'ru': 'Магма и Огонь',
       'pt': 'Magma e Fogo',
       'fr': 'Magma et Feu',
@@ -851,6 +950,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Du lebst auf den untersten, heißesten Inseln über dem Lavameer — ein Ort, den andere meiden. Deine massiven, obsidianartigen Schuppen sind Panzerung und Identität zugleich. Du bist Draconias unangefochtener Meisterschmied. Deine Arbeit hält ewig. Du selbst auch fast.',
       'en':
           'You live on the lowest, hottest islands above the lava sea — a place others avoid. Your massive, obsidian-like scales are both armor and identity. You are Draconia\'s undisputed master smith. Your work lasts forever. So do you, almost.',
+      'ja':
+          'あなたは溶岩の海の上、最も低く最も熱い島々に住んでいる — 他の者が避ける場所だ。黒曜石のような巨大な鱗は、鎧であると同時にあなた自身そのもの。あなたはドラコニア随一の鍛冶の名匠。その作品は永遠に残る。あなた自身も — ほとんど永遠に。',
       'ru':
           'Ты живёшь на самых нижних и жарких островах над морем лавы — там, где другие не бывают. Твоя массивная, словно обсидиановая, чешуя — это и броня, и сама твоя суть. Ты бесспорный мастер-кузнец Драконии. Твои творения служат вечно. Ты сам — почти тоже.',
       'pt':
@@ -863,6 +964,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Selten',
       'en': 'Rare',
+      'ja': '稀少',
       'ru': 'Редкий',
       'pt': 'Raro',
       'fr': 'Rare',
@@ -875,6 +977,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Seraph-Drache',
       'en': 'Seraph Dragon',
+      'ja': 'セラフドラゴン',
       'ru': 'Дракон-серафим',
       'pt': 'Dragão Serafim',
       'fr': 'Dragon Séraphin',
@@ -883,6 +986,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Gewitter-Seraph',
       'en': 'Storm Seraph',
+      'ja': '嵐のセラフ',
       'ru': 'Грозовой серафим',
       'pt': 'Serafim da Tempestade',
       'fr': 'Séraphin des Tempêtes',
@@ -891,6 +995,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Blitz & Donner',
       'en': 'Lightning & Thunder',
+      'ja': '稲妻と雷',
       'ru': 'Молния и Гром',
       'pt': 'Raio e Trovão',
       'fr': 'Foudre et Tonnerre',
@@ -901,6 +1006,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Vier bis sechs schmale Flügel übereinander — du manövrierst selbst durch wildeste Orkane. Du bist wild, dynamisch und lebst am Rand der Welt, wo andere längst umkehren würden. Als Blitz-Fänger, Orkan-Kurier oder Kartograf der unbekannten Stürme — du bist immer dort, wo es am gefährlichsten und aufregendsten ist.',
       'en':
           'Four to six narrow wings stacked — you maneuver even through the wildest hurricanes. You are wild, dynamic, and live at the edge of the world where others would have turned back long ago. As a lightning catcher, hurricane courier, or cartographer of unknown storms — you are always where it is most dangerous and most exciting.',
+      'ja':
+          '四枚から六枚の細い翼を重ね — 最も荒れ狂う暴風の中さえ自在に飛ぶ。荒々しく躍動的で、他の者がとうに引き返す世界の果てに生きている。雷を捕らえる者、暴風の使者、未知の嵐の地図を描く者として — あなたはいつも、最も危険で最も心躍る場所にいる。',
       'ru':
           'От четырёх до шести узких крыльев одно над другим — ты маневрируешь даже в самых неистовых ураганах. Ты дик, динамичен и живёшь на краю мира, где другие давно бы повернули назад. Ловец молний, гонец ураганов или картограф неведомых бурь — ты всегда там, где опаснее и увлекательнее всего.',
       'pt':
@@ -913,6 +1020,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Selten',
       'en': 'Rare',
+      'ja': '稀少',
       'ru': 'Редкий',
       'pt': 'Raro',
       'fr': 'Rare',
@@ -925,6 +1033,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Seraph-Drache',
       'en': 'Seraph Dragon',
+      'ja': 'セラフドラゴン',
       'ru': 'Дракон-серафим',
       'pt': 'Dragão Serafim',
       'fr': 'Dragon Séraphin',
@@ -933,6 +1042,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Äther-Seraph',
       'en': 'Aether Seraph',
+      'ja': 'エーテルのセラフ',
       'ru': 'Эфирный серафим',
       'pt': 'Serafim do Éter',
       'fr': 'Séraphin de l\'Éther',
@@ -941,6 +1051,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Äther & Sternenlicht',
       'en': 'Aether & Starlight',
+      'ja': 'エーテルと星光',
       'ru': 'Эфир и Звёздный свет',
       'pt': 'Éter e Luz das Estrelas',
       'fr': 'Éther et Lumière des Étoiles',
@@ -951,6 +1062,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Du lebst an den allerhöchsten Stellen Draconias, nahe an der Grenze zum Weltraum. Da Worte in der dünnen Luft kaum zu hören sind, kommunizierst du fast ausschließlich durch Telepathie. Du bist ein Denker, ein Beobachter der Sterne und der Zeit. Was andere als Einsamkeit empfinden, ist für dich die reinste Form der Klarheit.',
       'en':
           'You live at the very highest points of Draconia, near the boundary of space. Since words are barely audible in the thin air, you communicate almost exclusively through telepathy. You are a thinker, an observer of stars and time. What others perceive as loneliness is for you the purest form of clarity.',
+      'ja':
+          'あなたはドラコニアの最も高い地、宇宙との境近くに住んでいる。薄い空気の中では言葉がほとんど届かないため、あなたはほぼテレパシーだけで語り合う。あなたは思索する者、星と時の観察者。他の者が孤独と感じるものは、あなたにとって最も純粋な明晰さの形だ。',
       'ru':
           'Ты живёшь в самых высоких точках Драконии, у самой границы с космосом. Поскольку в разреженном воздухе слова почти не слышны, ты общаешься почти исключительно телепатией. Ты мыслитель, наблюдатель звёзд и времени. То, что другие воспринимают как одиночество, для тебя — чистейшая форма ясности.',
       'pt':
@@ -963,6 +1076,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Sehr selten',
       'en': 'Very rare',
+      'ja': '非常に稀少',
       'ru': 'Очень редкий',
       'pt': 'Muito raro',
       'fr': 'Très rare',
@@ -975,6 +1089,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Fae-Drache',
       'en': 'Fae Dragon',
+      'ja': 'フェイドラゴン',
       'ru': 'Дракон-фей',
       'pt': 'Dragão Fae',
       'fr': 'Dragon Fae',
@@ -983,6 +1098,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Stadt-Fae',
       'en': 'City Fae',
+      'ja': '街のフェイ',
       'ru': 'Городской фей',
       'pt': 'Fae da Cidade',
       'fr': 'Fae des Villes',
@@ -991,6 +1107,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Natur & Tarnung',
       'en': 'Nature & Camouflage',
+      'ja': '自然と擬態',
       'ru': 'Природа и Маскировка',
       'pt': 'Natureza e Camuflagem',
       'fr': 'Nature et Camouflage',
@@ -1001,6 +1118,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Deine Drachenform ist kaum größer als ein Mensch — aber in deiner humanoiden Form überragst du fast alle. Deine Schuppen sind farbenfroh und auffällig, und du trägst sie mit Stolz. Du hast dich perfekt ans Stadtleben angepasst, ohne deine drachische Natur zu vergessen. Deine surrenden Libellenflügel machen dich präziser als jeden Großdrachen.',
       'en':
           'Your dragon form is barely larger than a human — but in your humanoid form you tower over almost everyone. Your scales are colorful and striking, and you wear them with pride. You have perfectly adapted to city life without forgetting your draconic nature. Your humming dragonfly wings make you more precise than any Great Dragon.',
+      'ja':
+          '竜の姿は人とほとんど変わらぬ大きさ — だが人型のときは、ほぼ誰よりも背が高い。鱗は色鮮やかで目を引き、あなたはそれを誇りをもってまとっている。竜としての本性を忘れることなく、都会の暮らしに完璧に適応した。ぶんぶんと鳴るトンボのような翼が、どんなグレートドラゴンより正確な動きをあなたに与えている。',
       'ru':
           'Твоя драконья форма едва крупнее человека — но в человекоподобном облике ты возвышаешься почти над всеми. Твоя чешуя яркая и заметная, и ты носишь её с гордостью. Ты идеально приспособился к городской жизни, не забыв своей драконьей природы. Твои жужжащие стрекозиные крылья делают тебя точнее любого Великого дракона.',
       'pt':
@@ -1013,6 +1132,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Selten',
       'en': 'Rare',
+      'ja': '稀少',
       'ru': 'Редкий',
       'pt': 'Raro',
       'fr': 'Rare',
@@ -1025,6 +1145,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     species: {
       'de': 'Fae-Drache',
       'en': 'Fae Dragon',
+      'ja': 'フェイドラゴン',
       'ru': 'Дракон-фей',
       'pt': 'Dragão Fae',
       'fr': 'Dragon Fae',
@@ -1033,6 +1154,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     name: {
       'de': 'Wald-Fae',
       'en': 'Forest Fae',
+      'ja': '森のフェイ',
       'ru': 'Лесной фей',
       'pt': 'Fae da Floresta',
       'fr': 'Fae des Forêts',
@@ -1041,6 +1163,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     element: {
       'de': 'Natur & Heilung',
       'en': 'Nature & Healing',
+      'ja': '自然と癒し',
       'ru': 'Природа и Исцеление',
       'pt': 'Natureza e Cura',
       'fr': 'Nature et Guérison',
@@ -1051,6 +1174,8 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
           'Du lebst als Einsiedler tief im Dschungel, hoch oben in den Baumkronen. Mittlerweile bist du eine Rarität. Du sammelst das magisch gereinigte Regenwasser, das durch die gigantischen Baumkronen fließt, und bringst es als Heilwasser in die Dörfer. Du bist kein Held der großen Gesten — du bist der stille Retter, den die Welt braucht.',
       'en':
           'You live as a hermit deep in the jungle, high in the treetops. You have become a rarity. You collect the magically purified rainwater that flows through the giant tree crowns and bring it as healing water to the villages. You are not a hero of grand gestures — you are the quiet savior the world needs.',
+      'ja':
+          'あなたは隠者として、ジャングルの奥深く、樹冠の高みに暮らしている。今やあなたは稀有な存在だ。巨大な樹冠を伝って流れる、魔法で清められた雨水を集め、癒しの水として村々へ運ぶ。あなたは大げさな振る舞いの英雄ではない — 世界が必要とする、静かな救い手だ。',
       'ru':
           'Ты живёшь отшельником в глубине джунглей, высоко в кронах деревьев. Ты стал редкостью. Ты собираешь магически очищенную дождевую воду, что стекает по гигантским кронам, и приносишь её как целебную воду в деревни. Ты не герой громких жестов — ты тихий спаситель, в котором нуждается мир.',
       'pt':
@@ -1063,6 +1188,7 @@ const Map<DragonSubtype, DragonResult> dragonResults = {
     rarity: {
       'de': 'Sehr selten',
       'en': 'Very rare',
+      'ja': '非常に稀少',
       'ru': 'Очень редкий',
       'pt': 'Muito raro',
       'fr': 'Très rare',

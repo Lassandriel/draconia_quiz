@@ -10,6 +10,7 @@ const List<Locale> kSupportedLocales = [
   Locale('en'),
   Locale('es'),
   Locale('fr'),
+  Locale('ja'),
   Locale('pt'),
   Locale('ru'),
 ];
