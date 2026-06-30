@@ -229,8 +229,10 @@ class _QuizScreenState extends State<QuizScreen>
                           width: 48,
                           height: 48,
                           child: IconButton(
-                            icon: const Icon(
-                              Icons.arrow_back,
+                            icon: Icon(
+                              Directionality.of(context) == TextDirection.rtl
+                                  ? Icons.arrow_forward
+                                  : Icons.arrow_back,
                               color: AppColors.primary,
                             ),
                             tooltip: l10n.back,

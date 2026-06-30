@@ -35,4 +35,21 @@ void main() {
     // Spanischer Start-Button-Text aus app_es.arb.
     expect(find.text('Empezar el test'), findsOneWidget);
   });
+
+  testWidgets('Arabisch rendert auf Arabisch und von rechts nach links (RTL)', (
+    tester,
+  ) async {
+    SharedPreferences.setMockInitialValues({'language': 'ar'});
+    await SettingsService.instance.init();
+
+    await tester.pumpWidget(const DraconiaApp());
+    await tester.pumpAndSettle();
+
+    // Arabischer Start-Button-Text aus app_ar.arb.
+    expect(find.text('ابدأ الاختبار'), findsOneWidget);
+
+    // Die App-Richtung muss bei Arabisch RTL sein.
+    final dir = Directionality.of(tester.element(find.text('ابدأ الاختبار')));
+    expect(dir, TextDirection.rtl);
+  });
 }

@@ -6,6 +6,7 @@ const List<QuizQuestion> quizQuestions = [
     text: {
       'de': 'Wo fühlst du dich am lebendigsten?',
       'en': 'Where do you feel most alive?',
+      'ar': 'أين تشعر بأنك على قيد الحياة أكثر من أي مكان؟',
       'zh': '在哪里你最能感受到生命的活力？',
       'ja': 'どこにいるとき、最も生きていると感じる？',
       'ru': 'Где ты чувствуешь себя живее всего?',
@@ -18,6 +19,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Hoch über den Wolken, im Licht der Sonne',
           'en': 'High above the clouds, in the light of the sun',
+          'ar': 'عالياً فوق الغيوم، في ضوء الشمس',
           'zh': '高高在云端之上，沐浴在阳光里',
           'ja': '雲のはるか上、太陽の光の中で',
           'ru': 'Высоко над облаками, в свете солнца',
@@ -37,6 +39,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Tief im Wald, zwischen Moos und alten Bäumen',
           'en': 'Deep in the forest, among moss and ancient trees',
+          'ar': 'في أعماق الغابة، بين الطحالب والأشجار العتيقة',
           'zh': '在森林深处，苔藓与古树之间',
           'ja': '森の奥深く、苔と古い木々の間で',
           'ru': 'В глубине леса, среди мха и древних деревьев',
@@ -57,6 +60,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'An einem Vulkan, umgeben von Feuer und Lava',
           'en': 'At a volcano, surrounded by fire and lava',
+          'ar': 'عند بركان، محاطاً بالنار والحمم',
           'zh': '在火山旁，被烈焰与熔岩环绕',
           'ja': '火山のそば、炎と溶岩に囲まれて',
           'ru': 'У вулкана, в окружении огня и лавы',
@@ -76,6 +80,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'In den Tiefen des Ozeans',
           'en': 'In the depths of the ocean',
+          'ar': 'في أعماق المحيط',
           'zh': '在海洋的深处',
           'ja': '大海の深みで',
           'ru': 'В глубинах океана',
@@ -92,6 +97,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'In Höhlen tief im Stein',
           'en': 'In caves deep within the stone',
+          'ar': 'في كهوف عميقة داخل الصخر',
           'zh': '在岩石深处的洞穴里',
           'ja': '岩の奥深くの洞窟で',
           'ru': 'В пещерах глубоко в камне',
@@ -109,6 +115,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'In eisiger Kälte, im ewigen Eis',
           'en': 'In icy cold, amid eternal ice',
+          'ar': 'في برد قارس، وسط جليد أبدي',
           'zh': '在冰冷之中，置身永恒的寒冰里',
           'ja': '凍てつく寒さの中、永遠の氷の只中で',
           'ru': 'В ледяном холоде, среди вечных льдов',
@@ -122,6 +129,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'An steilen Klippen und in weiter Steppe',
           'en': 'On steep cliffs and across open steppe',
+          'ar': 'على المنحدرات الشاهقة وفي السهوب المفتوحة',
           'zh': '在陡峭的悬崖与辽阔的草原上',
           'ja': '切り立った崖や、広大な草原で',
           'ru': 'На отвесных скалах и в бескрайней степи',
@@ -142,6 +150,7 @@ const List<QuizQuestion> quizQuestions = [
     text: {
       'de': 'Wie gehst du mit Konflikten um?',
       'en': 'How do you handle conflict?',
+      'ar': 'كيف تتعامل مع الصراعات؟',
       'zh': '你如何面对冲突？',
       'ja': '争いごとにどう向き合う？',
       'ru': 'Как ты справляешься с конфликтами?',
@@ -154,6 +163,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich handle direkt und mit Stärke',
           'en': 'I act directly and with strength',
+          'ar': 'أتصرّف بشكل مباشر وبقوة',
           'zh': '我直截了当，以力量行事',
           'ja': 'まっすぐ、力をもって動く',
           'ru': 'Действую прямо и с силой',
@@ -173,6 +183,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich beobachte zuerst und plane taktisch',
           'en': 'I observe first and plan tactically',
+          'ar': 'أراقب أولاً ثم أخطّط بأسلوب تكتيكي',
           'zh': '我先观察，再做战术性的谋划',
           'ja': 'まず観察し、戦略的に計画する',
           'ru': 'Сначала наблюдаю и планирую тактически',
@@ -191,6 +202,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich versuche Verständnis und Diplomatie',
           'en': 'I seek understanding and diplomacy',
+          'ar': 'أسعى إلى التفاهم والدبلوماسية',
           'zh': '我寻求理解与外交斡旋',
           'ja': '理解と対話を求める',
           'ru': 'Ищу понимание и дипломатию',
@@ -209,6 +221,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich weiche aus und löse es auf meine eigene Art',
           'en': 'I evade and solve it in my own way',
+          'ar': 'أتجنّبه وأحلّه على طريقتي الخاصة',
           'zh': '我避开它，用自己的方式解决',
           'ja': 'かわして、自分なりのやり方で解決する',
           'ru': 'Уклоняюсь и решаю по-своему',
@@ -230,6 +243,7 @@ const List<QuizQuestion> quizQuestions = [
     text: {
       'de': 'Was treibt dich am stärksten an?',
       'en': 'What motivates you the most?',
+      'ar': 'ما الذي يحفّزك أكثر من غيره؟',
       'zh': '什么最能驱动你？',
       'ja': '何に最も突き動かされる？',
       'ru': 'Что движет тобой сильнее всего?',
@@ -242,6 +256,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Freiheit und Abenteuer',
           'en': 'Freedom and adventure',
+          'ar': 'الحرية والمغامرة',
           'zh': '自由与冒险',
           'ja': '自由と冒険',
           'ru': 'Свобода и приключения',
@@ -260,6 +275,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Wissen und Geheimnisse lüften',
           'en': 'Knowledge and uncovering secrets',
+          'ar': 'المعرفة وكشف الأسرار',
           'zh': '知识，以及揭开秘密',
           'ja': '知識と、秘密を解き明かすこと',
           'ru': 'Знания и раскрытие тайн',
@@ -278,6 +294,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Meine Familie und Gemeinschaft schützen',
           'en': 'Protecting my family and community',
+          'ar': 'حماية عائلتي ومجتمعي',
           'zh': '守护我的家人与族群',
           'ja': '家族と仲間を守ること',
           'ru': 'Защита моей семьи и сообщества',
@@ -296,6 +313,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Erschaffen, handwerken, bauen',
           'en': 'Creating, crafting, building',
+          'ar': 'الابتكار والصناعة والبناء',
           'zh': '创造、打造、建设',
           'ja': '創り、作り、築くこと',
           'ru': 'Творить, мастерить, строить',
@@ -317,6 +335,7 @@ const List<QuizQuestion> quizQuestions = [
     text: {
       'de': 'Welches Wetter passt am besten zu dir?',
       'en': 'Which weather suits you best?',
+      'ar': 'أي طقس يناسبك أكثر؟',
       'zh': '哪种天气最适合你？',
       'ja': 'どんな天気が一番しっくりくる？',
       'ru': 'Какая погода подходит тебе больше всего?',
@@ -329,6 +348,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Gewitter — elektrisch und wild',
           'en': 'Thunderstorm — electric and wild',
+          'ar': 'عاصفة رعدية — كهربائية وجامحة',
           'zh': '雷暴——带电而狂野',
           'ja': '雷雨 — 電気を帯びて荒々しい',
           'ru': 'Гроза — электрическая и дикая',
@@ -346,6 +366,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Strahlender Sonnenschein',
           'en': 'Bright sunshine',
+          'ar': 'أشعة شمس ساطعة',
           'zh': '灿烂的阳光',
           'ja': '輝く陽射し',
           'ru': 'Яркое солнце',
@@ -364,6 +385,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Tiefer Nebel und Mondschein',
           'en': 'Deep fog and moonlight',
+          'ar': 'ضباب كثيف وضوء القمر',
           'zh': '浓雾与月光',
           'ja': '深い霧と月明かり',
           'ru': 'Густой туман и лунный свет',
@@ -381,6 +403,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Eisige Kälte und Stille',
           'en': 'Icy cold and silence',
+          'ar': 'برد قارس وصمت',
           'zh': '刺骨的寒冷与寂静',
           'ja': '凍える寒さと静寂',
           'ru': 'Ледяной холод и тишина',
@@ -401,6 +424,7 @@ const List<QuizQuestion> quizQuestions = [
     text: {
       'de': 'Wie bewegst du dich am liebsten fort?',
       'en': 'How do you prefer to move?',
+      'ar': 'كيف تفضّل أن تتحرك؟',
       'zh': '你更喜欢如何行动？',
       'ja': 'どう動くのが好き？',
       'ru': 'Как ты предпочитаешь передвигаться?',
@@ -413,6 +437,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Rasend schnell — nichts kann mich aufhalten',
           'en': 'Blazing fast — nothing can stop me',
+          'ar': 'بسرعة خاطفة — لا شيء يستطيع إيقافي',
           'zh': '风驰电掣——无人能阻挡我',
           'ja': '猛烈な速さで — 何も止められない',
           'ru': 'Стремительно быстро — ничто меня не остановит',
@@ -431,6 +456,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Schwebend und anmutig, fast lautlos',
           'en': 'Floating gracefully, almost silent',
+          'ar': 'محلّقاً برشاقة، في صمت يكاد يكون تاماً',
           'zh': '优雅地滑翔，几乎悄无声息',
           'ja': '優雅に、ほとんど音もなく漂う',
           'ru': 'Паря грациозно, почти бесшумно',
@@ -450,6 +476,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Durch das Wasser oder unterirdisch',
           'en': 'Through water or underground',
+          'ar': 'عبر الماء أو تحت الأرض',
           'zh': '穿过水中，或潜行地下',
           'ja': '水の中、あるいは地中を',
           'ru': 'По воде или под землёй',
@@ -468,6 +495,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Mit mächtigen Flügelschlägen, imposant',
           'en': 'With powerful wingbeats, imposing',
+          'ar': 'بخفقات أجنحة قوية، بهيبة',
           'zh': '以有力的振翅，气势磅礴',
           'ja': '力強い羽ばたきで、堂々と',
           'ru': 'Мощными взмахами крыльев, внушительно',
@@ -489,6 +517,7 @@ const List<QuizQuestion> quizQuestions = [
     text: {
       'de': 'Was ist deine größte Stärke?',
       'en': 'What is your greatest strength?',
+      'ar': 'ما هي أعظم نقاط قوتك؟',
       'zh': '你最大的强项是什么？',
       'ja': 'あなたの最大の強みは？',
       'ru': 'В чём твоя самая большая сила?',
@@ -501,6 +530,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Physische Kraft und Unverwundbarkeit',
           'en': 'Physical power and invulnerability',
+          'ar': 'القوة الجسدية والمناعة من الأذى',
           'zh': '强大的体魄与刀枪不入',
           'ja': '肉体の力と不死身さ',
           'ru': 'Физическая мощь и неуязвимость',
@@ -519,6 +549,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Intuition und emotionale Tiefe',
           'en': 'Intuition and emotional depth',
+          'ar': 'الحدس والعمق العاطفي',
           'zh': '直觉与情感的深度',
           'ja': '直感と感情の深さ',
           'ru': 'Интуиция и эмоциональная глубина',
@@ -537,6 +568,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Anpassungsfähigkeit und Cleverness',
           'en': 'Adaptability and cleverness',
+          'ar': 'القدرة على التكيّف والذكاء',
           'zh': '适应力与机敏',
           'ja': '適応力と機転',
           'ru': 'Гибкость и смекалка',
@@ -555,6 +587,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Strahlendes Charisma und Führungsstärke',
           'en': 'Radiant charisma and leadership',
+          'ar': 'كاريزما متألقة وروح قيادية',
           'zh': '耀眼的魅力与领导力',
           'ja': '輝くカリスマと統率力',
           'ru': 'Сияющая харизма и лидерство',
@@ -576,6 +609,7 @@ const List<QuizQuestion> quizQuestions = [
     text: {
       'de': 'Was wäre dein Zuhause?',
       'en': 'What would your home be like?',
+      'ar': 'كيف سيكون شكل مسكنك؟',
       'zh': '你的家会是什么样子？',
       'ja': 'あなたの住まいはどんな場所？',
       'ru': 'Каким был бы твой дом?',
@@ -588,6 +622,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Eine Festung aus Stein, tief in der Erde',
           'en': 'A fortress of stone, deep in the earth',
+          'ar': 'حصن من الحجر، في أعماق الأرض',
           'zh': '深埋地底的石之堡垒',
           'ja': '大地の奥深くの、石の砦',
           'ru': 'Крепость из камня, глубоко в земле',
@@ -605,6 +640,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ein Nest ganz oben, wo kein anderer hinkommt',
           'en': 'A nest at the very top, where no one else can reach',
+          'ar': 'عشّ في القمة تماماً، حيث لا يصل إليه أحد سواك',
           'zh': '在最高处的巢，别人都无法抵达',
           'ja': '誰も届かない、一番高いところの巣',
           'ru': 'Гнездо на самой вершине, куда больше никто не доберётся',
@@ -623,6 +659,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ein prächtiger Palast, elegant und leuchtend',
           'en': 'A magnificent palace, elegant and radiant',
+          'ar': 'قصر فخم، أنيق ومتألق',
           'zh': '一座宏伟的宫殿，优雅而辉煌',
           'ja': '壮麗な宮殿、優雅で輝かしい',
           'ru': 'Великолепный дворец, изящный и сияющий',
@@ -641,6 +678,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Kein festes Zuhause — ich bin ständig unterwegs',
           'en': 'No fixed home — I\'m always on the move',
+          'ar': 'لا مسكن ثابت — أنا دائماً في ترحال',
           'zh': '没有固定的家——我总在路上',
           'ja': '決まった住まいはない — いつも旅の途中',
           'ru': 'Нет постоянного дома — я всегда в пути',
@@ -662,6 +700,7 @@ const List<QuizQuestion> quizQuestions = [
     text: {
       'de': 'Welche Farbe zieht dich am meisten an?',
       'en': 'Which color draws you in the most?',
+      'ar': 'أي لون يجذبك أكثر؟',
       'zh': '哪种颜色最吸引你？',
       'ja': 'どの色に最も惹かれる？',
       'ru': 'Какой цвет привлекает тебя больше всего?',
@@ -674,6 +713,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Gold und Weiß — leuchtend und warm',
           'en': 'Gold and white — radiant and warm',
+          'ar': 'الذهبي والأبيض — متألق ودافئ',
           'zh': '金与白——闪耀而温暖',
           'ja': '金と白 — 輝かしく温かい',
           'ru': 'Золото и белый — сияющий и тёплый',
@@ -692,6 +732,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Dunkelblau und Lila — geheimnisvoll und tief',
           'en': 'Dark blue and purple — mysterious and deep',
+          'ar': 'الأزرق الداكن والبنفسجي — غامض وعميق',
           'zh': '深蓝与紫——神秘而深邃',
           'ja': '濃紺と紫 — 神秘的で深い',
           'ru': 'Тёмно-синий и фиолетовый — таинственный и глубокий',
@@ -709,6 +750,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Schwarz und Orange — kraftvoll und gefährlich',
           'en': 'Black and orange — powerful and dangerous',
+          'ar': 'الأسود والبرتقالي — قوي وخطير',
           'zh': '黑与橙——强大而危险',
           'ja': '黒と橙 — 力強く危険な',
           'ru': 'Чёрный и оранжевый — мощный и опасный',
@@ -727,6 +769,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Grün und Braun — verwurzelt und lebendig',
           'en': 'Green and brown — rooted and alive',
+          'ar': 'الأخضر والبني — متجذّر ومفعم بالحياة',
           'zh': '绿与棕——扎根大地，生机盎然',
           'ja': '緑と茶 — 根を張り生命にあふれた',
           'ru': 'Зелёный и коричневый — укоренённый и живой',
@@ -747,6 +790,7 @@ const List<QuizQuestion> quizQuestions = [
     text: {
       'de': 'In einer Gruppe übernimmst du die Rolle...',
       'en': 'In a group, you tend to be the one who...',
+      'ar': 'ضمن المجموعة، تكون عادةً الشخص الذي...',
       'zh': '在团队中，你往往是那个……',
       'ja': 'グループの中では、あなたはたいてい…',
       'ru': 'В группе ты обычно тот, кто...',
@@ -759,6 +803,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': '...die Richtung vorgibt und anführt',
           'en': '...sets the direction and leads',
+          'ar': '...يحدّد الاتجاه ويقود',
           'zh': '……指明方向、引领众人的人',
           'ja': '…方向を定め、皆を導く',
           'ru': '...задаёт направление и ведёт за собой',
@@ -777,6 +822,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': '...alle zusammenhält und für Harmonie sorgt',
           'en': '...holds everyone together and ensures harmony',
+          'ar': '...يجمع الجميع ويحافظ على الانسجام',
           'zh': '……把大家凝聚在一起、维系和谐的人',
           'ja': '…皆をまとめ、調和を保つ',
           'ru': '...сплачивает всех и заботится о гармонии',
@@ -795,6 +841,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': '...alleine im Hintergrund die wichtige Arbeit macht',
           'en': '...works alone in the background doing the important work',
+          'ar': '...يعمل وحده في الخفاء منجزاً المهام المهمة',
           'zh': '……独自在幕后完成要紧事的人',
           'ja': '…陰でひとり、肝心な仕事をこなす',
           'ru': '...в одиночку за кулисами делает важную работу',
@@ -813,6 +860,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': '...mit einem Streich die Stimmung auflockert',
           'en': '...lightens the mood with a clever trick',
+          'ar': '...يخفّف الأجواء بطرفة ذكية',
           'zh': '……用机灵的玩笑活跃气氛的人',
           'ja': '…気の利いた一言で場を和ませる',
           'ru': '...разряжает обстановку остроумной шуткой',
@@ -834,6 +882,7 @@ const List<QuizQuestion> quizQuestions = [
     text: {
       'de': 'Was trifft am ehesten auf dich zu?',
       'en': 'Which of these fits you best?',
+      'ar': 'أي من هذه العبارات تنطبق عليك أكثر؟',
       'zh': '下面哪句话最符合你？',
       'ja': '次のうち、最もあなたに近いのは？',
       'ru': 'Какая из этих фраз подходит тебе больше всего?',
@@ -846,6 +895,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich bin mächtig, aber sehne mich nach Ruhe',
           'en': 'I am powerful, but long for peace',
+          'ar': 'أنا قوي، لكنني أتوق إلى السلام',
           'zh': '我很强大，却渴望安宁',
           'ja': '強い力を持つが、安らぎを求めている',
           'ru': 'Я могуществен, но жажду покоя',
@@ -864,6 +914,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich bin frei, aber fühle mich manchmal einsam',
           'en': 'I am free, but sometimes feel lonely',
+          'ar': 'أنا حر، لكنني أشعر بالوحدة أحياناً',
           'zh': '我很自由，却时常感到孤独',
           'ja': '自由だが、時に孤独を感じる',
           'ru': 'Я свободен, но порой чувствую одиночество',
@@ -882,6 +933,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich gehöre zur Welt, aber fühle mich fremd darin',
           'en': 'I belong to the world, but feel like a stranger in it',
+          'ar': 'أنتمي إلى هذا العالم، لكنني أشعر بأنني غريب فيه',
           'zh': '我属于这个世界，却觉得自己是其中的异乡人',
           'ja': 'この世界に属しているのに、よそ者のように感じる',
           'ru': 'Я принадлежу миру, но чувствую себя в нём чужим',
@@ -900,6 +952,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich passe mich an, aber weiß nie ganz, wer ich bin',
           'en': 'I adapt, but never quite know who I am',
+          'ar': 'أتكيّف، لكنني لا أعرف تماماً من أكون',
           'zh': '我善于适应，却始终不太清楚自己是谁',
           'ja': '順応するが、自分が何者かはっきりとは分からない',
           'ru': 'Я приспосабливаюсь, но никогда толком не знаю, кто я',
@@ -921,6 +974,7 @@ const List<QuizQuestion> quizQuestions = [
     text: {
       'de': 'Welche Fähigkeit wünschst du dir am meisten?',
       'en': 'Which ability do you wish for the most?',
+      'ar': 'أي قدرة تتمناها أكثر من غيرها؟',
       'zh': '你最渴望哪种能力？',
       'ja': '最も欲しい力はどれ？',
       'ru': 'Какую способность ты желаешь больше всего?',
@@ -933,6 +987,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Dinge aus dem Nichts erschaffen',
           'en': 'Create things from nothing',
+          'ar': 'ابتكار الأشياء من العدم',
           'zh': '无中生有地创造事物',
           'ja': '無から物を生み出す',
           'ru': 'Создавать вещи из ничего',
@@ -951,6 +1006,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Illusionen weben und Träume beeinflussen',
           'en': 'Weave illusions and influence dreams',
+          'ar': 'نسج الأوهام والتأثير في الأحلام',
           'zh': '编织幻象，影响梦境',
           'ja': '幻を織りなし、夢に働きかける',
           'ru': 'Плести иллюзии и влиять на сны',
@@ -968,6 +1024,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Blitze und Stürme kontrollieren',
           'en': 'Control lightning and storms',
+          'ar': 'التحكّم في البرق والعواصف',
           'zh': '操控闪电与风暴',
           'ja': '雷と嵐を操る',
           'ru': 'Управлять молниями и бурями',
@@ -985,6 +1042,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Reines Licht ausstrahlen, das Dunkelheit vertreibt',
           'en': 'Radiate pure light that drives away darkness',
+          'ar': 'إشعاع نور نقي يطرد الظلام',
           'zh': '散发驱散黑暗的纯净之光',
           'ja': '闇を払う純粋な光を放つ',
           'ru': 'Излучать чистый свет, прогоняющий тьму',
@@ -1006,6 +1064,7 @@ const List<QuizQuestion> quizQuestions = [
     text: {
       'de': 'Wie triffst du wichtige Entscheidungen?',
       'en': 'How do you make important decisions?',
+      'ar': 'كيف تتّخذ القرارات المهمة؟',
       'zh': '你如何做出重要的决定？',
       'ja': '大事な決断をどう下す？',
       'ru': 'Как ты принимаешь важные решения?',
@@ -1018,6 +1077,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Aus dem Bauch heraus — sofort',
           'en': 'From my gut — immediately',
+          'ar': 'بالحدس — على الفور',
           'zh': '凭直觉——当即决定',
           'ja': '直感で — 即座に',
           'ru': 'По наитию — сразу',
@@ -1036,6 +1096,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Nach langer Beobachtung und Analyse',
           'en': 'After long observation and analysis',
+          'ar': 'بعد مراقبة وتحليل طويلين',
           'zh': '经过长时间的观察与分析',
           'ja': 'じっくり観察し、分析してから',
           'ru': 'После долгого наблюдения и анализа',
@@ -1054,6 +1115,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich höre auf mein Herz und meine Gefühle',
           'en': 'I listen to my heart and feelings',
+          'ar': 'أصغي إلى قلبي ومشاعري',
           'zh': '我倾听自己的内心与感受',
           'ja': '自分の心と感情に耳を傾ける',
           'ru': 'Слушаю своё сердце и чувства',
@@ -1072,6 +1134,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich schaue, was am besten für alle ist',
           'en': 'I look at what\'s best for everyone',
+          'ar': 'أنظر إلى ما هو الأفضل للجميع',
           'zh': '我考虑怎样对大家最好',
           'ja': '皆にとって何が最善かを考える',
           'ru': 'Смотрю, что лучше для всех',
@@ -1094,6 +1157,7 @@ const List<QuizQuestion> quizQuestions = [
     text: {
       'de': 'Wo würdest du am liebsten leben?',
       'en': 'Where would you most like to live?',
+      'ar': 'أين تحب أن تعيش أكثر من أي مكان؟',
       'zh': '你最想住在哪里？',
       'ja': 'どこに一番住みたい？',
       'ru': 'Где бы ты больше всего хотел жить?',
@@ -1106,6 +1170,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'In einer prächtigen Hauptstadt voller Macht und Glanz',
           'en': 'In a grand capital full of power and splendor',
+          'ar': 'في عاصمة عظيمة مليئة بالقوة والبهاء',
           'zh': '在一座充满权力与荣光的宏伟都城',
           'ja': '力と栄華に満ちた壮大な都で',
           'ru': 'В великой столице, полной власти и блеска',
@@ -1124,6 +1189,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'In einer Stadt voller Forschung und Wissen',
           'en': 'In a city full of research and knowledge',
+          'ar': 'في مدينة مليئة بالبحث والمعرفة',
           'zh': '在一座充满研究与知识的城市',
           'ja': '研究と知識にあふれた街で',
           'ru': 'В городе, полном исследований и знаний',
@@ -1142,6 +1208,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Nirgends fest — immer unterwegs zu neuen Orten',
           'en': 'Nowhere fixed — always travelling to new places',
+          'ar': 'لا مكان ثابت — دائماً مسافر إلى أماكن جديدة',
           'zh': '居无定所——总在前往新的地方',
           'ja': '定まった場所はない — いつも新たな地へ旅して',
           'ru': 'Нигде надолго — всегда в пути к новым местам',
@@ -1160,6 +1227,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'In den wildesten Regionen: Vulkane, Stürme, Tiefsee',
           'en': 'In the wildest regions: volcanoes, storms, deep sea',
+          'ar': 'في أكثر المناطق وحشيةً: البراكين، العواصف، أعماق البحار',
           'zh': '在最荒野的地方：火山、风暴、深海',
           'ja': '最も荒々しい土地で — 火山、嵐、深海',
           'ru': 'В самых диких краях: вулканы, бури, морские глубины',
@@ -1184,6 +1252,7 @@ const List<QuizQuestion> quizQuestions = [
     text: {
       'de': 'Welche Aufgabe würde dich erfüllen?',
       'en': 'What kind of work would fulfil you?',
+      'ar': 'أي عمل قد يمنحك شعوراً بالرضا؟',
       'zh': '什么样的工作会让你感到充实？',
       'ja': 'どんな仕事に満たされる？',
       'ru': 'Какое дело принесло бы тебе удовлетворение?',
@@ -1196,6 +1265,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Sturmreiter — mitten im wildesten Geschehen',
           'en': 'Storm Rider — right in the thick of the action',
+          'ar': 'فارس العواصف — في قلب الحدث',
           'zh': '风暴骑手——身处风口浪尖',
           'ja': '嵐の乗り手 — 出来事のただ中で',
           'ru': 'Наездник бурь — в самой гуще событий',
@@ -1213,6 +1283,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Baumeister — ich plane und forme die Welt',
           'en': 'Builder — I plan and shape the world',
+          'ar': 'بنّاء — أخطّط وأشكّل العالم',
           'zh': '建造者——我规划并塑造世界',
           'ja': '建築家 — 世界を計画し、形づくる',
           'ru': 'Строитель — я планирую и формирую мир',
@@ -1230,6 +1301,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Meisterschmied — ich erschaffe Dinge, die ewig halten',
           'en': 'Master Smith — I forge things that last forever',
+          'ar': 'حدّاد بارع — أصنع أشياء تدوم إلى الأبد',
           'zh': '铸造大师——我打造永世长存之物',
           'ja': '鍛冶の名匠 — 永遠に残る物を打ち上げる',
           'ru': 'Мастер-кузнец — я создаю вещи, что служат вечно',
@@ -1247,6 +1319,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Heiler — ich helfe still im Hintergrund',
           'en': 'Healer — I help quietly in the background',
+          'ar': 'معالج — أساعد بهدوء في الخفاء',
           'zh': '治愈者——我在幕后默默相助',
           'ja': '癒し手 — 陰で静かに支える',
           'ru': 'Целитель — я тихо помогаю за кулисами',
@@ -1268,6 +1341,7 @@ const List<QuizQuestion> quizQuestions = [
     text: {
       'de': 'Du hast ein geheimes Hobby — welches?',
       'en': 'You have a secret hobby — which one?',
+      'ar': 'لديك هواية سرية — ما هي؟',
       'zh': '你有一个秘密爱好——是什么？',
       'ja': 'あなたには秘密の趣味がある — それは？',
       'ru': 'У тебя есть тайное увлечение — какое?',
@@ -1280,6 +1354,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich schreibe Geschichten über ein ganz normales Leben',
           'en': 'I write stories about a totally normal life',
+          'ar': 'أكتب قصصاً عن حياة عادية تماماً',
           'zh': '我写些关于平凡生活的故事',
           'ja': 'ごく普通の暮らしの物語を書く',
           'ru': 'Я пишу истории о совершенно обычной жизни',
@@ -1297,6 +1372,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich baue winzige Miniaturwelten von Hand',
           'en': 'I build tiny miniature worlds by hand',
+          'ar': 'أصنع عوالم مصغّرة دقيقة بيدي',
           'zh': '我亲手打造微小的微缩世界',
           'ja': '手作業で小さなミニチュアの世界を作る',
           'ru': 'Я вручную создаю крошечные миниатюрные миры',
@@ -1314,6 +1390,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich päppele heimlich Pflanzen auf',
           'en': 'I secretly tend to my plants',
+          'ar': 'أعتني بنباتاتي سراً',
           'zh': '我偷偷地照料我的植物',
           'ja': 'こっそり植物の世話をする',
           'ru': 'Я тайком ухаживаю за своими растениями',
@@ -1332,6 +1409,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich verschlinge heimlich kitschige Liebesromane',
           'en': 'I secretly devour cheesy romance novels',
+          'ar': 'ألتهم سراً روايات رومانسية عاطفية مبتذلة',
           'zh': '我偷偷地沉迷于肉麻的言情小说',
           'ja': 'こっそり甘ったるい恋愛小説を読みふける',
           'ru': 'Я тайком проглатываю слащавые любовные романы',
@@ -1354,6 +1432,7 @@ const List<QuizQuestion> quizQuestions = [
           'Eine dunkle Macht bedroht die Existenz aller Drachen. Was tust du?',
       'en':
           'A dark power threatens the existence of all dragonkind. What do you do?',
+      'ar': 'قوة مظلمة تهدّد وجود التنانين جميعاً. ماذا تفعل؟',
       'zh': '一股黑暗力量威胁着所有龙族的存亡。你会怎么做？',
       'ja': '暗い力がすべての竜の存在を脅かしている。あなたはどうする？',
       'ru':
@@ -1371,6 +1450,7 @@ const List<QuizQuestion> quizQuestions = [
           'de':
               'Ich stelle mich allein dazwischen — und gebe notfalls mein Leben',
           'en': 'I stand in its path alone — and give my life if I must',
+          'ar': 'أقف في طريقها وحدي — وأضحّي بحياتي إن لزم الأمر',
           'zh': '我独自挡在它面前——必要时不惜以命相搏',
           'ja': 'ひとりでその前に立ちはだかる — 必要なら命をも捧げる',
           'ru':
@@ -1393,6 +1473,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich eine alle Drachen unter mir und führe sie in den Kampf',
           'en': 'I unite all dragons under me and lead them into battle',
+          'ar': 'أوحّد كل التنانين تحت قيادتي وأقودها إلى المعركة',
           'zh': '我把所有龙团结在麾下，率领它们投入战斗',
           'ja': 'すべての竜を束ね、戦いへと導く',
           'ru': 'Я объединяю всех драконов под собой и веду их в бой',
@@ -1414,6 +1495,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich rette Wissen und Brut — und baue notfalls neu auf',
           'en': 'I save our knowledge and our young — and rebuild if I must',
+          'ar': 'أنقذ معارفنا وصغارنا — وأعيد البناء إن لزم الأمر',
           'zh': '我保全我们的知识与幼崽——必要时从头重建',
           'ja': '知識と幼き者たちを守り — 必要なら一から築き直す',
           'ru':
@@ -1437,6 +1519,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich treffe die kalte Wahl: wenige opfern, um viele zu retten',
           'en': 'I make the cold choice: sacrifice the few to save the many',
+          'ar': 'أتّخذ القرار القاسي: التضحية بالقلّة لإنقاذ الكثرة',
           'zh': '我做出冷酷的抉择：牺牲少数以拯救多数',
           'ja': '冷徹な選択をする — 多くを救うため、少数を犠牲にする',
           'ru':
@@ -1458,6 +1541,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich greife zu Mitteln, die kein anderer wagt — um jeden Preis',
           'en': 'I turn to means no other dares — whatever the cost',
+          'ar': 'ألجأ إلى وسائل لا يجرؤ عليها أحد سواي — مهما كان الثمن',
           'zh': '我动用无人敢用的手段——不惜一切代价',
           'ja': '誰も手を出さない手段に頼る — どんな代償を払っても',
           'ru':
@@ -1483,6 +1567,7 @@ const List<QuizQuestion> quizQuestions = [
     text: {
       'de': 'Welches Fest würde dich am meisten begeistern?',
       'en': 'Which kind of festival would excite you the most?',
+      'ar': 'أي نوع من الاحتفالات قد يثير حماسك أكثر؟',
       'zh': '哪种节庆最让你兴奋？',
       'ja': 'どんな祭りに最もわくわくする？',
       'ru': 'Какой праздник воодушевил бы тебя больше всего?',
@@ -1495,6 +1580,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ein Gemeinschaftsfest, bei dem alle zusammenkommen',
           'en': 'A community festival where everyone comes together',
+          'ar': 'احتفال جماعي يلتقي فيه الجميع',
           'zh': '一场让所有人欢聚一堂的族群庆典',
           'ja': '皆が集う共同体の祭り',
           'ru': 'Общий праздник, где собираются все вместе',
@@ -1513,6 +1599,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ein Handelsfest, wo fremde Kulturen aufeinandertreffen',
           'en': 'A trade festival where foreign cultures meet',
+          'ar': 'سوق تجاري تتلاقى فيه ثقافات مختلفة',
           'zh': '一场不同文化交汇的贸易集市',
           'ja': '異なる文化が出会う交易の祭り',
           'ru': 'Торговая ярмарка, где встречаются разные культуры',
@@ -1531,6 +1618,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ein Kräftemessen voller Wettkämpfe und Spektakel',
           'en': 'A tournament full of contests and spectacle',
+          'ar': 'بطولة مليئة بالمنافسات والعروض',
           'zh': '一场充满较量与盛况的竞技大会',
           'ja': '競い合いと見世物に満ちた大会',
           'ru': 'Состязание, полное соревнований и зрелищ',
@@ -1549,6 +1637,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Eine feierliche Zeremonie voller uralter Magie',
           'en': 'A solemn ceremony full of ancient magic',
+          'ar': 'مراسم مهيبة مفعمة بالسحر القديم',
           'zh': '一场充满远古魔法的庄严仪式',
           'ja': '古の魔法に満ちた厳かな儀式',
           'ru': 'Торжественная церемония, полная древней магии',
@@ -1570,6 +1659,7 @@ const List<QuizQuestion> quizQuestions = [
     text: {
       'de': 'Wie stehst du zu Regeln und Gemeinschaft?',
       'en': 'How do you feel about rules and community?',
+      'ar': 'ما رأيك في القواعد والمجتمع؟',
       'zh': '你如何看待规则与族群？',
       'ja': '規則や共同体についてどう思う？',
       'ru': 'Как ты относишься к правилам и сообществу?',
@@ -1582,6 +1672,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Regeln bremsen mich — ich folge meiner Natur',
           'en': 'Rules hold me back — I follow my own nature',
+          'ar': 'القواعد تكبّلني — أتبع طبيعتي الخاصة',
           'zh': '规则束缚着我——我遵从自己的天性',
           'ja': '規則は窮屈だ — 自分の本性に従う',
           'ru': 'Правила меня сдерживают — я следую своей природе',
@@ -1600,6 +1691,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich lebe gern nach gemeinsamen Werten',
           'en': 'I am happy living by shared values',
+          'ar': 'يسعدني أن أعيش وفق قيم مشتركة',
           'zh': '我乐于按共同的价值观生活',
           'ja': '共有された価値観に従って生きるのが心地よい',
           'ru': 'Мне нравится жить по общим ценностям',
@@ -1617,6 +1709,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Beides hat seinen Platz — ich passe mich an',
           'en': 'Both have their place — I adapt',
+          'ar': 'لكليهما مكانه — أنا أتكيّف',
           'zh': '两者各有其位——我随之调整',
           'ja': 'どちらにも意味がある — 状況に合わせる',
           'ru': 'У обоих есть своё место — я приспосабливаюсь',
@@ -1635,6 +1728,7 @@ const List<QuizQuestion> quizQuestions = [
         text: {
           'de': 'Ich folge keiner Seite — nur meinen eigenen Regeln',
           'en': 'I follow neither side — only my own rules',
+          'ar': 'لا أتبع أي طرف — بل قوانيني الخاصة فقط',
           'zh': '我不站任何一边——只遵从自己的法则',
           'ja': 'どちらにもつかない — 従うのは自分の掟だけ',
           'ru': 'Я ни на чьей стороне — лишь по своим правилам',

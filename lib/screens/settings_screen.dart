@@ -23,6 +23,7 @@ const _languageOptions = <({String code, String label})>[
   (code: 'pt', label: 'Português'),
   (code: 'ru', label: 'Русский'),
   (code: 'zh', label: '中文'),
+  (code: 'ar', label: 'العربية'),
 ];
 
 class SettingsScreen extends StatefulWidget {
@@ -55,7 +56,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
       appBar: AppBar(
         backgroundColor: AppColors.background,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: AppColors.primary),
+          icon: Icon(
+            Directionality.of(context) == TextDirection.rtl
+                ? Icons.arrow_forward
+                : Icons.arrow_back,
+            color: AppColors.primary,
+          ),
           onPressed: () => context.go('/'),
         ),
         title: Text(
@@ -247,7 +253,7 @@ class _SliderTile extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 12,
               ),
-              textAlign: TextAlign.right,
+              textAlign: TextAlign.end,
             ),
           ),
         ],

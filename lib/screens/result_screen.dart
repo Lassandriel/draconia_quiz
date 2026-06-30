@@ -103,7 +103,12 @@ class _ResultScreenState extends State<ResultScreen>
           pinned: true,
           backgroundColor: AppColors.background,
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back, color: AppColors.primary),
+            icon: Icon(
+              Directionality.of(context) == TextDirection.rtl
+                  ? Icons.arrow_forward
+                  : Icons.arrow_back,
+              color: AppColors.primary,
+            ),
             tooltip: l10n.back,
             onPressed: () => context.go('/'),
           ),
