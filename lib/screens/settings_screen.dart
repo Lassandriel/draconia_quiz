@@ -20,6 +20,7 @@ const _languageOptions = <({String code, String label})>[
   (code: 'es', label: 'Español'),
   (code: 'fr', label: 'Français'),
   (code: 'pt', label: 'Português'),
+  (code: 'ru', label: 'Русский'),
 ];
 
 class SettingsScreen extends StatefulWidget {
