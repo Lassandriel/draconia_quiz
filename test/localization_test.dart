@@ -44,4 +44,25 @@ void main() {
       expectComplete(r.rarity, 'rarity');
     }
   });
+
+  test('Doppel-Elemente lassen sich in allen Sprachen in 2 Teile zerlegen', () {
+    for (final r in dragonResults.values) {
+      // „Dual" wird an der englischen Referenz erkannt (dort immer " & ").
+      final isDual = r.element['en']!.contains(' & ');
+      if (!isDual) continue;
+      for (final code in codes) {
+        final parts = splitElementParts(r.element[code]!, code);
+        expect(
+          parts.length,
+          2,
+          reason:
+              'Element "${r.element[code]}" ($code) ergibt ${parts.length} '
+              'statt 2 Teile – Trenner für "$code" prüfen',
+        );
+        for (final p in parts) {
+          expect(p.trim(), isNotEmpty, reason: 'leerer Teil bei $code');
+        }
+      }
+    }
+  });
 }

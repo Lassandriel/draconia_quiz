@@ -19,3 +19,26 @@ extension LocalizedTextResolve on LocalizedText {
         values.first;
   }
 }
+
+/// Verbindungswort zwischen den beiden Teilen eines Doppel-Elements
+/// (z. B. „Natur & Tarnung") je Sprache. Damit lassen sich Doppel-Elemente
+/// in einzelne Badges zerlegen – sprachunabhängig.
+const Map<String, String> _elementSeparators = {
+  'de': ' & ',
+  'en': ' & ',
+  'es': ' y ',
+  'fr': ' et ',
+  'pt': ' e ',
+  'ru': ' и ',
+  'ja': 'と',
+  'zh': '与',
+  'ar': ' و',
+};
+
+/// Zerlegt einen bereits lokalisierten Elementnamen in seine Teile.
+/// Einfache Elemente ergeben eine einelementige Liste; Doppel-Elemente zwei.
+/// Unbekannte Sprachen fallen auf den lateinischen Trenner zurück.
+List<String> splitElementParts(String element, String languageCode) {
+  final separator = _elementSeparators[languageCode] ?? ' & ';
+  return element.split(separator);
+}

@@ -314,14 +314,18 @@ class _ElementIconRow extends StatelessWidget {
         ),
         const SizedBox(width: 12),
         // Doppel-Elemente (z. B. „Natur & Tarnung") als zwei getrennte
-        // Badges nebeneinander; einfache Elemente als ein Badge.
+        // Badges nebeneinander; einfache Elemente als ein Badge. Der Trenner
+        // ist sprachabhängig, daher über splitElementParts.
         Expanded(
           child: ExcludeSemantics(
             child: Wrap(
               spacing: 8,
               runSpacing: 8,
               children: [
-                for (final part in elementName.split(' & '))
+                for (final part in splitElementParts(
+                  elementName,
+                  Localizations.localeOf(context).languageCode,
+                ))
                   _ElementBadge(part),
               ],
             ),
