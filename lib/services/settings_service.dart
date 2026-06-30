@@ -13,6 +13,7 @@ const List<Locale> kSupportedLocales = [
   Locale('ja'),
   Locale('pt'),
   Locale('ru'),
+  Locale('zh'),
 ];
 
 class SettingsService {
