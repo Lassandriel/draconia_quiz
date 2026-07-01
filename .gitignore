@@ -63,3 +63,8 @@ android/*.keystore
 android/key.properties
 android/*.jks
 android/*.keystore
+
+# Font-Quelldateien (~38 MB): bleiben lokal, damit tools/subset_fonts.py
+# jederzeit ohne erneuten Download neu zuschneiden kann. Die zugeschnittenen
+# Fonts in assets/fonts/ sind eingecheckt und werden gebündelt.
+fonts_src/

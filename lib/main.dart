@@ -96,14 +96,34 @@ class _DraconiaAppState extends State<DraconiaApp> with WidgetsBindingObserver {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      theme: _draconiaTheme(),
+      theme: _draconiaTheme(_fontFallbackFor(_locale.languageCode)),
       routerConfig: _router,
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
-ThemeData _draconiaTheme() {
+/// Fallback-Schriften je Sprache für Zeichen, die die lateinischen Marken-
+/// Fonts (Cinzel & Co.) nicht abdecken. Locale-abhängig, weil Japanisch und
+/// Chinesisch sich Zeichen-Codes teilen (Han-Unifikation) und je die korrekt
+/// geformte Variante brauchen. Auf die verwendeten Zeichen zugeschnitten via
+/// tools/subset_fonts.py.
+List<String> _fontFallbackFor(String languageCode) {
+  switch (languageCode) {
+    case 'ja':
+      return const ['NotoSerifJP'];
+    case 'zh':
+      return const ['NotoSerifSC'];
+    case 'ar':
+      return const ['Amiri'];
+    case 'ru':
+      return const ['PlayfairDisplay'];
+    default:
+      return const [];
+  }
+}
+
+ThemeData _draconiaTheme(List<String> fontFallback) {
   const background = AppColors.background;
   const surface = AppColors.surface;
   const primary = AppColors.primary;
@@ -119,9 +139,10 @@ ThemeData _draconiaTheme() {
       surface: surface,
       onSurface: onBackground,
     ),
-    textTheme: const TextTheme(
+    textTheme: TextTheme(
       displayLarge: TextStyle(
         fontFamily: 'CinzelDecorative',
+        fontFamilyFallback: fontFallback,
         color: primary,
         fontSize: 34,
         fontWeight: FontWeight.w700,
@@ -129,23 +150,27 @@ ThemeData _draconiaTheme() {
       ),
       headlineMedium: TextStyle(
         fontFamily: 'Cinzel',
+        fontFamilyFallback: fontFallback,
         color: onBackground,
         fontSize: 22,
         fontWeight: FontWeight.w700,
       ),
       bodyLarge: TextStyle(
         fontFamily: 'CrimsonText',
+        fontFamilyFallback: fontFallback,
         color: onBackground,
         fontSize: 18,
         height: 1.7,
       ),
       bodyMedium: TextStyle(
         fontFamily: 'Outfit',
+        fontFamilyFallback: fontFallback,
         color: onBackground,
         fontSize: 14,
       ),
       labelLarge: TextStyle(
         fontFamily: 'Outfit',
+        fontFamilyFallback: fontFallback,
         color: onPrimary,
         fontSize: 15,
         fontWeight: FontWeight.w600,

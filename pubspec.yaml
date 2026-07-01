@@ -90,3 +90,19 @@ flutter:
           weight: 500
         - asset: assets/fonts/Outfit-SemiBold.ttf
           weight: 600
+    # Fallback-Schriften für nicht-lateinische Sprachen. Auf die tatsächlich
+    # verwendeten Zeichen zugeschnitten via tools/subset_fonts.py.
+    - family: PlayfairDisplay
+      fonts:
+        - asset: assets/fonts/PlayfairDisplay-subset.ttf
+    - family: Amiri
+      fonts:
+        - asset: assets/fonts/Amiri-Regular-subset.ttf
+        - asset: assets/fonts/Amiri-Bold-subset.ttf
+          weight: 700
+    - family: NotoSerifJP
+      fonts:
+        - asset: assets/fonts/NotoSerifJP-subset.ttf
+    - family: NotoSerifSC
+      fonts:
+        - asset: assets/fonts/NotoSerifSC-subset.ttf
