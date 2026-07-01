@@ -47,7 +47,11 @@ flutter_native_splash:
   web: true
 
 flutter:
-  generate: true
+  # Keine Auto-Regenerierung der Lokalisierungen beim Build: gen-l10n schlägt
+  # auf diesem Laufwerk mit einer falschen "doesn't allow reading and writing"-
+  # Meldung fehl. Die generierten Dateien in lib/generated/ werden von Hand
+  # gepflegt und sind eingecheckt. Zum manuellen Neugenerieren: flutter gen-l10n.
+  generate: false
   uses-material-design: true
 
   assets:
