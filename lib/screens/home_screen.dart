@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../generated/app_localizations.dart';
 
 import '../data/localized_text.dart';
@@ -9,6 +10,9 @@ import '../models/dragon_type.dart';
 import '../services/audio_service.dart';
 import '../services/settings_service.dart';
 import '../theme/app_colors.dart';
+
+// Ziel des Feedback-Links: direkt das Formular für ein neues GitHub-Issue.
+const _bugReportUrl = 'https://github.com/Lassandriel/draconia_quiz/issues/new';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -28,6 +32,19 @@ class _HomeScreenState extends State<HomeScreen> {
       if (!mounted) return;
       setState(() => _version = info.version);
     });
+  }
+
+  Future<void> _reportIssue() async {
+    final messenger = ScaffoldMessenger.of(context);
+    final errorMsg = AppLocalizations.of(context)!.bugReportError;
+    final ok = await launchUrl(
+      Uri.parse(_bugReportUrl),
+      mode: LaunchMode.externalApplication,
+    );
+    if (!mounted) return;
+    if (!ok) {
+      messenger.showSnackBar(SnackBar(content: Text(errorMsg)));
+    }
   }
 
   @override
@@ -106,6 +123,29 @@ class _HomeScreenState extends State<HomeScreen> {
                 const Spacer(),
                 // Letztes Ergebnis
                 _LastResultBadge(),
+                const SizedBox(height: 12),
+                // Feedback: Bugs / Übersetzungsfehler melden (öffnet GitHub)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: Semantics(
+                    button: true,
+                    link: true,
+                    child: GestureDetector(
+                      onTap: _reportIssue,
+                      child: Text(
+                        l10n.reportProblemHome,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontFamily: 'Outfit',
+                          color: AppColors.primary,
+                          fontSize: 13,
+                          decoration: TextDecoration.underline,
+                          decorationColor: AppColors.primary,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
                 const SizedBox(height: 12),
                 // Version
                 Padding(

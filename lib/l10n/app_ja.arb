@@ -1,6 +1,7 @@
 {
   "@@locale": "ja",
   "appTitle": "Draconia Quiz",
+  "reportProblemHome": "バグや誤字を見つけましたか？ こちらをタップ！",
   "startButton": "クイズを始める",
   "tagline": "あなたがどの竜で、どの属性なのかを見つけよう",
   "questionOf": "質問 {current} / {total}",

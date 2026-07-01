@@ -1,6 +1,7 @@
 {
   "@@locale": "ru",
   "appTitle": "Draconia Quiz",
+  "reportProblemHome": "Нашли ошибку или опечатку? Нажмите здесь!",
   "startButton": "Начать тест",
   "tagline": "Узнай, какой ты дракон и какая у тебя стихия",
   "questionOf": "Вопрос {current} из {total}",

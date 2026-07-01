@@ -1,6 +1,7 @@
 {
   "@@locale": "zh",
   "appTitle": "Draconia Quiz",
+  "reportProblemHome": "发现了错误或错别字？请点击这里！",
   "startButton": "开始测验",
   "tagline": "发现你是哪种龙、属于哪种属性",
   "questionOf": "第 {current} 题，共 {total} 题",

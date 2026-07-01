@@ -12,6 +12,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get appTitle => 'Draconia Quiz';
 
   @override
+  String get reportProblemHome =>
+      'Tu as trouvé un bug ou une faute ? Touche ici !';
+
+  @override
   String get startButton => 'Commencer le test';
 
   @override

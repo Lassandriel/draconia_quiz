@@ -118,6 +118,12 @@ abstract class AppLocalizations {
   /// **'Draconia Quiz'**
   String get appTitle;
 
+  /// No description provided for @reportProblemHome.
+  ///
+  /// In de, this message translates to:
+  /// **'Bugs oder Schreibfehler gefunden? Bitte hier klicken!'**
+  String get reportProblemHome;
+
   /// No description provided for @startButton.
   ///
   /// In de, this message translates to:
@@ -363,18 +369,17 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>[
-        'ar',
-        'de',
-        'en',
-        'es',
-        'fr',
-        'ja',
-        'pt',
-        'ru',
-        'zh',
-      ].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>[
+    'ar',
+    'de',
+    'en',
+    'es',
+    'fr',
+    'ja',
+    'pt',
+    'ru',
+    'zh',
+  ].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;

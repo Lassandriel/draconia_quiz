@@ -1,6 +1,7 @@
 {
   "@@locale": "ar",
   "appTitle": "Draconia Quiz",
+  "reportProblemHome": "هل وجدت خطأً أو خطأً مطبعياً؟ انقر هنا!",
   "startButton": "ابدأ الاختبار",
   "tagline": "اكتشف أي نوع من التنانين وأي عنصر تمثّل",
   "questionOf": "السؤال {current} من {total}",

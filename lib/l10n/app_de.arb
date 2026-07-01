@@ -1,6 +1,7 @@
 {
   "@@locale": "de",
   "appTitle": "Draconia Quiz",
+  "reportProblemHome": "Bugs oder Schreibfehler gefunden? Bitte hier klicken!",
   "startButton": "Quiz starten",
   "tagline": "Entdecke, welche Drachenart und welches Element du bist",
   "questionOf": "Frage {current} von {total}",

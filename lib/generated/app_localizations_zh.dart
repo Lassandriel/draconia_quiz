@@ -12,6 +12,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get appTitle => 'Draconia Quiz';
 
   @override
+  String get reportProblemHome => '发现了错误或错别字？请点击这里！';
+
+  @override
   String get startButton => '开始测验';
 
   @override
