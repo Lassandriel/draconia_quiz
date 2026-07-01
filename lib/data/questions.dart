@@ -1207,7 +1207,7 @@ const List<QuizQuestion> quizQuestions = [
       QuizAnswer(
         text: {
           'de': 'Nirgends fest — immer unterwegs zu neuen Orten',
-          'en': 'Nowhere fixed — always travelling to new places',
+          'en': 'Nowhere fixed — always traveling to new places',
           'ar': 'لا مكان ثابت — دائماً مسافر إلى أماكن جديدة',
           'zh': '居无定所——总在前往新的地方',
           'ja': '定まった場所はない — いつも新たな地へ旅して',
@@ -1251,7 +1251,7 @@ const List<QuizQuestion> quizQuestions = [
   QuizQuestion(
     text: {
       'de': 'Welche Aufgabe würde dich erfüllen?',
-      'en': 'What kind of work would fulfil you?',
+      'en': 'What kind of work would fulfill you?',
       'ar': 'أي عمل قد يمنحك شعوراً بالرضا؟',
       'zh': '什么样的工作会让你感到充实？',
       'ja': 'どんな仕事に満たされる？',
