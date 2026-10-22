@@ -1,6 +1,6 @@
 # Draconia Quiz
 
-Ein Persönlichkeitsquiz für iOS, Android und Web: *Welche Drachenart und welches Element bist du?*
+Ein Persönlichkeitsquiz für Android und Web (iOS bewusst nicht): *Welche Drachenart und welches Element bist du?*
 
 ---
 
@@ -48,14 +48,16 @@ Ein Persönlichkeitsquiz für iOS, Android und Web: *Welche Drachenart und welch
 → Quellen: AG, freesound.org, pixabay.com/music, oder KI (Suno/Udio)
 → `audioplayers`-Package ist eingebaut — weitere Tracks einfach in `assets/audio/` legen
 
-### 🚀 Noch offen (vor Release)
-- [ ] App-Icon in Android/iOS einsetzen (aus `assets/images/app/app_icon.png`)
-- [ ] Splash-Screen konfigurieren
+### 🚀 Release — fertig
+- [x] App-Icon eingesetzt (aus `assets/images/app/app_icon.png`)
+- [x] Splash-Screen konfiguriert
 - [x] Audio-Integration (`audioplayers` eingebaut, Mute-Button vorhanden)
 - [x] Fonts aktivieren (Cinzel, Crimson Text, Outfit — alle aktiv)
-- [ ] Testen auf echtem iOS- und Android-Gerät
-- [ ] Google Play Developer Account ($25 einmalig)
-- [ ] Apple Developer Account ($99/Jahr) + Mac für iOS-Build
+- [x] Auf echtem Android-Gerät getestet
+- [x] Google Play Developer Account
+
+**Kein iOS-Release** (Entscheidung 22.10.2026): Apple Developer Account ($99/Jahr) plus Mac
+ist zu teuer. Der iOS-Teil der Codebasis bleibt liegen, wird aber nicht veröffentlicht.
 
 ---
 
